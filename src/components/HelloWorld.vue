@@ -44,7 +44,7 @@ export default {
   },
 
   mounted() {
-    this.default_camera_position = { x: 0, y: 0, z: 20 };
+    this.default_camera_position = { x: 0, y: 400, z: 150 };
 
     this.init();
     this.addSceneLight();
