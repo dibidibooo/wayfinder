@@ -1,7 +1,10 @@
 <template>
   <div class="about">
     <div id="model_view">
-      <div id="container" style="width: 100%; height: 100%; overflow: hidden;"></div>
+      <div
+        id="container"
+        style="width: 100%; height: 100%; overflow: hidden"
+      ></div>
     </div>
   </div>
 </template>
@@ -101,6 +104,17 @@ export default {
       // this.clock = new THREE.Clock();
 
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+      this.controls.enableRotate = false;
+      // di Максимальное и минимальное приближение камеры
+      this.controls.minDistance = 150;
+      this.controls.maxDistance = 350;
+      // di Ограничение по Rotate
+      // this.controls.minPolarAngle = 0
+      // this.controls.maxPolarAngle = 1.5
+      // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
+      this.controls.mouseButtons = {
+        LEFT: THREE.MOUSE.PAN,
+      };
     },
 
     // TiCK
