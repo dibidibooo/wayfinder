@@ -13,7 +13,8 @@
 <script>
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
+// import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export default {
   data() {
@@ -28,9 +29,9 @@ export default {
       control_is_on: true,
       controls: null,
       default_camera_position: {
-        x: 500,
-        y: 500,
-        z: -500,
+        x: 50,
+        y: 50,
+        z: -50,
       },
 
       // SELECT
@@ -47,7 +48,7 @@ export default {
   },
 
   mounted() {
-    this.default_camera_position = { x: 0, y: 400, z: 150 };
+    this.default_camera_position = { x: 0, y: 40, z: 15 };
 
     this.init();
     this.addSceneLight();
@@ -61,10 +62,12 @@ export default {
     init() {
       // SCENE
       this.scene = new THREE.Scene();
-      this.scene.background = new THREE.Color("#333333");
-      // this.scene.fog = new THREE.Fog(this.scene.background, 3500, 15000);
-      // this.scene.fog	= new THREE.FogExp2( 0x000000, 0.1 );
-      // window.test_scene = this.scene;
+      this.scene.background = new THREE.Color("#DEFEFF");
+
+      // di Добавить задний фон на сцену
+      // this.loader = new THREE.TextureLoader();
+      // this.bgTexture = this.loader.load("images/background.jpg");
+      // this.scene.background = this.bgTexture;
 
       // RENDER
       this.renderer = new THREE.WebGLRenderer();
@@ -86,11 +89,11 @@ export default {
       // var width = rect.width;
 
       this.camera = new THREE.PerspectiveCamera(
-        75,
+        70,
         window.innerWidth / window.innerHeight,
         // width / height,
-        0.1,
-        150000
+        1,
+        15000
       );
 
       this.camera.position.x = this.default_camera_position.x;
@@ -106,8 +109,12 @@ export default {
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.enableRotate = false;
       // di Максимальное и минимальное приближение камеры
-      this.controls.minDistance = 150;
-      this.controls.maxDistance = 350;
+      this.controls.minDistance = 15;
+      this.controls.maxDistance = 50;
+      // di Touch fingers
+      this.controls.touches = {
+        ONE: THREE.TOUCH.DOLLY_PAN,
+      };
       // di Ограничение по Rotate
       // this.controls.minPolarAngle = 0
       // this.controls.maxPolarAngle = 1.5
@@ -148,76 +155,80 @@ export default {
     // SCENE LIGHT
     addSceneLight() {
       // RectAreaLightUniformsLib.init();
-
       // const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444 );
       // hemiLight.position.set( 0, 20000, 0 );
       // this.scene.add( hemiLight );
       const ambient_light = new THREE.AmbientLight(0xffffff);
       this.scene.add(ambient_light);
 
-      // const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
-      // hemiLight.color.setHSL(0.6, 1, 0.6);
-      // hemiLight.groundColor.setHSL(0.095, 1, 0.85);
-      // hemiLight.position.set(0, 50, 0);
-      // this.scene.add(hemiLight);
+      const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
+      hemiLight.color.setHSL(0.6, 1, 0.6);
+      hemiLight.groundColor.setHSL(0.095, 1, 0.85);
+      hemiLight.position.set(0, 50, 0);
+      this.scene.add(hemiLight);
 
-      // const hemiLightHelper = new THREE.HemisphereLightHelper( hemiLight, 10 );
-      // this.scene.add( hemiLightHelper );
+      // di Видишь в какую сторону свет падает, где центр модельки, какую зону свет покрывает, куда рэйкастер смотрит
+      // const hemiLightHelper = new THREE.HemisphereLightHelper(hemiLight, 10);
+      // this.scene.add(hemiLightHelper);
 
-      // const dirLight = new THREE.DirectionalLight(0xffffff);
-      // const dirLight_1 = new THREE.DirectionalLight(0xffffff);
-      // dirLight_1.castShadow = true;
-      // dirLight_1.position.set(700, 2000, -900);
-      // this.scene.add(dirLight_1);
+      const dirLight = new THREE.DirectionalLight(0xffffff);
+      const dirLight_1 = new THREE.DirectionalLight(0xffffff);
+      dirLight_1.castShadow = true;
+      dirLight_1.position.set(700, 2000, -900);
+      this.scene.add(dirLight_1);
 
-      // const dirLight_2 = new THREE.DirectionalLight(0x0087FF);
-      // dirLight_2.castShadow = true;
-      // dirLight_2.position.set(0, 1500, 0);
-      // this.scene.add(dirLight_2);
+      const dirLight_2 = new THREE.DirectionalLight(0x0087ff);
+      dirLight_2.castShadow = true;
+      dirLight_2.position.set(0, 1500, 0);
+      this.scene.add(dirLight_2);
 
-      // const dirLight_2_1 = new THREE.DirectionalLight(0xC1FF00);
-      // dirLight_2_1.castShadow = true;
-      // dirLight_2_1.position.set(0, -2000, 0);
-      // this.scene.add(dirLight_2_1);
+      const dirLight_2_1 = new THREE.DirectionalLight(0xc1ff00);
+      dirLight_2_1.castShadow = true;
+      dirLight_2_1.position.set(0, -2000, 0);
+      this.scene.add(dirLight_2_1);
 
-      // const dirLight_3 = new THREE.DirectionalLight(0xffffff);
-      // dirLight_3.castShadow = true;
-      // dirLight_3.position.set(300, 2000, 2000);
-      // this.scene.add(dirLight_3);
-      //
-      // dirLight.shadow.camera.top = 180;
-      // dirLight.shadow.camera.bottom = -100;
-      // dirLight.shadow.camera.left = -120;
-      // dirLight.shadow.camera.right = 120;
+      const dirLight_3 = new THREE.DirectionalLight(0xffffff);
+      dirLight_3.castShadow = true;
+      dirLight_3.position.set(300, 2000, 2000);
+      this.scene.add(dirLight_3);
+
+      dirLight.shadow.camera.top = 180;
+      dirLight.shadow.camera.bottom = -100;
+      dirLight.shadow.camera.left = -120;
+      dirLight.shadow.camera.right = 120;
     },
 
     loadModel() {
-      const model_src = "/models/first_floor.fbx";
-      const manager = new THREE.LoadingManager();
-      const loader = new FBXLoader(manager);
+      {
+        const gltfLoader = new GLTFLoader();
+        gltfLoader.load("models/first_floor.gltf", (gltf) => {
+          const root = gltf.scene;
+          this.scene.add(root);
+          gltf.scene.scale.set(17.0, 17.0, 17.0);
 
-      loader.load(
-        model_src,
-        (object) => {
-          object.traverse(function (child) {
-            if (child.isMesh) {
-              child.castShadow = true;
-              child.receiveShadow = true;
-            }
-          });
+          // compute the box that contains all the stuff
+          // from root and below
+          const box = new THREE.Box3().setFromObject(root);
 
-          // load success functions
-          this.scene.add(object);
-        },
-        (load) => {
-          // console.log((load.loaded / load.total) * 100 + "% loaded fbx");
-          console.log(load.loaded / load.total) * 100;
-        },
-        (e) => {
-          console.log("Error");
-          console.log(e);
-        }
-      );
+          const boxSize = box.getSize(new THREE.Vector3()).length();
+          const boxCenter = box.getCenter(new THREE.Vector3());
+
+          // set the camera to frame the box
+          this.frameArea(boxSize * 0.5, boxSize, boxCenter, this.camera);
+          this.gltfloader.scale.set(10, 10, 10);
+
+          // update the Trackball controls to handle the new size
+          this.controls.maxDistance = boxSize * 10;
+          this.controls.target.copy(boxCenter);
+          this.controls.update();
+        });
+      }
+    },
+
+    onWindowResize() {
+      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.updateProjectionMatrix();
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
     },
   },
 };
