@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" style="z-index:5 ">
     <div id="model_view">
       <div
         id="container"
@@ -150,6 +150,35 @@ export default {
       // if (this.control_is_on) {
       //   this.controls.update();
       // }
+
+      const raycaster = new THREE.Raycaster();
+      const pointer = new THREE.Vector2();
+
+      function onPointerMove(event) {
+        // calculate pointer position in normalized device coordinates
+        // (-1 to +1) for both components
+
+        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      }
+
+      function render() {
+        // update the picking ray with the camera and pointer position
+        raycaster.setFromCamera(pointer, this.camera);
+
+        // calculate objects intersecting the picking ray
+        const intersects = raycaster.intersectObjects(this.scene.children[6]);
+
+        for (let i = 0; i < intersects.length; i++) {
+          intersects[i].object.material.color.set(0xff0000);
+        }
+
+        this.renderer.render(this.scene, this.camera);
+      }
+
+      window.addEventListener("pointermove", onPointerMove);
+
+      window.requestAnimationFrame(render);
     },
 
     // SCENE LIGHT
@@ -223,12 +252,6 @@ export default {
           this.controls.update();
         });
       }
-    },
-
-    onWindowResize() {
-      this.camera.aspect = window.innerWidth / window.innerHeight;
-      this.camera.updateProjectionMatrix();
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
     },
   },
 };
