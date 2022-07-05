@@ -1,5 +1,5 @@
 <template>
-  <div class="about" style="z-index:5 ">
+  <div class="about" style="z-index: 5">
     <div id="model_view">
       <div
         id="container"
@@ -13,7 +13,6 @@
 <script>
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-// import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export default {
@@ -122,6 +121,11 @@ export default {
       this.controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
       };
+
+      this.raycaster = new THREE.Raycaster();
+      this.renderer = new THREE.WebGLRenderer();
+      this.renderer.setPixelRatio(window.devicePixelRatio);
+      this.renderer.setSize(window.innerWidth, window.innerHeight);
     },
 
     // TiCK
@@ -151,8 +155,26 @@ export default {
       //   this.controls.update();
       // }
 
+      this.raycaster.setFromCamera(this.pointer, this.camera);
+      const intersects = this.raycaster.intersectObjects(
+        this.scene.children[3].children,
+        true
+      );
 
-
+      document.addEventListener("dblclick", async function () {
+        if (intersects.length > 0) {
+          if (this.INTERSECTED != intersects[0].object) {
+            this.INTERSECTED = intersects[0].object;
+            this.INTERSECTED.material = new THREE.MeshPhongMaterial();
+            this.INTERSECTED.material.color.set("#f5deb3");
+            this.INTERSECTED.material.specular.set("#004cff");
+            this.INTERSECTED.material.emissive.set("#ff0000");
+            this.INTERSECTED.material.shininess = 100000;
+          } else {
+            console.log("ERROR");
+          }
+        }
+      });
       // di Выборка SELECT
       // const raycaster = new THREE.Raycaster();
       // const pointer = new THREE.Vector2();
@@ -174,10 +196,6 @@ export default {
       // }
       // window.addEventListener("pointermove", onPointerMove);
       // window.requestAnimationFrame(render);
-
-
-
-
     },
 
     // SCENE LIGHT
@@ -237,7 +255,6 @@ export default {
           // compute the box that contains all the stuff
           // from root and below
           const box = new THREE.Box3().setFromObject(root);
-
           const boxSize = box.getSize(new THREE.Vector3()).length();
           const boxCenter = box.getCenter(new THREE.Vector3());
 
@@ -252,17 +269,6 @@ export default {
         });
       }
     },
-
-
-
-
-
-
-
-
-
-
-
   },
 };
 </script>
