@@ -1,7 +1,5 @@
 <template>
-<div class="buttonBubble">
-<button  class="bubbly-button">Model 1</button>
-<button  class="bubbly-button" style="margin-top:15em">Model 2</button>
+<div>
 </div>
 </template>
 
@@ -9,7 +7,7 @@
 <style>
 .bubbly-button {
   font-family: "Helvetica", "Arial", sans-serif;
-  position: absolute;
+  position: fixed;
   display: inline-block;
   font-size: 1.2em;
   padding: 1em 2em;

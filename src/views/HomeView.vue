@@ -1,6 +1,10 @@
 <template>
   <div id="container">
+    <!-- <ButtonSearch /> -->
     <ButtonMenu />
+    <button @click="buttonModel1()" class="bubbly-button">1 Этаж</button>
+    <button
+      @click="buttonModel2()" class="bubbly-button" style="margin-top: 15em">2 Этаж</button>
   </div>
 </template>
 
@@ -10,6 +14,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 import ButtonMenu from "@/components/ButtonMenu.vue";
+// import ButtonSearch from "@/components/ButtonSearch.vue";
 // import { GUI } from 'dat.gui'
 var container, controls;
 var camera, scene, raycaster, renderer;
@@ -20,6 +25,7 @@ const pointer = new THREE.Vector2();
 export default {
   components: {
     ButtonMenu,
+    // ButtonSearch,
   },
   data() {
     return {};
@@ -78,7 +84,7 @@ export default {
 
       const loader = new GLTFLoader();
       loader.load(
-        "models/first_floor.gltf",
+        "models/example.gltf",
         function (gltf_model1) {
           scene.add(gltf_model1.scene);
           gltf_model1.scene.scale.set(17.0, 17.0, 17.0);
@@ -106,7 +112,7 @@ export default {
         undefined,
         function (error) {
           console.error(error);
-        }
+        }, 
       );
 
       //Raycaster-settings
@@ -140,6 +146,10 @@ export default {
       container.appendChild(renderer.domElement);
       document.addEventListener("mousemove", this.onPointerMove);
       window.addEventListener("resize", this.onWindowResize);
+      setTimeout(function () {
+        scene.children[4].visible = true;
+        scene.children[5].visible = false;
+      }, 500);
     },
 
     //Подгон размера окна к данным матрице
@@ -148,6 +158,19 @@ export default {
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     },
+
+    //Выбрать модель через кнопку (1 этаж / 2этаж )
+    async buttonModel1() {
+      scene.children[4].visible = true;
+      scene.children[5].visible = false;
+      console.log("MODEL1::::>>>", scene.children);
+    },
+
+    async buttonModel2() {
+      scene.children[4].visible = false;
+      scene.children[5].visible = true;
+    },
+
     //Отслеживание мыши
     async onPointerMove(event) {
       pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -165,10 +188,17 @@ export default {
       raycaster.setFromCamera(pointer, camera);
       //Функция срабатывающаяя на двойное нажатие мыши
       document.addEventListener("dblclick", async function () {
-        const intersects = raycaster.intersectObjects(
-          scene.children[4].children,
-          true
-        );
+        if (scene.children[4].visible != false) {
+          var intersects = raycaster.intersectObjects(
+            scene.children[4].children,
+            true
+          );
+        } else {
+          intersects = raycaster.intersectObjects(
+            scene.children[5].children,
+            true
+          );
+        }
         //Получение объекта после реакции с рэйкастером
         if (intersects.length > 0) {
           if (INTERSECTED != intersects[0].object) {
