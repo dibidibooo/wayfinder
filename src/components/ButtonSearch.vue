@@ -3,7 +3,7 @@
 <form action="" class="search-bar">
 	<input type="search" name="search" pattern=".*\S.*" required>
 	<button class="search-btn" type="submit">
-		<span>Search</span>
+		<span>Поиск..</span>
 	</button>
 </form>
 </div>
@@ -85,7 +85,7 @@ body {
 	transform: scale(1);
 }
 .search-btn {
-	background: #171717;
+	background: #d60000;
 	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
 	padding: 0.75em;
 	position: relative;

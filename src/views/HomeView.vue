@@ -62,9 +62,9 @@ export default {
       dirLight_1.position.set(700, 2000, -900);
       scene.add(dirLight_1);
 
-      const dirLight_2 = new THREE.DirectionalLight(0x0087ff);
+      const dirLight_2 = new THREE.DirectionalLight(0xffffff);
       dirLight_2.castShadow = true;
-      dirLight_2.position.set(0, 1500, 0);
+      dirLight_2.position.set(300, 2000, 2000);
       scene.add(dirLight_2);
 
       const dirLight_2_1 = new THREE.DirectionalLight(0xc1ff00);
@@ -84,7 +84,7 @@ export default {
 
       const loader = new GLTFLoader();
       loader.load(
-        "models/example.gltf",
+        "models/InUse/first_floor.gltf",
         function (gltf_model1) {
           scene.add(gltf_model1.scene);
           gltf_model1.scene.scale.set(17.0, 17.0, 17.0);
@@ -100,7 +100,7 @@ export default {
       );
 
       loader.load(
-        "models/second_floor.gltf",
+        "models/InUse/second_floor.gltf",
         function (gltf_model2) {
           scene.add(gltf_model2.scene);
           gltf_model2.scene.scale.set(17.0, 17.0, 17.0);
