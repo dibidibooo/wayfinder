@@ -3,8 +3,7 @@
     <!-- <ButtonSearch /> -->
     <ButtonMenu />
     <button @click="buttonModel1()" class="bubbly-button">1 Этаж</button>
-    <button
-      @click="buttonModel2()" class="bubbly-button" style="margin-top: 15em">2 Этаж</button>
+    <button @click="buttonModel2()" class="bubbly-button" style="margin-top: 15em">2 Этаж</button>
   </div>
 </template>
 
@@ -205,6 +204,7 @@ export default {
             INTERSECTED = intersects[0].object;
             INTERSECTED.material = new THREE.MeshPhongMaterial();
             INTERSECTED.material.color.set("red");
+            console.log(INTERSECTED.name)
             return INTERSECTED;
           }
           INTERSECTED = null;
