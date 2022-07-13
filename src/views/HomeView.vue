@@ -53,12 +53,12 @@ export default {
 
       //Create Scene and settings
       scene = new THREE.Scene();
-      scene.background = new THREE.Color("#DEFEFF");
+      // scene.background = new THREE.Color("#DEFEFF");
 
       // di Добавить задний фон на сцену
-      // this.loader = new THREE.TextureLoader();
-      // this.bgTexture = this.loader.load("images/background.jpg");
-      // scene.background = this.bgTexture;
+      this.loader = new THREE.TextureLoader();
+      this.bgTexture = this.loader.load("images/background2.jpg");
+      scene.background = this.bgTexture;
 
       //Create Light for scene
       const dirLight = new THREE.DirectionalLight(0xffffff);
@@ -613,10 +613,10 @@ export default {
               INTERSECTED.name === "sf_tr_a040" ||
               INTERSECTED.name === "sf_ground"
             ) {
-              console.log("Nonclickable");
+              console.log(INTERSECTED.name, "- Nonclickable");
             } else {
               INTERSECTED.material = new THREE.MeshPhongMaterial();
-              INTERSECTED.material.color.set("red");
+              INTERSECTED.material.color.set("#009de0");
               console.log(INTERSECTED.name);
               return INTERSECTED;
             }
@@ -630,12 +630,12 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-23001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-22001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -647,17 +647,17 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-17001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-16_1001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-16_2001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -668,12 +668,12 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-11001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-12001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -685,17 +685,17 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-01001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-02_1001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-02_2001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -707,17 +707,17 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-49001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-48001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-47001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -731,27 +731,27 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-60001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-61001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-62001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-63001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-64001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -763,17 +763,17 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-55001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-54001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-53001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -784,12 +784,12 @@ export default {
               if (scene.children[4].children[i].name === "ff_g-51001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
               if (scene.children[4].children[i].name === "ff_g-52001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("red");
+                scene.children[4].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -800,12 +800,12 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-62001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-61001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -816,12 +816,12 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-01001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-02001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -832,12 +832,12 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-04001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-05001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -849,17 +849,17 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-31001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-32001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-33001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -871,17 +871,17 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-37001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-36001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-35001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -894,22 +894,22 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-74001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-75001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-76001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-77001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -921,17 +921,17 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-68001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-69001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-70001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -945,27 +945,27 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-82001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-83001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-84001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-85001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-86001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           } else if (
@@ -976,12 +976,12 @@ export default {
               if (scene.children[5].children[i].name === "ff_f-53001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
               if (scene.children[5].children[i].name === "ff_f-54001") {
                 scene.children[5].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[5].children[i].material.color.set("red");
+                scene.children[5].children[i].material.color.set("#009de0");
               }
             }
           }
