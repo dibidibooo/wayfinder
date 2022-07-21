@@ -4,15 +4,6 @@
 </template>
 
 <style>
-* {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-:root {
-	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
-}
 button, input {
 	font: 1em Hind, sans-serif;
 	line-height: 1.5em;

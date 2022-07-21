@@ -1,6 +1,5 @@
 <template>
   <div id="container">
-
     <form action="" class="search-bar">
       <input
         v-model="message"
@@ -9,7 +8,14 @@
         pattern=".*\S.*"
         required
       />
-      <button @click="searchBox()" class="search-btn" type="submit">
+      <button
+        @click="
+          searchBox1();
+          searchBox2();
+        "
+        class="search-btn"
+        type="submit"
+      >
         <span>Поиск..</span>
       </button>
     </form>
@@ -33,8 +39,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 import ButtonMenu from "@/components/ButtonMenu.vue";
-import json_search from "/public/search.json";
 import ButtonSearch from "@/components/ButtonSearch.vue";
+import json_search from "/public/search.json";
 // import { GUI } from 'dat.gui'
 var container, controls;
 var camera, scene, raycaster, renderer;
@@ -58,7 +64,7 @@ export default {
   },
 
   methods: {
-    searchBox() {
+    searchBox1() {
       let temp_json = json_search;
       for (let i in temp_json) {
         if (this.message == temp_json[i]) {
@@ -66,6 +72,21 @@ export default {
           for (let k in scene.children[3].children) {
             if (butik_name == scene.children[3].children[k].name) {
               scene.children[3].children[k].material.color.set("#009de0");
+              console.log("NAME-ABSOLUTE");
+            }
+          }
+        }
+      }
+    },
+
+    searchBox2() {
+      let temp_json = json_search;
+      for (let i in temp_json) {
+        if (this.message == temp_json[i]) {
+          let butik_name = i;
+          for (let k in scene.children[4].children) {
+            if (butik_name == scene.children[4].children[k].name) {
+              scene.children[4].children[k].material.color.set("#009de0");
               console.log("NAME-ABSOLUTE");
             }
           }
