@@ -1,7 +1,19 @@
 <template>
   <div id="container">
-    <!-- <ButtonSearch /> -->
-    <ButtonMenu />
+
+    <form action="" class="search-bar">
+      <input
+        v-model="message"
+        type="search"
+        name="search"
+        pattern=".*\S.*"
+        required
+      />
+      <button @click="searchBox()" class="search-btn" type="submit">
+        <span>Поиск..</span>
+      </button>
+    </form>
+
     <button @click="buttonModel1()" class="bubbly-button">1 Этаж</button>
     <button
       @click="buttonModel2()"
@@ -10,6 +22,8 @@
     >
       2 Этаж
     </button>
+    <ButtonSearch />
+    <ButtonMenu />
   </div>
 </template>
 
@@ -19,7 +33,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 import ButtonMenu from "@/components/ButtonMenu.vue";
-// import ButtonSearch from "@/components/ButtonSearch.vue";
+import json_search from "/public/search.json";
+import ButtonSearch from "@/components/ButtonSearch.vue";
 // import { GUI } from 'dat.gui'
 var container, controls;
 var camera, scene, raycaster, renderer;
@@ -30,10 +45,12 @@ const pointer = new THREE.Vector2();
 export default {
   components: {
     ButtonMenu,
-    // ButtonSearch,
+    ButtonSearch,
   },
   data() {
-    return {};
+    return {
+      message: "",
+    };
   },
   mounted() {
     this.init();
@@ -41,6 +58,20 @@ export default {
   },
 
   methods: {
+    searchBox() {
+      let temp_json = json_search;
+      for (let i in temp_json) {
+        if (this.message == temp_json[i]) {
+          let butik_name = i;
+          for (let k in scene.children[3].children) {
+            if (butik_name == scene.children[3].children[k].name) {
+              scene.children[3].children[k].material.color.set("#009de0");
+              console.log("NAME-ABSOLUTE");
+            }
+          }
+        }
+      }
+    },
     async init() {
       //Camera create and settings
       camera = new THREE.PerspectiveCamera(
@@ -62,7 +93,7 @@ export default {
 
       //Create Light for scene
       const dirLight = new THREE.DirectionalLight(0xffffff);
-      const dirLight_1 = new THREE.AmbientLight( 0xffffff );
+      const dirLight_1 = new THREE.AmbientLight(0xffffff);
       scene.add(dirLight_1);
 
       const dirLight_2 = new THREE.DirectionalLight(0xffffff);
@@ -131,8 +162,8 @@ export default {
         ONE: THREE.TOUCH.DOLLY_PAN,
       };
       // di Ограничение по Rotate
-      controls.minPolarAngle = 0.7
-      controls.maxPolarAngle = 1.1
+      controls.minPolarAngle = 0.7;
+      controls.maxPolarAngle = 1.1;
       // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
       controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
@@ -981,7 +1012,7 @@ export default {
         }
       });
 
-      INTERSECTED = null;
+      this.intersects = null;
       this.render();
     },
     //Функция рендера страницы

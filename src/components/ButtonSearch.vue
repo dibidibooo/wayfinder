@@ -1,11 +1,5 @@
 <template>
 <div>
-<form action="" class="search-bar">
-	<input type="search" name="search" pattern=".*\S.*" required>
-	<button class="search-btn" type="submit">
-		<span>Поиск..</span>
-	</button>
-</form>
 </div>
 </template>
 
