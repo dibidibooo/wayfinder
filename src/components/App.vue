@@ -42,7 +42,6 @@ async massive_reverse(){
       for(var q = 0; q <= 10; q++){
         arr1.push(Math.floor(Math.random() * 1000))
       }
-    
       console.log(arr1);
         for(var i = 0; i<arr1.length; i++){
           for(var j=0; j<arr1.length; j++){
@@ -53,7 +52,7 @@ async massive_reverse(){
             }
           }
         }
-          console.log(arr1);
+      console.log(arr1);
 },
 
 async init(){
@@ -390,4 +389,5 @@ async render() {
 </script>
 
 <style>
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <form action="" class="search-bar">
+    <!-- <form action="" class="search-bar">
       <input
         v-model="message"
         type="search"
@@ -14,22 +14,22 @@
           searchBox2();
         "
         class="search-btn"
-        type="submit"
       >
         <span>Поиск..</span>
       </button>
-    </form>
+    </form> -->
 
-    <button @click="buttonModel1()" class="bubbly-button">1 Этаж</button>
+
+    <!-- <button @click="buttonModel1()" class="bubbly-button">1 Этаж</button>
     <button
       @click="buttonModel2()"
       class="bubbly-button"
       style="margin-top: 15em"
     >
       2 Этаж
-    </button>
-    <ButtonSearch />
-    <ButtonMenu />
+    </button> -->
+    <!-- <ButtonSearch />
+    <ButtonMenu /> -->
   </div>
 </template>
 
@@ -38,8 +38,9 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
-import ButtonMenu from "@/components/ButtonMenu.vue";
-import ButtonSearch from "@/components/ButtonSearch.vue";
+// import ButtonMenu from "@/components/ButtonMenu.vue";
+// import ButtonSearch from "@/components/ButtonSearch.vue";
+
 import json_search from "/public/search.json";
 // import { GUI } from 'dat.gui'
 var container, controls;
@@ -50,9 +51,9 @@ const pointer = new THREE.Vector2();
 
 export default {
   components: {
-    ButtonMenu,
-    ButtonSearch,
-  },
+    // ButtonMenu,
+    // ButtonSearch
+},
   data() {
     return {
       message: "",
@@ -72,7 +73,7 @@ export default {
           for (let k in scene.children[3].children) {
             if (butik_name == scene.children[3].children[k].name) {
               scene.children[3].children[k].material.color.set("#009de0");
-              console.log("NAME-ABSOLUTE");
+              console.log("SEARCH-NAME");
             }
           }
         }
@@ -87,12 +88,13 @@ export default {
           for (let k in scene.children[4].children) {
             if (butik_name == scene.children[4].children[k].name) {
               scene.children[4].children[k].material.color.set("#009de0");
-              console.log("NAME-ABSOLUTE");
+              console.log("SEARCH-NAME-model2");
             }
           }
         }
       }
     },
+
     async init() {
       //Camera create and settings
       camera = new THREE.PerspectiveCamera(
@@ -105,12 +107,12 @@ export default {
 
       //Create Scene and settings
       scene = new THREE.Scene();
-      // scene.background = new THREE.Color("#DEFEFF");
+      scene.background = new THREE.Color("#f0f0f0");
 
       // di Добавить задний фон на сцену
-      this.loader = new THREE.TextureLoader();
-      this.bgTexture = this.loader.load("images/background2.jpg");
-      scene.background = this.bgTexture;
+      // this.loader = new THREE.TextureLoader();
+      // this.bgTexture = this.loader.load("images/background2.jpg");
+      // scene.background = this.bgTexture;
 
       //Create Light for scene
       const dirLight = new THREE.DirectionalLight(0xffffff);
