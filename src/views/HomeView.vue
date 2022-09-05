@@ -21,14 +21,14 @@
 
 
     <!-- <button @click="buttonModel1()" class="bubbly-button">1 Этаж</button>
-    <button
+    <button 
       @click="buttonModel2()"
       class="bubbly-button"
       style="margin-top: 15em"
     >
       2 Этаж
-    </button> -->
-    <!-- <ButtonSearch />
+    </button>
+    <ButtonSearch />
     <ButtonMenu /> -->
   </div>
 </template>
@@ -95,19 +95,20 @@ export default {
       }
     },
 
+
     async init() {
       //Camera create and settings
       camera = new THREE.PerspectiveCamera(
-        70,
+        25,
         window.innerWidth / window.innerHeight,
-        0.01,
-        1000
+        1,
+        100
       );
-      camera.position.set(0, 40, 15);
+      camera.position.set(20, 20, 35);
 
       //Create Scene and settings
       scene = new THREE.Scene();
-      scene.background = new THREE.Color("#f0f0f0");
+      scene.background = new THREE.Color(0x222222);
 
       // di Добавить задний фон на сцену
       // this.loader = new THREE.TextureLoader();
@@ -134,12 +135,25 @@ export default {
       dirLight.shadow.camera.left = -120;
       dirLight.shadow.camera.right = 120;
 
+
+      //Сетка
+      let gridHelper = new THREE.GridHelper(
+        60,
+        150,
+        new THREE.Color(0x555555),
+        new THREE.Color(0x333333)
+      );
+      scene.add(gridHelper);
+
+
+      
+
       const loader = new GLTFLoader();
       loader.load(
         "models/InUse/first_floor.gltf",
         function (gltf_model1) {
           scene.add(gltf_model1.scene);
-          gltf_model1.scene.scale.set(17.0, 17.0, 17.0);
+          gltf_model1.scene.scale.set(6.0, 6.0, 6.0);
           console.log(
             ">>>THREE.JS:::gltf_model1",
             scene.add(gltf_model1.scene)
@@ -155,7 +169,7 @@ export default {
         "models/InUse/second_floor.gltf",
         function (gltf_model2) {
           scene.add(gltf_model2.scene);
-          gltf_model2.scene.scale.set(17.0, 17.0, 17.0);
+          gltf_model2.scene.scale.set(6.0, 6.0, 6.0);
           console.log(
             ">>>THREE.JS:::gltf_model2",
             scene.add(gltf_model2.scene)
@@ -177,16 +191,19 @@ export default {
       controls = new OrbitControls(camera, renderer.domElement);
       controls.listenToKeyEvents(window);
       controls.enableRotate = true;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 1.0;
       // di Максимальное и минимальное приближение камеры
       controls.minDistance = 15;
       controls.maxDistance = 50;
+      
       // di Touch fingers
       controls.touches = {
         ONE: THREE.TOUCH.DOLLY_PAN,
       };
       // di Ограничение по Rotate
-      controls.minPolarAngle = 0.7;
-      controls.maxPolarAngle = 1.1;
+      // controls.minPolarAngle = 0.7;
+      // controls.maxPolarAngle = 1.5;
       // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
       controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
