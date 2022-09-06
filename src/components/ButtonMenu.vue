@@ -5,10 +5,10 @@
 
 
 <style>
-button {
+.bubbly-button {
   position: fixed;
-  width: 182px;
-  height: 90px;
+  width: 130px;
+  height: 120px;
   background: transparent;
   border: 1px solid #434343;
   border-radius: 18px;
@@ -18,21 +18,17 @@ button {
   font-family: Arial;
   font-size: 24px;
   font-weight: 700;
-  margin-left: 34em;
-  
+  margin-left: 36em;
 }
 
-button a {
+.bubbly-button a {
   position: absolute;
   top: 0;
   left: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: hover;
-
   width: 100%;
   height: 100%;
   backdrop-filter: blur(16px);
@@ -41,46 +37,39 @@ button a {
   border-radius: 18px;
 }
 
-button a::before {
+.bubbly-button a::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-
   width: 50%;
   height: 100%;
-
   background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1));
   transform: skewX(30deg);
   transition: transform ease 0.3s;
 }
 
-button a:active::before {
+.bubbly-button a:active::before {
   transform: skewX(30deg) translateX(-150%);
 }
 
-button::after {
+.bubbly-button::after {
   content: "";
-
   position: absolute;
   bottom: -12px;
   right: 50%;
   border-radius: 8px;
-
   height: 24px;
   width: 48px;
   background: #ff2e6d;
   filter: drop-shadow(0 0 12px #ff2e6d);
-
   transform: translateX(50%);
   transition: 0.3s ease;
 }
 
-button:active::after {
+.bubbly-button:active::after {
   bottom: 50%;
-
   transform: translateY(50%) translateX(50%);
-
   height: 32%;
   width: 32%;
 }
