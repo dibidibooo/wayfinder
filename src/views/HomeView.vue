@@ -1,5 +1,43 @@
 <template>
   <div id="container">
+    
+    <!-- <div id="svgContainer">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="1024px"
+        height="1024px"
+        viewBox="0 0 1024 1024"
+        enable-background="new 0 0 400 400"
+        xml:space="preserve"
+      >
+        <path
+          style="position: absolute; z-index: -1"
+          class="path"
+          fill="none"
+          stroke="#000000"
+          stroke-width="4"
+          stroke-miterlimit="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="
+           M512,512 q50,-100 0,-200 t0,-295
+           M512,512 q100,-25 100,-100 t95,-95 q100,-25 100,-100 t95,-95 
+           M512,512 q75,50 160,0 t150,0 s75,75 200,0  
+           M512,512 q100,25 100,100 t95,95 q100,25 100,100 t95,95 
+           M512,512 q-75,50 0,150 t0,175 s-75,75 0,180
+           M512,512 q-25,50 -100,50 t-95,95 q-25,75 -100,75 t-125,125 
+           M512,512 q-50,-50 -150,0 t-150,0 s-50,-50 -195,0
+           M512,512 q-50,-100 -125,-75 t-100,-100 q-25,-100 -100,-75 t-100,-100         
+           "
+        />
+      </svg>
+    </div> -->
+
     <!-- <form action="" class="search-bar">
       <input
         v-model="message"
@@ -51,7 +89,6 @@ import json_search from "/public/search.json";
 var container, controls;
 var camera, scene, raycaster, renderer;
 var INTERSECTED;
-// var MEHCANISM_CONTROLS;
 const pointer = new THREE.Vector2();
 
 export default {
@@ -108,7 +145,7 @@ export default {
         1,
         100
       );
-      camera.position.set(20, 20, 35);
+      camera.position.set(0, 50, 50);
 
       //Create Scene and settings
       scene = new THREE.Scene();
@@ -143,14 +180,12 @@ export default {
       // const gt = new THREE.TextureLoader().load("images/asphalt.jpg");
       // const gg = new THREE.PlaneGeometry(16000, 16000);
       // const gm = new THREE.MeshPhongMaterial({ color: 0xffffff, map: gt });
-
       // const ground = new THREE.Mesh(gg, gm);
       // ground.rotation.x = -Math.PI / 2;
       // ground.material.map.repeat.set(256 * 8, 256 * 8);
       // ground.material.map.wrapS = THREE.RepeatWrapping;
       // ground.material.map.wrapT = THREE.RepeatWrapping;
       // ground.material.map.encoding = THREE.sRGBEncoding;
-      // // note that because the ground does not cast a shadow, .castShadow is left false
       // ground.receiveShadow = true;
       // scene.add(ground);
 
@@ -217,8 +252,8 @@ export default {
         ONE: THREE.TOUCH.DOLLY_PAN,
       };
       // di Ограничение по Rotate
-      // controls.minPolarAngle = 0.7;
-      // controls.maxPolarAngle = 1.5;
+      controls.minPolarAngle = 0.7;
+      controls.maxPolarAngle = 1.5;
       // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
       controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
@@ -1086,5 +1121,27 @@ body {
   overflow: hidden;
   z-index: -1;
   display: block;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+}
+
+svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50%;
+  margin-top: -50vh;
+  width: 100%;
+  height: 100vh;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 </style>
