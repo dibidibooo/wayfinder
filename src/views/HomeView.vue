@@ -38,7 +38,7 @@
       </svg>
     </div> -->
 
-    <!-- <form action="" class="search-bar">
+    <form class="search-bar">
       <input
         v-model="message"
         type="search"
@@ -55,7 +55,7 @@
       >
         <span>Поиск..</span>
       </button>
-    </form> -->
+    </form>
 
     <button
       @click="buttonModel1()"
@@ -71,7 +71,7 @@
     >
       <a>2 Этаж</a>
     </button>
-    <!-- <ButtonSearch /> -->
+    <ButtonSearch />
     <ButtonMenu />
   </div>
 </template>
@@ -82,7 +82,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 import ButtonMenu from "@/components/ButtonMenu.vue";
-// import ButtonSearch from "@/components/ButtonSearch.vue";
+import ButtonSearch from "@/components/ButtonSearch.vue";
 
 import json_search from "/public/search.json";
 // import { GUI } from 'dat.gui'
@@ -94,7 +94,7 @@ const pointer = new THREE.Vector2();
 export default {
   components: {
     ButtonMenu,
-    // ButtonSearch
+    ButtonSearch
   },
   data() {
     return {
