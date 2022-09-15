@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@seregpie/three.text-sprite": "^3.2.0",
     "core-js": "^3.8.3",
     "firebase": "^9.9.1",
     "gsap": "^3.11.1",
@@ -16,6 +17,7 @@
     "svg-mesh-3d": "^1.1.0",
     "three": "^0.141.0",
     "three-nebula": "^10.0.3",
+    "three-pathfinding": "^1.1.0",
     "three-text2d": "^0.6.0",
     "three.interactive": "^1.4.0",
     "vue": "^2.6.14",

@@ -1,6 +1,5 @@
 <template>
   <div id="container">
-    
     <!-- <div id="svgContainer">
       <svg
         version="1.1"
@@ -38,7 +37,7 @@
       </svg>
     </div> -->
 
-    <form class="search-bar">
+    <!-- <form class="search-bar">
       <input
         v-model="message"
         type="search"
@@ -55,7 +54,7 @@
       >
         <span>Поиск..</span>
       </button>
-    </form>
+    </form> -->
 
     <button
       @click="buttonModel1()"
@@ -71,7 +70,7 @@
     >
       <a>2 Этаж</a>
     </button>
-    <ButtonSearch />
+    <!-- <ButtonSearch /> -->
     <ButtonMenu />
   </div>
 </template>
@@ -81,8 +80,11 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
+
+import TextSprite from "@seregpie/three.text-sprite";
+
 import ButtonMenu from "@/components/ButtonMenu.vue";
-import ButtonSearch from "@/components/ButtonSearch.vue";
+// import ButtonSearch from "@/components/ButtonSearch.vue";
 
 import json_search from "/public/search.json";
 // import { GUI } from 'dat.gui'
@@ -94,7 +96,7 @@ const pointer = new THREE.Vector2();
 export default {
   components: {
     ButtonMenu,
-    ButtonSearch
+    // ButtonSearch
   },
   data() {
     return {
@@ -140,12 +142,12 @@ export default {
     async init() {
       //Camera create and settings
       camera = new THREE.PerspectiveCamera(
-        25,
+        11,
         window.innerWidth / window.innerHeight,
         1,
         100
       );
-      camera.position.set(0, 50, 50);
+      camera.position.set(0, 50, 30);
 
       //Create Scene and settings
       scene = new THREE.Scene();
@@ -176,6 +178,15 @@ export default {
       dirLight.shadow.camera.left = -120;
       dirLight.shadow.camera.right = 120;
 
+      let instance = new TextSprite({
+        alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 1,
+        text: "Abu Dhabi Plaza",
+      });
+      scene.add(instance);
+
       // Ground
       // const gt = new THREE.TextureLoader().load("images/asphalt.jpg");
       // const gg = new THREE.PlaneGeometry(16000, 16000);
@@ -204,7 +215,7 @@ export default {
         "models/InUse/first_floor.gltf",
         function (gltf_model1) {
           scene.add(gltf_model1.scene);
-          gltf_model1.scene.scale.set(6.0, 6.0, 6.0);
+          gltf_model1.scene.scale.set(3.0, 3.0, 3.0);
           console.log(
             ">>>THREE.JS:::gltf_model1",
             scene.add(gltf_model1.scene)
@@ -220,7 +231,7 @@ export default {
         "models/InUse/second_floor.gltf",
         function (gltf_model2) {
           scene.add(gltf_model2.scene);
-          gltf_model2.scene.scale.set(6.0, 6.0, 6.0);
+          gltf_model2.scene.scale.set(3.0, 3.0, 3.0);
           console.log(
             ">>>THREE.JS:::gltf_model2",
             scene.add(gltf_model2.scene)
@@ -252,8 +263,8 @@ export default {
         ONE: THREE.TOUCH.DOLLY_PAN,
       };
       // di Ограничение по Rotate
-      controls.minPolarAngle = 0.7;
-      controls.maxPolarAngle = 1.5;
+      // controls.minPolarAngle = 0.7;
+      // controls.maxPolarAngle = 1.5;
       // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
       controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
