@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@seregpie/three.text-sprite": "^3.2.0",
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "firebase": "^9.9.1",
     "gsap": "^3.11.1",
@@ -25,6 +26,8 @@
     "vue-json-editor": "^1.4.3",
     "vue-json-ui-editor": "^1.0.0",
     "vue-router": "^3.5.1",
+    "vue-select2": "^0.2.6",
+    "vue2-autocomplete-js": "^0.2.2",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
