@@ -293,7 +293,6 @@ export default {
       let instance0 = new TextSprite({
       // alignment: "center",
       color: "#24ff00",
-      fontFamily: '"Times New Roman", Times, serif',
       fontSize: 0.02,
       text: title[0].title
     });
@@ -306,7 +305,6 @@ export default {
       let instance1 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[1].title
       });
@@ -319,7 +317,6 @@ export default {
         let instance2 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[2].title
       });
@@ -332,7 +329,6 @@ export default {
         let instance3 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[3].title
       });
@@ -344,7 +340,6 @@ export default {
         let instance4 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[4].title
       });
@@ -356,7 +351,6 @@ export default {
         let instance5 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[5].title
       });
@@ -368,7 +362,6 @@ export default {
         let instance6 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[6].title
       });
@@ -380,7 +373,6 @@ export default {
         let instance7 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[7].title
       });
@@ -392,7 +384,6 @@ export default {
         let instance8 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[8].title
       });
@@ -404,7 +395,6 @@ export default {
         let instance9 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[9].title
       });
@@ -416,7 +406,6 @@ export default {
         let instance10 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[10].title
       });
@@ -428,7 +417,6 @@ export default {
         let instance11 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[11].title
       });
@@ -440,7 +428,6 @@ export default {
         let instance12 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[12].title
       });
@@ -452,7 +439,6 @@ export default {
         let instance13 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[13].title
       });
@@ -464,7 +450,6 @@ export default {
         let instance14 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[14].title
       });
@@ -476,7 +461,6 @@ export default {
         let instance15 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[15].title
       });
@@ -488,7 +472,6 @@ export default {
         let instance16 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[16].title
       });
@@ -500,7 +483,6 @@ export default {
         let instance17 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[17].title
       });
@@ -512,7 +494,6 @@ export default {
         let instance18 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.06,
         text: title[18].title
       });
@@ -523,8 +504,7 @@ export default {
 
         let instance19 = new TextSprite({
         // alignment: "center",
-        color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
+        color: "#24ff00",  
         fontSize: 0.03,
         text: title[19].title
       });
@@ -535,8 +515,7 @@ export default {
 
         let instance20 = new TextSprite({
         // alignment: "center",
-        color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
+        color: "#24ff00",       
         fontSize: 0.03,
         text: title[20].title
       });
@@ -547,8 +526,7 @@ export default {
 
         let instance21 = new TextSprite({
         // alignment: "center",
-        color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
+        color: "#24ff00",         
         fontSize: 0.06,
         text: title[21].title
       });
@@ -560,7 +538,6 @@ export default {
         let instance22 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[22].title
       });
@@ -571,8 +548,7 @@ export default {
 
         let instance23 = new TextSprite({
         // alignment: "center",
-        color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
+        color: "#24ff00",      
         fontSize: 0.03,
         text: title[23].title
       });
@@ -584,7 +560,6 @@ export default {
         let instance24 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[24].title
       });
@@ -596,7 +571,6 @@ export default {
         let instance25 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[25].title
       });
@@ -608,7 +582,6 @@ export default {
         let instance26 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[26].title
       });
@@ -620,7 +593,6 @@ export default {
         let instance27 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[27].title
       });
@@ -632,7 +604,6 @@ export default {
         let instance28 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.02,
         text: title[28].title
       });
@@ -644,7 +615,6 @@ export default {
         let instance29 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[29].title
       });
@@ -656,7 +626,6 @@ export default {
         let instance30 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[30].title
       });
@@ -668,7 +637,6 @@ export default {
         let instance31 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.06,
         text: title[31].title
       });
@@ -680,7 +648,6 @@ export default {
         let instance32 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[32].title
       });
@@ -692,7 +659,6 @@ export default {
         let instance33 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[33].title
       });
@@ -704,7 +670,6 @@ export default {
         let instance34 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[34].title
       });
@@ -716,7 +681,6 @@ export default {
         let instance35 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[35].title
       });
@@ -728,7 +692,6 @@ export default {
         let instance36 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[36].title
       });
@@ -740,7 +703,6 @@ export default {
         let instance37 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.06,
         text: title[37].title
       });
@@ -752,7 +714,6 @@ export default {
         let instance38 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[38].title
       });
@@ -764,7 +725,6 @@ export default {
         let instance39 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[39].title
       });
@@ -776,7 +736,6 @@ export default {
         let instance40 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.07,
         text: title[40].title
       });
@@ -788,7 +747,6 @@ export default {
         let instance41 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[41].title
       });
@@ -800,7 +758,6 @@ export default {
         let instance42 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[42].title
       });
@@ -812,7 +769,6 @@ export default {
         let instance43 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[43].title
       });
@@ -824,7 +780,6 @@ export default {
         let instance44 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.06,
         text: title[44].title
       });
@@ -836,11 +791,10 @@ export default {
 
         //////////////////////////////////////////////
 
-
+        
         let instance45 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.06,
         text: title[45].title
       });
@@ -852,7 +806,6 @@ export default {
         let instance46 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.06,
         text: title[46].title
       });
@@ -864,7 +817,6 @@ export default {
         let instance47 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[47].title
       });
@@ -876,7 +828,6 @@ export default {
         let instance48 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[48].title
       });
@@ -888,7 +839,6 @@ export default {
         let instance49 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[49].title
       });
@@ -900,7 +850,6 @@ export default {
         let instance50 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[50].title
       });
@@ -912,7 +861,6 @@ export default {
         let instance51 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[51].title
       });
@@ -924,7 +872,6 @@ export default {
         let instance52 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[52].title
       });
@@ -936,7 +883,6 @@ export default {
         let instance53 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[53].title
       });
@@ -948,7 +894,6 @@ export default {
         let instance54 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[54].title
       });
@@ -960,7 +905,6 @@ export default {
         let instance55 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[55].title
       });
@@ -972,7 +916,6 @@ export default {
         let instance56 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[56].title
       });
@@ -984,7 +927,6 @@ export default {
         let instance57 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[57].title
       });
@@ -996,7 +938,6 @@ export default {
         let instance58 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[58].title
       });
@@ -1008,7 +949,6 @@ export default {
         let instance59 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[59].title
       });
@@ -1020,7 +960,6 @@ export default {
         let instance60 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[60].title
       });
@@ -1032,7 +971,6 @@ export default {
         let instance61 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[61].title
       });
@@ -1044,7 +982,6 @@ export default {
         let instance62 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[62].title
       });
@@ -1056,7 +993,6 @@ export default {
         let instance63 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[63].title
       });
@@ -1068,7 +1004,6 @@ export default {
         let instance64 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[64].title
       });
@@ -1080,7 +1015,6 @@ export default {
         let instance65 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[65].title
       });
@@ -1092,7 +1026,6 @@ export default {
         let instance66 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[66].title
       });
@@ -1104,7 +1037,6 @@ export default {
         let instance67 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[67].title
       });
@@ -1116,7 +1048,6 @@ export default {
         let instance68 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[68].title
       });
@@ -1128,7 +1059,6 @@ export default {
         let instance69 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[69].title
       });
@@ -1140,7 +1070,6 @@ export default {
         let instance70 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[70].title
       });
@@ -1152,7 +1081,6 @@ export default {
         let instance71 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[71].title
       });
@@ -1164,7 +1092,6 @@ export default {
         let instance72 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[72].title
       });
@@ -1176,7 +1103,6 @@ export default {
         let instance73 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[73].title
       });
@@ -1188,7 +1114,6 @@ export default {
         let instance74 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[74].title
       });
@@ -1200,7 +1125,6 @@ export default {
         let instance75 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[75].title
       });
@@ -1212,7 +1136,6 @@ export default {
         let instance76 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[76].title
       });
@@ -1224,7 +1147,6 @@ export default {
         let instance77 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[77].title
       });
@@ -1236,7 +1158,6 @@ export default {
         let instance78 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[78].title
       });
@@ -1248,7 +1169,6 @@ export default {
         let instance79 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[79].title
       });
@@ -1260,7 +1180,6 @@ export default {
         let instance80 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[80].title
       });
@@ -1272,7 +1191,6 @@ export default {
         let instance81 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[81].title
       });
@@ -1284,7 +1202,6 @@ export default {
         let instance82 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[82].title
       });
@@ -1296,7 +1213,6 @@ export default {
         let instance83 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[83].title
       });
@@ -1308,7 +1224,6 @@ export default {
         let instance84 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
         fontSize: 0.03,
         text: title[84].title
       });
@@ -1320,8 +1235,7 @@ export default {
         let instance85 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
-        fontFamily: '"Times New Roman", Times, serif',
-        fontSize: 0.03,
+         fontSize: 0.03,
         text: title[85].title
       });
         instance85.scale.set(0.5,0.5,0.5);
