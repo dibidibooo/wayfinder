@@ -833,6 +833,10 @@ export default {
         instance44.position.set(-1.37,0.06,-0.05)
         instance44.rotation.set(0,0,150)
 
+
+        //////////////////////////////////////////////
+
+
         let instance45 = new TextSprite({
         // alignment: "center",
         color: "#24ff00",
@@ -844,6 +848,487 @@ export default {
         scene.children[4].children[44].add(instance45);
         instance45.position.set(-1.37,0.06,-0.05)
         instance45.rotation.set(0,0,150)
+
+        let instance46 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.06,
+        text: title[46].title
+      });
+        instance46.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance46);
+        instance46.position.set(0,0.06,0)
+        instance46.rotation.set(0,0,150)
+
+        let instance47 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[47].title
+      });
+        instance47.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance47);
+        instance47.position.set(0,0.05,0)
+        instance47.rotation.set(0,0,150)
+
+        let instance48 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[48].title
+      });
+        instance48.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance48);
+        instance48.position.set(0,0.05,0)
+        instance48.rotation.set(0,0,150)
+
+        let instance49 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[49].title
+      });
+        instance49.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance49);
+        instance49.position.set(0,0.05,0)
+        instance49.rotation.set(0,0,150)
+
+        let instance50 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[50].title
+      });
+        instance50.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance50);
+        instance50.position.set(0,0.05,0)
+        instance50.rotation.set(0,0,150)
+
+        let instance51 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[51].title
+      });
+        instance51.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance51);
+        instance51.position.set(0,0.05,0)
+        instance51.rotation.set(0,0,150)
+
+        let instance52 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[52].title
+      });
+        instance52.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance52);
+        instance52.position.set(0,0.05,0)
+        instance52.rotation.set(0,0,150)
+
+        let instance53 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[53].title
+      });
+        instance53.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance53);
+        instance53.position.set(0,0.05,0)
+        instance53.rotation.set(0,0,150)
+
+        let instance54 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[54].title
+      });
+        instance54.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance54);
+        instance54.position.set(0,0.05,0)
+        instance54.rotation.set(0,0,150)
+
+        let instance55 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[55].title
+      });
+        instance55.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance55);
+        instance55.position.set(0,0.05,0)
+        instance55.rotation.set(0,0,150)
+
+        let instance56 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[56].title
+      });
+        instance56.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance56);
+        instance56.position.set(0,0.05,0)
+        instance56.rotation.set(0,0,150)
+
+        let instance57 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[57].title
+      });
+        instance57.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance57);
+        instance57.position.set(0,0.05,0)
+        instance57.rotation.set(0,0,150)
+
+        let instance58 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[58].title
+      });
+        instance58.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance58);
+        instance58.position.set(0,0.05,0)
+        instance58.rotation.set(0,0,150)
+
+        let instance59 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[59].title
+      });
+        instance59.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance59);
+        instance59.position.set(0,0.05,0)
+        instance59.rotation.set(0,0,150)
+
+        let instance60 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[60].title
+      });
+        instance60.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance60);
+        instance60.position.set(0,0.05,0)
+        instance60.rotation.set(0,0,150)
+
+        let instance61 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[61].title
+      });
+        instance61.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance61);
+        instance61.position.set(0,0.05,0)
+        instance61.rotation.set(0,0,150)
+
+        let instance62 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[62].title
+      });
+        instance62.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance62);
+        instance62.position.set(0,0.05,0)
+        instance62.rotation.set(0,0,150)
+
+        let instance63 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[63].title
+      });
+        instance63.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance63);
+        instance63.position.set(0,0.05,0)
+        instance63.rotation.set(0,0,150)
+
+        let instance64 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[64].title
+      });
+        instance64.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance64);
+        instance64.position.set(0,0.05,0)
+        instance64.rotation.set(0,0,150)
+
+        let instance65 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[65].title
+      });
+        instance65.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance65);
+        instance65.position.set(0,0.05,0)
+        instance65.rotation.set(0,0,150)
+
+        let instance66 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[66].title
+      });
+        instance66.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance66);
+        instance66.position.set(0,0.05,0)
+        instance66.rotation.set(0,0,150)
+
+        let instance67 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[67].title
+      });
+        instance67.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance67);
+        instance67.position.set(0,0.05,0)
+        instance67.rotation.set(0,0,150)
+
+        let instance68 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[68].title
+      });
+        instance68.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance68);
+        instance68.position.set(0,0.05,0)
+        instance68.rotation.set(0,0,150)
+
+        let instance69 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[69].title
+      });
+        instance69.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance69);
+        instance69.position.set(0,0.05,0)
+        instance69.rotation.set(0,0,150)
+
+        let instance70 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[70].title
+      });
+        instance70.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance70);
+        instance70.position.set(0,0.05,0)
+        instance70.rotation.set(0,0,150)
+
+        let instance71 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[71].title
+      });
+        instance71.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance71);
+        instance71.position.set(0,0.05,0)
+        instance71.rotation.set(0,0,150)
+
+        let instance72 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[72].title
+      });
+        instance72.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance72);
+        instance72.position.set(0,0.05,0)
+        instance72.rotation.set(0,0,150)
+
+        let instance73 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[73].title
+      });
+        instance73.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance73);
+        instance73.position.set(0,0.05,0)
+        instance73.rotation.set(0,0,150)
+
+        let instance74 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[74].title
+      });
+        instance74.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance74);
+        instance74.position.set(0,0.05,0)
+        instance74.rotation.set(0,0,150)
+
+        let instance75 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[75].title
+      });
+        instance75.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance75);
+        instance75.position.set(0,0.05,0)
+        instance75.rotation.set(0,0,150)
+
+        let instance76 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[76].title
+      });
+        instance76.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance76);
+        instance76.position.set(0,0.05,0)
+        instance76.rotation.set(0,0,150)
+
+        let instance77 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[77].title
+      });
+        instance77.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance77);
+        instance77.position.set(0,0.05,0)
+        instance77.rotation.set(0,0,150)
+
+        let instance78 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[78].title
+      });
+        instance78.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance78);
+        instance78.position.set(0,0.05,0)
+        instance78.rotation.set(0,0,150)
+
+        let instance79 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[79].title
+      });
+        instance79.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance79);
+        instance79.position.set(0,0.05,0)
+        instance79.rotation.set(0,0,150)
+
+        let instance80 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[80].title
+      });
+        instance80.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance80);
+        instance80.position.set(0,0.05,0)
+        instance80.rotation.set(0,0,150)
+
+        let instance81 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[81].title
+      });
+        instance81.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance81);
+        instance81.position.set(0,0.05,0)
+        instance81.rotation.set(0,0,150)
+
+        let instance82 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[82].title
+      });
+        instance82.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance82);
+        instance82.position.set(0,0.05,0)
+        instance82.rotation.set(0,0,150)
+
+        let instance83 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[83].title
+      });
+        instance83.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance83);
+        instance83.position.set(0,0.05,0)
+        instance83.rotation.set(0,0,150)
+
+        let instance84 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[84].title
+      });
+        instance84.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance84);
+        instance84.position.set(0,0.05,0)
+        instance84.rotation.set(0,0,150)
+
+        let instance85 = new TextSprite({
+        // alignment: "center",
+        color: "#24ff00",
+        fontFamily: '"Times New Roman", Times, serif',
+        fontSize: 0.03,
+        text: title[85].title
+      });
+        instance85.scale.set(0.5,0.5,0.5);
+        scene.children[4].children[44].add(instance85);
+        instance85.position.set(0,0.05,0)
+        instance85.rotation.set(0,0,150)
+        
         
       }, 500);
       // console.log("SCENE", scene);
