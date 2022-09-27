@@ -12,8 +12,8 @@
   background: transparent;
   border: 1px solid #434343;
   border-radius: 18px;
-  border-color: #ff2e6d;
-  box-shadow: 0 0 10px #ff2e6d;
+  border-color: #1eb6ff;
+  box-shadow: 0 0 10px #1eb6ff;
   color: rgba(255, 255, 255, 0.8);
   font-family: Arial;
   font-size: 24px;
@@ -61,8 +61,8 @@
   border-radius: 8px;
   height: 24px;
   width: 48px;
-  background: #ff2e6d;
-  filter: drop-shadow(0 0 12px #ff2e6d);
+  background: #1eb6ff;
+  filter: drop-shadow(0 0 12px #1eb6ff);
   transform: translateX(50%);
   transition: 0.3s ease;
 }

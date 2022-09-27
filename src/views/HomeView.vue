@@ -1,6 +1,5 @@
 <template>
   <div id="container">
-    
     <!-- <autocomplete
     url="http://Localhost:8081/api/stores"
     anchor="title"
@@ -78,21 +77,22 @@
     >
       <a>2 Этаж</a>
     </button>
-    <!-- <ButtonSearch /> -->
+    <ButtonSearch />
     <ButtonMenu />
   </div>
 </template>
 
 <script>
+import TextSprite from "@seregpie/three.text-sprite";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
-import TextSprite from "@seregpie/three.text-sprite";
 import ButtonMenu from "@/components/ButtonMenu.vue";
-import axios from 'axios';
+import axios from "axios"; 
 
-// import ButtonSearch from "@/components/ButtonSearch.vue";
+
+import ButtonSearch from "@/components/ButtonSearch.vue";
 // import Autocomplete from 'vue2-autocomplete-js'
 
 import json_search from "/public/search.json";
@@ -100,13 +100,14 @@ import json_search from "/public/search.json";
 var container, controls;
 var camera, scene, raycaster, renderer;
 var INTERSECTED;
-let title
+let title;
+// let titleCategory
 const pointer = new THREE.Vector2();
 
 export default {
   components: {
     ButtonMenu,
-    // ButtonSearch,
+    ButtonSearch,
     // Autocomplete,
   },
   data() {
@@ -118,16 +119,22 @@ export default {
     this.init();
     this.animate();
     this.getapi();
+    // this.getapicategory();
   },
 
   methods: {
     getapi() {
-    axios.get("http://Localhost:8081/api/stores").then(function (response){
-    let data = response.data
-    title = response.data
-    console.log("axios", data)
-  })
-  },
+      axios.get("http://Localhost:8081/api/stores").then(function (response) {
+        title = response.data;
+      });
+    },
+    // getapicategory() {
+    //   axios.get("http://Localhost:8081/api/categories").then(function (response){
+    //   let data = response.data
+    //   titleCategory = response.data
+    //   console.log("api category", data)
+    // })
+    // },
     searchBox1() {
       let temp_json = json_search;
       for (let i in temp_json) {
@@ -135,7 +142,7 @@ export default {
           let butik_name = i;
           for (let k in scene.children[3].children) {
             if (butik_name == scene.children[3].children[k].name) {
-              scene.children[3].children[k].material.color.set("#009de0");
+              scene.children[3].children[k].material.color.set("#1eb6ff");
               console.log("SEARCH-NAME");
             }
           }
@@ -150,7 +157,7 @@ export default {
           let butik_name = i;
           for (let k in scene.children[4].children) {
             if (butik_name == scene.children[4].children[k].name) {
-              scene.children[4].children[k].material.color.set("#009de0");
+              scene.children[4].children[k].material.color.set("#1eb6ff");
               console.log("SEARCH-NAME-model2");
             }
           }
@@ -166,11 +173,12 @@ export default {
         1,
         100
       );
-      camera.position.set(0, 50, 30);
+      camera.position.set(0, 40, 50);
 
       //Create Scene and settings
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x222222);
+      // scene.background = new THREE.Color(0x222222);
+      scene.background = new THREE.Color("#303030");
 
       // di Добавить задний фон на сцену
       // this.loader = new THREE.TextureLoader();
@@ -222,12 +230,12 @@ export default {
 
       const loader = new GLTFLoader();
       loader.load(
-        "models/InUse/first_floor_version2.glb",
+        "models/InUse/first_floor1.gltf",
         function (gltf_model1) {
           scene.add(gltf_model1.scene);
-          gltf_model1.scene.scale.set(3.0, 3.0, 3.0);
+          gltf_model1.scene.scale.set(4.0, 5.0, 4.0);
           console.log(
-            ">>>THREE.JS:::gltf_model1",
+            "First floor Loaded",
             scene.add(gltf_model1.scene)
           );
         },
@@ -241,9 +249,9 @@ export default {
         "models/InUse/second_floor.gltf",
         function (gltf_model2) {
           scene.add(gltf_model2.scene);
-          gltf_model2.scene.scale.set(3.0, 3.0, 3.0);
+          gltf_model2.scene.scale.set(4.0, 5.0, 3.7);
           console.log(
-            ">>>THREE.JS:::gltf_model2",
+            "Second floor Loaded",
             scene.add(gltf_model2.scene)
           );
         },
@@ -288,964 +296,1389 @@ export default {
       setTimeout(function () {
         scene.children[3].visible = true;
         scene.children[4].visible = false;
-
-
-      let instance0 = new TextSprite({
-      // alignment: "center",
-      color: "#24ff00",
-      fontSize: 0.02,
-      text: title[0].title
-    });
-      instance0.scale.set(0.5,0.5,0.5);
-      scene.children[3].children[74].add(instance0);
-      instance0.position.set(-0.61,0.05,-0.6)
-      instance0.rotation.set(0,0,150)
-
-
-      let instance1 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[1].title
-      });
-        instance1.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[73].add(instance1);
-        instance1.position.set(-0.61,0.05,-0.5)
-        instance1.rotation.set(0,0,150)
-
-
-        let instance2 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[2].title
-      });
-        instance2.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[72].add(instance2);
-        instance2.position.set(-0.61,0.05,-0.41)
-        instance2.rotation.set(0,0,150)
-
-
-        let instance3 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[3].title
-      });
-        instance3.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[71].add(instance3);
-        instance3.position.set(-0.61,0.05,-0.22)
-        instance3.rotation.set(0,0,150)
-
-        let instance4 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[4].title
-      });
-        instance4.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[85].add(instance4);
-        instance4.position.set( -0.06,0.05,0.97)
-        instance4.rotation.set(0,0,150)
-
-        let instance5 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[5].title
-      });
-       instance5.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[84].add(instance5);
-        instance5.position.set(0.31,0.05,0.775)
-        instance5.rotation.set(0,0,150)
-
-        let instance6 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[6].title
-      });
-       instance6.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[83].add(instance6);
-        instance6.position.set(0.6,0.05,0.34)
-        instance6.rotation.set(0,0,150)
-
-        let instance7 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[7].title
-      });
-        instance7.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[82].add(instance7);
-        instance7.position.set(0.6,0.05,0.01)
-        instance7.rotation.set(0,0,150)
-
-        let instance8 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[8].title
-      });
-        instance8.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[81].add(instance8);
-        instance8.position.set(0.6,0.05,-0.42)
-        instance8.rotation.set(0,0,150)
-
-        let instance9 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[9].title
-      });
-        instance9.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[80].add(instance9);
-        instance9.position.set(0.59,0.05,-0.52)
-        instance9.rotation.set(0,0,150)
-
-        let instance10 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[10].title
-      });
-       instance10.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[79].add(instance10);
-        instance10.position.set(0.59,0.05,-0.67)
-        instance10.rotation.set(0,0,150)
-
-        let instance11 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[11].title
-      });
-        instance11.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[75].add(instance11);
-        instance11.position.set(0.09,0.05,-0.81)
-        instance11.rotation.set(0,0,150)
-
-        let instance12 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[12].title
-      });
-        instance12.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[76].add(instance12);
-        instance12.position.set(0.44,0.05,-0.815)
-        instance12.rotation.set(0,0,150)
-
-        let instance13 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[13].title
-      });
-        instance13.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[77].add(instance13);
-        instance13.position.set(0.6,0.05,-0.98)
-        instance13.rotation.set(0,0,150)
-
-        let instance14 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[14].title
-      });
-        instance14.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[78].add(instance14);
-        instance14.position.set(0.6,0.05,-1.085)
-        instance14.rotation.set(0,0,150)
-
-        let instance15 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[15].title
-      });
-        instance15.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[63].add(instance15);
-        instance15.position.set(0.36,0.05,-0.63)
-        instance15.rotation.set(0,0,150)
-
-        let instance16 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[16].title
-      });
-        instance16.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[64].add(instance16);
-        instance16.position.set(0.36,0.05,-0.49)
-        instance16.rotation.set(0,0,150)
-
-        let instance17 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[17].title
-      });
-        instance17.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[65].add(instance17);
-        instance17.position.set(0.36,0.05,-0.375)
-        instance17.rotation.set(0,0,150)
-
-        let instance18 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.06,
-        text: title[18].title
-      });
-        instance18.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[61].add(instance18);
-        instance18.position.set(-0.13,0.06,-0.55)
-        instance18.rotation.set(0,0,150)
-
-        let instance19 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",  
-        fontSize: 0.03,
-        text: title[19].title
-      });
-       instance19.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[57].add(instance19);
-        instance19.position.set(-0.45,0.05,-0.55)
-        instance19.rotation.set(0,0,150)
-
-        let instance20 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",       
-        fontSize: 0.03,
-        text: title[20].title
-      });
-        instance20.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[56].add(instance20);
-        instance20.position.set(-0.45,0.05,-0.38)
-        instance20.rotation.set(0,0,150)
-
-        let instance21 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",         
-        fontSize: 0.06,
-        text: title[21].title
-      });
-        instance21.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[54].add(instance21);
-        instance21.position.set(-0.29,0.06,-0.1)
-        instance21.rotation.set(0,0,150)
-
-        let instance22 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[22].title
-      });
-        instance22.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[68].add(instance22);
-        instance22.position.set(0.3,0.05,0)
-        instance22.rotation.set(0,0,150)
-
-        let instance23 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",      
-        fontSize: 0.03,
-        text: title[23].title
-      });
-        instance23.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[52].add(instance23);
-        instance23.position.set(-0.45,0.05,0.3)
-        instance23.rotation.set(0,0,150)
-
-        let instance24 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[24].title
-      });
-        instance24.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[15].add(instance24);
-        instance24.position.set(-0.8,0.05,0.3)
-        instance24.rotation.set(0,0,150)
-
-        let instance25 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[25].title
-      });
-        instance25.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[14].add(instance25);
-        instance25.position.set(-1,0.05,0.33)
-        instance25.rotation.set(0,0,150)
-
-        let instance26 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[26].title
-      });
-        instance26.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[12].add(instance26);
-        instance26.position.set(-1.05,0.05,0.58)
-        instance26.rotation.set(0,0,150)
-
-        let instance27 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[27].title
-      });
-        instance27.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[9].add(instance27);
-        instance27.position.set(-1.55,0.05,0.58)
-        instance27.rotation.set(0,0,150)
-
-        let instance28 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.02,
-        text: title[28].title
-      });
-        instance28.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[8].add(instance28);
-        instance28.position.set(-1.26,0.05,0.735)
-        instance28.rotation.set(0,0,150)
-
-        let instance29 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[29].title
-      });
-        instance29.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[7].add(instance29);
-        instance29.position.set(-1.6,0.05,0.81)
-        instance29.rotation.set(0,0,150)
-
-        let instance30 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[30].title
-      });
-        instance30.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[5].add(instance30);
-        instance30.position.set(-0.9,0.05,0.91)
-        instance30.rotation.set(0,0,150)
-
-        let instance31 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.06,
-        text: title[31].title
-      });
-        instance31.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[43].add(instance31);
-        instance31.position.set(1.1,0.06,0.31)
-        instance31.rotation.set(0,0,150)
-
-        let instance32 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[32].title
-      });
-        instance32.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[42].add(instance32);
-        instance32.position.set(0.7,0.05,-0.34)
-        instance32.rotation.set(0,0,150)
-
-        let instance33 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[33].title
-      });
-        instance33.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[41].add(instance33);
-        instance33.position.set(0.8,0.05,-0.5)
-        instance33.rotation.set(0,0,150)
-
-        let instance34 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[34].title
-      });
-        instance34.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[35].add(instance34);
-        instance34.position.set(0.9,0.05,-1.5)
-        instance34.rotation.set(0,0,150)
-
-        let instance35 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[35].title
-      });
-        instance35.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[34].add(instance35);
-        instance35.position.set(0.43,0.05,-1.53)
-        instance35.rotation.set(0,0,150)
-
-        let instance36 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[36].title
-      });
-        instance36.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[33].add(instance36);
-        instance36.position.set(0.42,0.05,-1.38)
-        instance36.rotation.set(0,0,150)
-
-        let instance37 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.06,
-        text: title[37].title
-      });
-        instance37.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[31].add(instance37);
-        instance37.position.set(0.35,0.06,-1)
-        instance37.rotation.set(0,0,150)
-
-        let instance38 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[38].title
-      });
-        instance38.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[29].add(instance38);
-        instance38.position.set(0.09,0.05,-0.96)
-        instance38.rotation.set(0,0,150)
-
-        let instance39 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[39].title
-      });
-        instance39.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[26].add(instance39);
-        instance39.position.set(-0.45,0.05,-0.98)
-        instance39.rotation.set(0,0,150)
-
-        let instance40 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.07,
-        text: title[40].title
-      });
-        instance40.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[23].add(instance40);
-        instance40.position.set(-0.8,0.06,-0.9)
-        instance40.rotation.set(0,0,150)
-
-        let instance41 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[41].title
-      });
-        instance41.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[22].add(instance41);
-        instance41.position.set(-0.85,0.05,-0.61)
-        instance41.rotation.set(0,0,150)
-
-        let instance42 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[42].title
-      });
-        instance42.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[87].add(instance42);
-        instance42.position.set(-1.13,0.05,-0.51)
-        instance42.rotation.set(0,0,150)
-
-        let instance43 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[43].title
-      });
-        instance43.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[19].add(instance43);
-        instance43.position.set(-0.89,0.05,-0.14)
-        instance43.rotation.set(0,0,150)
-
-        let instance44 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.06,
-        text: title[44].title
-      });
-        instance44.scale.set(0.5,0.5,0.5);
-        scene.children[3].children[44].add(instance44);
-        instance44.position.set(-1.37,0.06,-0.05)
-        instance44.rotation.set(0,0,150)
-
-
-        //////////////////////////////////////////////
-
         
-        let instance45 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.06,
-        text: title[45].title
-      });
-        instance45.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance45);
-        instance45.position.set(-1.37,0.06,-0.05)
-        instance45.rotation.set(0,0,150)
-
-        let instance46 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.06,
-        text: title[46].title
-      });
-        instance46.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance46);
-        instance46.position.set(0,0.06,0)
-        instance46.rotation.set(0,0,150)
-
-        let instance47 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[47].title
-      });
-        instance47.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance47);
-        instance47.position.set(0,0.05,0)
-        instance47.rotation.set(0,0,150)
-
-        let instance48 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[48].title
-      });
-        instance48.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance48);
-        instance48.position.set(0,0.05,0)
-        instance48.rotation.set(0,0,150)
-
-        let instance49 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[49].title
-      });
-        instance49.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance49);
-        instance49.position.set(0,0.05,0)
-        instance49.rotation.set(0,0,150)
-
-        let instance50 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[50].title
-      });
-        instance50.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance50);
-        instance50.position.set(0,0.05,0)
-        instance50.rotation.set(0,0,150)
-
-        let instance51 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[51].title
-      });
-        instance51.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance51);
-        instance51.position.set(0,0.05,0)
-        instance51.rotation.set(0,0,150)
-
-        let instance52 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[52].title
-      });
-        instance52.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance52);
-        instance52.position.set(0,0.05,0)
-        instance52.rotation.set(0,0,150)
-
-        let instance53 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[53].title
-      });
-        instance53.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance53);
-        instance53.position.set(0,0.05,0)
-        instance53.rotation.set(0,0,150)
-
-        let instance54 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[54].title
-      });
-        instance54.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance54);
-        instance54.position.set(0,0.05,0)
-        instance54.rotation.set(0,0,150)
-
-        let instance55 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[55].title
-      });
-        instance55.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance55);
-        instance55.position.set(0,0.05,0)
-        instance55.rotation.set(0,0,150)
-
-        let instance56 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[56].title
-      });
-        instance56.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance56);
-        instance56.position.set(0,0.05,0)
-        instance56.rotation.set(0,0,150)
-
-        let instance57 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[57].title
-      });
-        instance57.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance57);
-        instance57.position.set(0,0.05,0)
-        instance57.rotation.set(0,0,150)
-
-        let instance58 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[58].title
-      });
-        instance58.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance58);
-        instance58.position.set(0,0.05,0)
-        instance58.rotation.set(0,0,150)
-
-        let instance59 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[59].title
-      });
-        instance59.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance59);
-        instance59.position.set(0,0.05,0)
-        instance59.rotation.set(0,0,150)
-
-        let instance60 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[60].title
-      });
-        instance60.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance60);
-        instance60.position.set(0,0.05,0)
-        instance60.rotation.set(0,0,150)
-
-        let instance61 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[61].title
-      });
-        instance61.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance61);
-        instance61.position.set(0,0.05,0)
-        instance61.rotation.set(0,0,150)
-
-        let instance62 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[62].title
-      });
-        instance62.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance62);
-        instance62.position.set(0,0.05,0)
-        instance62.rotation.set(0,0,150)
-
-        let instance63 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[63].title
-      });
-        instance63.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance63);
-        instance63.position.set(0,0.05,0)
-        instance63.rotation.set(0,0,150)
-
-        let instance64 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[64].title
-      });
-        instance64.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance64);
-        instance64.position.set(0,0.05,0)
-        instance64.rotation.set(0,0,150)
-
-        let instance65 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[65].title
-      });
-        instance65.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance65);
-        instance65.position.set(0,0.05,0)
-        instance65.rotation.set(0,0,150)
-
-        let instance66 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[66].title
-      });
-        instance66.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance66);
-        instance66.position.set(0,0.05,0)
-        instance66.rotation.set(0,0,150)
-
-        let instance67 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[67].title
-      });
-        instance67.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance67);
-        instance67.position.set(0,0.05,0)
-        instance67.rotation.set(0,0,150)
-
-        let instance68 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[68].title
-      });
-        instance68.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance68);
-        instance68.position.set(0,0.05,0)
-        instance68.rotation.set(0,0,150)
-
-        let instance69 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[69].title
-      });
-        instance69.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance69);
-        instance69.position.set(0,0.05,0)
-        instance69.rotation.set(0,0,150)
-
-        let instance70 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[70].title
-      });
-        instance70.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance70);
-        instance70.position.set(0,0.05,0)
-        instance70.rotation.set(0,0,150)
-
-        let instance71 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[71].title
-      });
-        instance71.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance71);
-        instance71.position.set(0,0.05,0)
-        instance71.rotation.set(0,0,150)
-
-        let instance72 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[72].title
-      });
-        instance72.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance72);
-        instance72.position.set(0,0.05,0)
-        instance72.rotation.set(0,0,150)
-
-        let instance73 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[73].title
-      });
-        instance73.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance73);
-        instance73.position.set(0,0.05,0)
-        instance73.rotation.set(0,0,150)
-
-        let instance74 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[74].title
-      });
-        instance74.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance74);
-        instance74.position.set(0,0.05,0)
-        instance74.rotation.set(0,0,150)
-
-        let instance75 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[75].title
-      });
-        instance75.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance75);
-        instance75.position.set(0,0.05,0)
-        instance75.rotation.set(0,0,150)
-
-        let instance76 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[76].title
-      });
-        instance76.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance76);
-        instance76.position.set(0,0.05,0)
-        instance76.rotation.set(0,0,150)
-
-        let instance77 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[77].title
-      });
-        instance77.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance77);
-        instance77.position.set(0,0.05,0)
-        instance77.rotation.set(0,0,150)
-
-        let instance78 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[78].title
-      });
-        instance78.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance78);
-        instance78.position.set(0,0.05,0)
-        instance78.rotation.set(0,0,150)
-
-        let instance79 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[79].title
-      });
-        instance79.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance79);
-        instance79.position.set(0,0.05,0)
-        instance79.rotation.set(0,0,150)
-
-        let instance80 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[80].title
-      });
-        instance80.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance80);
-        instance80.position.set(0,0.05,0)
-        instance80.rotation.set(0,0,150)
-
-        let instance81 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[81].title
-      });
-        instance81.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance81);
-        instance81.position.set(0,0.05,0)
-        instance81.rotation.set(0,0,150)
-
-        let instance82 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[82].title
-      });
-        instance82.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance82);
-        instance82.position.set(0,0.05,0)
-        instance82.rotation.set(0,0,150)
-
-        let instance83 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[83].title
-      });
-        instance83.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance83);
-        instance83.position.set(0,0.05,0)
-        instance83.rotation.set(0,0,150)
-
-        let instance84 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-        fontSize: 0.03,
-        text: title[84].title
-      });
-        instance84.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance84);
-        instance84.position.set(0,0.05,0)
-        instance84.rotation.set(0,0,150)
-
-        let instance85 = new TextSprite({
-        // alignment: "center",
-        color: "#24ff00",
-         fontSize: 0.03,
-        text: title[85].title
-      });
-        instance85.scale.set(0.5,0.5,0.5);
-        scene.children[4].children[44].add(instance85);
-        instance85.position.set(0,0.05,0)
-        instance85.rotation.set(0,0,150)
-        
-        
+        for (let i in title) {
+          console.log("Text from DB loaded")
+          switch (title[i].id) {
+            case 45: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.61,0.05,-0.6)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 44: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.61,0.05,-0.5)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 43: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.61,0.05,-0.41)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 42: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.61,0.05,-0.22)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 41: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.06,0.05,0.97)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 40: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.31,0.05,0.775)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 39: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.6,0.05,0.34)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 38: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.6,0.05,0.01)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 37: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.6,0.05,-0.42)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 36: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.59,0.05,-0.52)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 35: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.59,0.05,-0.67)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 34: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.09,0.05,-0.81)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 33: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.44,0.05,-0.815)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 32: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.6,0.05,-0.98)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 31: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.6,0.05,-1.085)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 30: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.36,0.05,-0.63)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 29: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.36,0.05,-0.49)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 28: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.36,0.05,-0.375)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 27: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.13,0.06,-0.55)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 26: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,-0.55)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 25: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,-0.38)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 24: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.29,0.06,-0.1)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 23: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.3,0.05,0)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 22: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,0.3)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 21: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.8,0.05,0.3)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 20: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1,0.05,0.33)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 19: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.05,0.05,0.58)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 18: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.55,0.05,0.58)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 17: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.26,0.05,0.735)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 16: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.6,0.05,0.81)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 15: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.9,0.05,0.91)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 14: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(1.1,0.06,0.31)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 13: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.7,0.05,-0.34)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 12: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.8,0.05,-0.5)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 11: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.9,0.05,-1.5)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 10: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.43,0.05,-1.53)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 9: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.42,0.05,-1.38)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 8: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.35,0.06,-1)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 7: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.09,0.05,-0.96)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 6: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,-0.98)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 5: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.07,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.8,0.06,-0.9)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 4: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.85,0.05,-0.61)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 3: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.13,0.05,-0.51)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 2: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.89,0.05,-0.14)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 1: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,                
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.37,0.06,-0.05)
+              instance.rotation.set(0, 0, 150)
+              scene.children[3].add(instance)
+              break;
+            }
+            case 46: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.06,0.06,-0.73)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 47: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(1.1,0.06,0.3)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 48: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.44,0.05,0.84)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 49: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.89,0.06,0.95)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 50: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.16,0.05,0.61)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 51: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.06,0.05,0.585)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 52: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1,0.05,0.47)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 53: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1,0.05,0.3)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 54: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.82,0.05,0.38)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 55: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.175,0.05,-0.34)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 56: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.1,0.05,-0.32)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 57: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1,0.06,-0.9)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 58: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-1.2,0.05,-1.23)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 59: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.9,0.06,-1.5)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 60: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.405,0.05,-1.2)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 61: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.22,0.05,-1.16)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 62: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.06,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.65,0.06,-1.47)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 63: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.94,0.05,-1.11)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 64: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.04,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.88,0.06,-0.66)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 65: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.71,0.05,-0.48)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 66: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,-0.8)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 67: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,-0.65)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 68: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,-0.54)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 69: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.04,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.32,0.06,-0.74)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 70: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.46,0.05,-0.8)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 71: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.38,0.05,-0.54)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 72: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.04,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.29,0.06,-0.2)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 73: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.04,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.28,0.06,-0.1)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 74: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,0.23)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 75: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.45,0.05,0.48)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 76: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.3,0.05,0.51)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 77: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.15,0.05,0.53)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 78: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.03,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.015,0.05,0.65)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 79: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.04,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.15,0.06,0.53)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 80: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.44,0.05,-1.01)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 81: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.16,0.05,-1.02)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 82: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.27,0.05,-1)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 83: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.63,0.05,-0.27)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 84: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.77,0.05,-0.27)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 85: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(0.66,0.05,0.33)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+            case 86: {
+              let instance = new TextSprite({
+                // alignment: "center",
+                fontFamily: 'Impact, Charcoal, sans-serif',
+                color: "#ffffff",
+                strokeColor: '#000000',
+                strokeWidth: 0.03,
+                fontSize: 0.02,
+                text: title[i].title,
+              });
+              instance.scale.set(0.5, 0.5, 0.5)
+              instance.position.set(-0.75,0.05,-0.03)
+              instance.rotation.set(0, 0, 150)
+              scene.children[4].add(instance)
+              break;
+            }
+          }
+        }
       }, 500);
-      // console.log("SCENE", scene);
     },
 
     //Подгон размера окна к данным матрице
@@ -1707,7 +2140,7 @@ export default {
               console.log(INTERSECTED.name, "- Nonclickable");
             } else {
               INTERSECTED.material = new THREE.MeshPhongMaterial();
-              INTERSECTED.material.color.set("#009de0");
+              INTERSECTED.material.color.set("#1eb6ff");
               console.log(INTERSECTED.name);
               return INTERSECTED;
             }
@@ -1721,12 +2154,12 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-23001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-22001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1738,17 +2171,17 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-17001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-16_1001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-16_2001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1759,12 +2192,12 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-11001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-12001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1776,17 +2209,17 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-01001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-02_1001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-02_2001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1798,17 +2231,17 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-49001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-48001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-47001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1822,27 +2255,27 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-60001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-61001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-62001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-63001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-64001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1854,17 +2287,17 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-55001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-54001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-53001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1875,12 +2308,12 @@ export default {
               if (scene.children[3].children[i].name === "ff_g-51001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[3].children[i].name === "ff_g-52001") {
                 scene.children[3].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[3].children[i].material.color.set("#009de0");
+                scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1891,12 +2324,12 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-62001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-61001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1907,12 +2340,12 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-01001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-02001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1923,12 +2356,12 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-04001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-05001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1940,17 +2373,17 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-31001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-32001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-33001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1962,17 +2395,17 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-37001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-36001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-35001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -1985,22 +2418,22 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-74001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-75001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-76001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-77001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -2012,17 +2445,17 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-68001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-69001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-70001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -2036,27 +2469,27 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-82001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-83001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-84001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-85001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-86001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           } else if (
@@ -2067,12 +2500,12 @@ export default {
               if (scene.children[4].children[i].name === "ff_f-53001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
               if (scene.children[4].children[i].name === "ff_f-54001") {
                 scene.children[4].children[i].material =
                   new THREE.MeshPhongMaterial();
-                scene.children[4].children[i].material.color.set("#009de0");
+                scene.children[4].children[i].material.color.set("#1eb6ff");
               }
             }
           }
