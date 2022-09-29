@@ -134,9 +134,13 @@
     <div id="open-modal" class="modal-window">
       <div>
         <a href="#" title="Close" class="modal-close"><bold>X </bold></a>
-        <h1>Название магазина</h1>
-        <div>Описание магазина</div>
-        <div>График работы</div>
+        <ul class="categories-list">
+     
+     <li>
+      <div>xsxsx</div>
+      <!-- <div>{{info.description}}</div> -->
+     </li>
+    </ul>
       </div>
     </div>
 
@@ -144,6 +148,24 @@
 
   </div>
 </template>
+
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      info: null
+    };
+  },
+
+  mounted() {
+    axios
+      .get('http://Localhost:8081/api/stores')
+      .then(response => (this.info = response.data));
+  }
+}
+</script>
 
 
 <style scoped>
@@ -410,7 +432,7 @@ a {
   height: 800px;
 }
 
-/* -------------------------------------------------- */
+/* ------------------------MODAL-------------------------- */
 
 .modal-window {
   position: fixed;
@@ -431,7 +453,8 @@ a {
   pointer-events: auto;
 }
 .modal-window > div {
-  width: 400px;
+  width: 1200px;
+  height: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -470,4 +493,124 @@ a {
   margin-bottom: 15px;
 }
 
+/* ------------------------MODAL-------------------------- */
+
+
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 700px;
+  overflow-y: auto;
+  justify-content: space-between;
+}
+.categories-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  border: 10px solid gray;
+  margin-right: 1rem;
+  border-radius: 5px;
+  min-width:150px;
+  min-height:100px;
+  margin:10px;
+}
+
+.categories-list li img {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* -------------------------------- */
+
+
+
+.main{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card{
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow:0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+  border-radius: 10px;
+}
+.card img{
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.card-title{
+  width: calc(100% - 40px);
+  background: #fff;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  top: 170px;
+  transform: translateX(-50%);
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  box-shadow:0 10px 15px -5px rgba(0,0,0,.1), 0 5px 5px -5px rgba(0,0,0,.01);
+}
+.card-title h4{
+  font-family: 'Roboto', sans-serif;
+}
+.card-title h3{
+  font-weight: normal;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.card-content{
+  width: 100%;
+  background: #fff;
+  padding-top: 40px;
+  border-radius: 0 0 10px 10px;
+}
+.card-content-row{
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e2e8f0;
+}
+.card-content-col{
+  width: 50%;
+  padding: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.card-content-col .fa{
+  font-size: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+  color: #718096;
+}
+.card-content-user-info{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  background: #f7fafc;
+  border-radius: 0 0 10px 10px;
+}
+.card-content-user-info img{
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.card-content-user-info h4{
+  font-family: 'Roboto', sans-serif;
+}
+.card-content-user-info p{
+  font-family: 'Roboto', sans-serif;
+}
+.card-content-user-info .card-content-user-contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
 </style>
