@@ -8,143 +8,528 @@
           </a>
           <div class="modules-links-wrapper modules-big-links">
             <div class="modules-link-wrapper" id="navbar-home">
-              <a href="#open-modal">
+              <a href="#open-modal1">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/1.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">ПОДАРКИ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name1 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-athlete">
-              <a href="#">
+              <a href="#open-modal2">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/2.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">ШОППИНГ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name2 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-event">
-              <a href="#">
+              <a href="#open-modal3">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/3.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">БАНКОМАТЫ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name3 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-tour">
-              <a href="#">
+              <a href="#open-modal4">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/4.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">РАЗВЛЕЧЕНИЯ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name4 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-tour">
-              <a href="#">
+              <a href="#open-modal5">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/5.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">СУПЕРМАРКЕТ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name5 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-tour">
-              <a href="#">
+              <a href="#open-modal6">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/6.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">ЭЛЕКТРОНИКА</div>
                 </div>
+                <div class="modules-link-text">{{ category_name6 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-tour">
-              <a href="#">
+              <a href="#open-modal7">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/7.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">ТОВАРЫ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name7 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-tour">
-              <a href="#">
+              <a href="#open-modal8">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/8.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">РЕСТОРАНЫ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name8 }}</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-tour">
-              <a href="#">
+              <a href="#open-modal9">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/9.png"
-                    width="100"
-                    height="100"
+                    width="80"
+                    height="80"
                     alt="lorem"
                   />
-                  <div class="modules-link-text">СУПЕРМАРКЕТ</div>
                 </div>
+                <div class="modules-link-text">{{ category_name9 }}</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-tour">
+              <a href="#open-modal10">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/10.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">{{ category_name10 }}</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-tour">
+              <a href="#open-modal11">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/11.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">{{ category_name11 }}</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-tour">
+              <a href="#open-modal12">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/12.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">{{ category_name12 }}</div>
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    
-    
-    <div id="open-modal" class="modal-window">
+
+    <div id="open-modal1" class="modal-window">
       <div>
-        <a href="#" title="Close" class="modal-close"><bold>X </bold></a>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
         <ul class="categories-list">
-     
-     <li>
-      <div>xsxsx</div>
-      <!-- <div>{{info.description}}</div> -->
-     </li>
-    </ul>
+          <a href="#open-modal999">
+          <li>            
+            <div>{{ store1[0].title }}</div>
+          </li>
+        </a>
+          <li>            
+            <div>{{ store1[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[3].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[4].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[5].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[6].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[7].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[8].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[9].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[10].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[11].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[12].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[13].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store1[14].title }}</div>
+          </li>
+        </ul>
       </div>
     </div>
 
+    <div id="open-modal999" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+          <div>cdsjncjdsnckjdsncdsjkcndjkn</div>
+      </div>
+    </div>
 
+    <div id="open-modal2" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store2[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store2[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store2[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store2[3].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal3" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store3[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store3[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store3[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store3[3].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store3[4].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store3[5].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store3[6].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal4" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store4[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store4[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store4[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store4[3].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store4[4].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store4[5].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store4[6].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store4[7].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal5" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store5[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store5[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store5[2].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal6" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store6[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store6[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store6[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store6[3].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store6[4].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store6[5].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store6[6].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal7" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store7[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[3].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[4].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[5].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[6].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[7].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[8].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[9].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[10].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[11].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[12].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[13].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[14].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[15].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[16].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[17].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[18].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[19].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[20].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[21].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store7[22].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal8" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store8[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store8[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store8[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store8[3].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store8[4].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal9" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store9[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store9[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store9[2].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal10" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store10[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store10[1].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal11" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store11[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store11[1].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store11[2].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store11[3].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store11[4].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store11[5].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store11[6].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="open-modal12" class="modal-window">
+      <div>
+        <a href="#" title="Close" class="modal-close"><b>X</b></a>
+        <ul class="categories-list">
+          <li>            
+            <div>{{ store12[0].title }}</div>
+          </li>
+          <li>            
+            <div>{{ store12[1].title }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -153,18 +538,157 @@
 <script>
 import axios from "axios";
 export default {
-  data() {
-    return {
-      info: null
-    };
-  },
+  data: () => ({
+    category_name1: null,
+    category_name2: null,
+    category_name3: null,
+    category_name4: null,
+    category_name5: null,
+    category_name6: null,
+    category_name7: null,
+    category_name8: null,
+    category_name9: null,
+    category_name10: null,
+    category_name11: null,
+    category_name12: null,
+    category1: null,
+    category2: null,
+    category3: null,
+    category4: null,
+    category5: null,
+    category6: null,
+    category7: null,
+    category8: null,
+    category9: null,
+    category10: null,
+    category11: null,
+    category12: null,
+    store1: [],
+    store2: [],
+    store3: [],
+    store4: [],
+    store5: [],
+    store6: [],
+    store7: [],
+    store8: [],
+    store9: [],
+    store10: [],
+    store11: [],
+    store12: [],
+    errors: [],
+  }),
 
   mounted() {
-    axios
-      .get('http://Localhost:8081/api/stores')
-      .then(response => (this.info = response.data));
-  }
-}
+    this.getStores();
+  },
+  methods: {
+    getStores() {
+      axios
+        .get("http://Localhost:8081/api/categories")
+        .then((response) => {
+          this.category_name1 = response.data[0].title;
+          this.category_name2 = response.data[1].title;
+          this.category_name3 = response.data[2].title;
+          this.category_name4 = response.data[3].title;
+          this.category_name5 = response.data[4].title;
+          this.category_name6 = response.data[5].title;
+          this.category_name7 = response.data[6].title;
+          this.category_name8 = response.data[7].title;
+          this.category_name9 = response.data[8].title;
+          this.category_name10 = response.data[9].title;
+          this.category_name11 = response.data[10].title;
+          this.category_name12 = response.data[11].title;
+
+          this.category1 = response.data[0].stores;
+          for (let i in this.category1) {
+            this.store1.push(this.category1[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 1", this.category1);
+
+          this.category2 = response.data[1].stores;
+          for (let i in this.category2) {
+            this.store2.push(this.category2[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 2", this.category2);
+
+          this.category3 = response.data[2].stores;
+          for (let i in this.category3) {
+            this.store3.push(this.category3[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 3", this.category3);
+
+          this.category4 = response.data[3].stores;
+          for (let i in this.category4) {
+            this.store4.push(this.category4[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 4", this.category4);
+
+          this.category5 = response.data[4].stores;
+          for (let i in this.category5) {
+            this.store5.push(this.category5[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 5", this.category5);
+
+          this.category6 = response.data[5].stores;
+          for (let i in this.category6) {
+            this.store6.push(this.category6[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 6", this.category6);
+
+          this.category7 = response.data[6].stores;
+          for (let i in this.category7) {
+            this.store7.push(this.category7[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 7", this.category7);
+
+          this.category8 = response.data[7].stores;
+          for (let i in this.category8) {
+            this.store8.push(this.category8[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 8", this.category8);
+
+          this.category9 = response.data[8].stores;
+          for (let i in this.category9) {
+            this.store9.push(this.category9[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 9", this.category9);
+
+          this.category10 = response.data[9].stores;
+          for (let i in this.category10) {
+            this.store10.push(this.category10[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 10", this.category10);
+
+          this.category11 = response.data[10].stores;
+          for (let i in this.category11) {
+            this.store11.push(this.category11[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 11", this.category11);
+
+          this.category12 = response.data[11].stores;
+          for (let i in this.category12) {
+            this.store12.push(this.category12[i]);
+            // console.log(this.store)
+          }
+          console.log("Category 12", this.category12);
+        })
+        .catch((e) => {
+          this.errors.push(e);
+        });
+    },
+  },
+};
 </script>
 
 
@@ -176,6 +700,7 @@ export default {
   width: 100%;
   margin: 0;
   padding: 0;
+  position: absolute;
 }
 
 .navbar-content {
@@ -249,7 +774,7 @@ a {
 }
 
 .modules-big-links {
-  width: 100%;
+  width: 95%;
 }
 
 .modules-big-contact,
@@ -301,7 +826,7 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 2em;
+  padding: 1em;
 }
 
 @media (min-width: 600px) {
@@ -353,8 +878,9 @@ a {
 
 @media (min-width: 900px) {
   .modules-link-text {
-    font-size: 20px;
-    padding: 0.75em 0 0;
+    font-size: 16px;
+    padding: 0.25em 0 0;
+    padding-bottom: 1em;
   }
 }
 
@@ -454,13 +980,13 @@ a {
 }
 .modal-window > div {
   width: 1200px;
-  height: 700px;
+  max-height: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 2em;
-  background: white;
+  background: #4c4c4c;
 }
 .modal-window header {
   font-weight: bold;
@@ -471,7 +997,7 @@ a {
 }
 
 .modal-close {
-  color: #aaa;
+  color: #fff;
   line-height: 50px;
   font-size: 80%;
   position: absolute;
@@ -495,12 +1021,10 @@ a {
 
 /* ------------------------MODAL-------------------------- */
 
-
-
 .categories-list {
   display: flex;
   flex-wrap: wrap;
-  max-height: 700px;
+  max-height: 650px;
   overflow-y: auto;
   justify-content: space-between;
 }
@@ -510,12 +1034,15 @@ a {
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
-  border: 10px solid gray;
+  border: 2px solid;
+  border-color: #1eb6ff;
+  box-shadow: 0 0 5px #1eb6ff;
   margin-right: 1rem;
   border-radius: 5px;
-  min-width:150px;
-  min-height:100px;
-  margin:10px;
+  min-width: 150px;
+  min-height: 100px;
+  margin: 10px;
+  color: #fff;
 }
 
 .categories-list li img {
@@ -523,94 +1050,6 @@ a {
   height: 30px;
 }
 
-
 /* -------------------------------- */
 
-
-
-.main{
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.card{
-  width: 400px;
-  margin: 0 auto;
-  position: relative;
-  box-shadow:0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
-  border-radius: 10px;
-}
-.card img{
-  width: 100%;
-  border-radius: 10px 10px 0 0;
-}
-.card-title{
-  width: calc(100% - 40px);
-  background: #fff;
-  padding: 10px;
-  position: absolute;
-  left: 50%;
-  top: 170px;
-  transform: translateX(-50%);
-  font-family: 'Roboto', sans-serif;
-  border-radius: 5px;
-  box-shadow:0 10px 15px -5px rgba(0,0,0,.1), 0 5px 5px -5px rgba(0,0,0,.01);
-}
-.card-title h4{
-  font-family: 'Roboto', sans-serif;
-}
-.card-title h3{
-  font-weight: normal;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-.card-content{
-  width: 100%;
-  background: #fff;
-  padding-top: 40px;
-  border-radius: 0 0 10px 10px;
-}
-.card-content-row{
-  display: flex;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #e2e8f0;
-}
-.card-content-col{
-  width: 50%;
-  padding: 20px;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-.card-content-col .fa{
-  font-size: 25px;
-  vertical-align: middle;
-  margin-right: 10px;
-  color: #718096;
-}
-.card-content-user-info{
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  background: #f7fafc;
-  border-radius: 0 0 10px 10px;
-}
-.card-content-user-info img{
-  width: 60px;
-  height: 60px;
-  margin: 10px;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-.card-content-user-info h4{
-  font-family: 'Roboto', sans-serif;
-}
-.card-content-user-info p{
-  font-family: 'Roboto', sans-serif;
-}
-.card-content-user-info .card-content-user-contact{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 20px;
-}
 </style>

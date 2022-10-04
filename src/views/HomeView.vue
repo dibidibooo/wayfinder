@@ -89,7 +89,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 import ButtonMenu from "@/components/ButtonMenu.vue";
-import axios from "axios"; 
+import axios from "axios";
+
 
 
 import ButtonSearch from "@/components/ButtonSearch.vue";
@@ -205,6 +206,8 @@ export default {
       dirLight.shadow.camera.left = -120;
       dirLight.shadow.camera.right = 120;
 
+
+
       // Ground
       // const gt = new THREE.TextureLoader().load("images/asphalt.jpg");
       // const gg = new THREE.PlaneGeometry(16000, 16000);
@@ -230,7 +233,7 @@ export default {
 
       const loader = new GLTFLoader();
       loader.load(
-        "models/InUse/first_floor1.gltf",
+        "models/InUse/first_floor.gltf",
         function (gltf_model1) {
           scene.add(gltf_model1.scene);
           gltf_model1.scene.scale.set(4.0, 5.0, 4.0);
@@ -244,6 +247,7 @@ export default {
           console.error(error);
         }
       );
+
 
       loader.load(
         "models/InUse/second_floor.gltf",
@@ -260,6 +264,42 @@ export default {
           console.error(error);
         }
       );
+
+
+
+
+
+
+
+
+// var from = new THREE.Vector3( 2, 2, 2 );
+// var to = new THREE.Vector3( 1, 1, 1 );
+// var direction = to.clone().sub(from);
+// var length = direction.length();
+// var arrowHelper = new THREE.ArrowHelper(direction.normalize(), from, length, 0xff0000 );
+// scene.add( arrowHelper );
+
+
+// var from1 = new THREE.Vector3( 5, 5, 5 );
+// var to1 = new THREE.Vector3( 3, 3, 3 );
+// var direction1 = to1.clone().sub(from1);
+// var length1 = direction.length();
+// var arrowHelper1 = new THREE.ArrowHelper(direction1.normalize(), from1, length1, 0xff0000 );
+// scene.add( arrowHelper1 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       //Raycaster-settings
       raycaster = new THREE.Raycaster();
       renderer = new THREE.WebGLRenderer();
@@ -2144,6 +2184,10 @@ export default {
               console.log(INTERSECTED.name);
               return INTERSECTED;
             }
+          }
+          else if (INTERSECTED.name == "ff_g-ksk-15001"){
+            
+           console.log("dwda"); 
           }
           // Условие для совместного выделения
           else if (
