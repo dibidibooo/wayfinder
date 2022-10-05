@@ -6,19 +6,19 @@
 
 <style>
 .bubbly-button {
-  position: fixed;
+  position: absolute;
   width: 130px;
   height: 120px;
   background: transparent;
   border: 1px solid #434343;
   border-radius: 18px;
-  border-color: #1eb6ff;
-  box-shadow: 0 0 10px #1eb6ff;
+  border-color: #B91E67;
+  box-shadow: 0 0 10px #B91E67;
   color: rgba(255, 255, 255, 0.8);
   font-family: Arial;
   font-size: 24px;
   font-weight: 700;
-  margin-left: 36em;
+  margin-top: 42em;
 }
 
 .bubbly-button a {
@@ -35,6 +35,7 @@
   z-index: 1;
   overflow: hidden;
   border-radius: 18px;
+  color: #B91E67 !important;
 }
 
 .bubbly-button a::before {
@@ -61,8 +62,8 @@
   border-radius: 8px;
   height: 24px;
   width: 48px;
-  background: #1eb6ff;
-  filter: drop-shadow(0 0 12px #1eb6ff);
+  background: #B91E67;
+  filter: drop-shadow(0 0 12px #B91E67);
   transform: translateX(50%);
   transition: 0.3s ease;
 }

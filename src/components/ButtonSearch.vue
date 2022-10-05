@@ -7,13 +7,13 @@
             <div class="modules-private-name">Abi Dhabi Plaza</div>
           </a>
           <div class="modules-links-wrapper modules-big-links">
-            <div class="modules-link-wrapper" id="navbar-home">
-              <a href="#">
+            <div class="modules-link-wrapper" id="navbar-home" style="position: absolute ;margin-right: 90em">
+              <a href="#open-modal1">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/search.png"
-                    width="200"
-                    height="100"
+                    width="160"
+                    height="80"
                     alt="lorem"
                   />
                 </div>
@@ -24,13 +24,26 @@
               <a href="#">
                 <div class="modules-link-content">
                   <img
-                    src="images/Category/foodcourt.png"
-                    width="80"
-                    height="80"
+                    src="images/Category/info.png"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ИНФОРМАЦИЯ</div>
                 </div>
-                <div class="modules-link-text">Фудкорт</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/foodcourt.png"
+                    width="65"
+                    height="65"
+                    alt="lorem"
+                  />
+                  <div class="modules-link-text">ФУДКОРТ</div>
+                </div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -38,12 +51,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/atm.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">БАНКОМАТЫ</div>
                 </div>
-                <div class="modules-link-text">Банкоматы</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -51,38 +64,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/toilet.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ТУАЛЕТЫ</div>
                 </div>
-                <div class="modules-link-text">Туалеты</div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="navbar-home">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/babyroom.png"
-                    width="80"
-                    height="80"
-                    alt="lorem"
-                  />
-                </div>
-                <div class="modules-link-text">Комната матери и ребенка</div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="navbar-home">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/medcenter.png"
-                    width="80"
-                    height="80"
-                    alt="lorem"
-                  />
-                </div>
-                <div class="modules-link-text">Мед. центр</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -90,12 +77,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/administrator.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">РЕСЕПШН</div>
                 </div>
-                <div class="modules-link-text">Администрация</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -103,12 +90,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/wardrobe.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ГАРДЕРОБ</div>
                 </div>
-                <div class="modules-link-text">Гардероб</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -116,12 +103,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/elevator.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ЛИФТ</div>
                 </div>
-                <div class="modules-link-text">Лифт</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -129,12 +116,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/stairs.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ЛЕСТНИЦА</div>
                 </div>
-                <div class="modules-link-text">Лестница</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -142,12 +129,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/escalator.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ЭСКАЛАТОР</div>
                 </div>
-                <div class="modules-link-text">Эскалатор</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -155,12 +142,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/parking_car.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ПАРКИНГ</div>
                 </div>
-                <div class="modules-link-text">Паркинг</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -168,12 +155,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/parking_bycicle.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ВЕЛОПАРКОВКА</div>
                 </div>
-                <div class="modules-link-text">Велопарковка</div>
               </a>
             </div>
             <div class="modules-link-wrapper" id="navbar-home">
@@ -181,25 +168,12 @@
                 <div class="modules-link-content">
                   <img
                     src="images/Category/parkomat.png"
-                    width="80"
-                    height="80"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">ПАРКОМАТ</div>
                 </div>
-                <div class="modules-link-text">Паркомат</div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="navbar-home">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/info.png"
-                    width="80"
-                    height="80"
-                    alt="lorem"
-                  />
-                </div>
-                <div class="modules-link-text">Информация</div>
               </a>
             </div>
             <!-- <div class="modules-link-wrapper" id="navbar-home">
@@ -362,13 +336,39 @@
               <a href="#">
                 <div class="modules-link-content">
                   <img
-                    src="images/Category/emergency.png"
-                    width="80"
-                    height="80"
+                    src="images/Category/babyroom.png"
+                    width="65"
+                    height="65"
                     alt="lorem"
                   />
+                  <div class="modules-link-text">КОМНАТА МАТЕРИ</div>
                 </div>
-                <div class="modules-link-text">Аварийный выход</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/medcenter.png"
+                    width="65"
+                    height="65"
+                    alt="lorem"
+                  />
+                <div class="modules-link-text">МЕД. ЦЕНТР</div>
+                </div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/emergency.png"
+                    width="65"
+                    height="65"
+                    alt="lorem"
+                  />
+                  <div class="modules-link-text">АВАРИЙНЫЙ ВЫХОД</div>
+                </div>
               </a>
             </div>
           </div>
@@ -982,7 +982,8 @@ a {
 }
 
 .modules-big-links {
-  width: 95%;
+  width: 100%;
+  /* margin-right: 50em; */
 }
 
 .modules-big-contact,
@@ -1015,7 +1016,7 @@ a {
 
 @media (min-width: 900px) {
   .modules-link-wrapper {
-    width: 100%;
+    width: 85px;
   }
 }
 
@@ -1077,8 +1078,8 @@ a {
 
 @media (min-width: 600px) {
   .modules-link-text {
-    font-family: Impact, Charcoal, sans-serif;
-    font-weight: 100;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
     font-size: 28px;
     padding: 0 1em;
   }
@@ -1086,10 +1087,9 @@ a {
 
 @media (min-width: 900px) {
   .modules-link-text {
-    color: #4c4c4c;
-    font-size: 16px;
-    padding: 0.25em 0 0;
-    padding-bottom: 1em;
+    color: #000000;
+    font-size: 10px;
+    padding: 1em 0 0;
   }
 }
 
@@ -1156,7 +1156,7 @@ a {
 .modules-nav-big-button {
   padding: 0.5em 0.5em;
   /* border: 1px solid #fff; */
-  color: #1eb6ff;
+  color: #B91E67;
 }
 
 .modules-nav-big-button .modules-link-icon {
@@ -1244,8 +1244,8 @@ a {
   flex-direction: column;
   padding: 1rem;
   border: 2px solid;
-  border-color: #1eb6ff;
-  box-shadow: 0 0 5px #1eb6ff;
+  border-color: #B91E67;
+  box-shadow: 0 0 5px #B91E67;
   margin-right: 1rem;
   border-radius: 5px;
   min-width: 150px;
