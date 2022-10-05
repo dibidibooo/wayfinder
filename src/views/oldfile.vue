@@ -1,6 +1,68 @@
 <template>
   <div id="container">
-    
+    <!-- <autocomplete
+    url="http://Localhost:8081/api/stores"
+    anchor="title"
+    label="writer"
+    :on-select="getData">
+  </autocomplete> -->
+
+    <!-- <div id="svgContainer">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="1024px"
+        height="1024px"
+        viewBox="0 0 1024 1024"
+        enable-background="new 0 0 400 400"
+        xml:space="preserve"
+      >
+        <path
+          style="position: absolute; z-index: -1"
+          class="path"
+          fill="none"
+          stroke="#000000"
+          stroke-width="4"
+          stroke-miterlimit="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="
+           M512,512 q50,-100 0,-200 t0,-295
+           M512,512 q100,-25 100,-100 t95,-95 q100,-25 100,-100 t95,-95 
+           M512,512 q75,50 160,0 t150,0 s75,75 200,0  
+           M512,512 q100,25 100,100 t95,95 q100,25 100,100 t95,95 
+           M512,512 q-75,50 0,150 t0,175 s-75,75 0,180
+           M512,512 q-25,50 -100,50 t-95,95 q-25,75 -100,75 t-125,125 
+           M512,512 q-50,-50 -150,0 t-150,0 s-50,-50 -195,0
+           M512,512 q-50,-100 -125,-75 t-100,-100 q-25,-100 -100,-75 t-100,-100         
+           "
+        />
+      </svg>
+    </div> -->
+
+    <!-- <form class="search-bar">
+      <input
+        v-model="message"
+        type="search"
+        name="search"
+        pattern=".*\S.*"
+        required
+      />
+      <button
+        @click="
+          searchBox1();
+          searchBox2();
+        "
+        class="search-btn"
+      >
+        <span>Поиск..</span>
+      </button>
+    </form> -->
+
     <button
       @click="buttonModel1()"
       class="bubbly-button"
@@ -20,35 +82,25 @@
   </div>
 </template>
 
-<!-- <script src="./threejs/Path3D.js"></script> -->
-
 <script>
 import TextSprite from "@seregpie/three.text-sprite";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-// import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
+import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 import ButtonMenu from "@/components/ButtonMenu.vue";
 import axios from "axios";
-
-import { Line2 } from 'three/examples/jsm/lines/Line2.js';
-import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
-import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
-import * as GeometryUtils from 'three/examples/jsm/utils/GeometryUtils.js'
 
 
 import ButtonSearch from "@/components/ButtonSearch.vue";
 // import Autocomplete from 'vue2-autocomplete-js'
 
 import json_search from "/public/search.json";
-// import road_texture from "/public/images/threejs/images/path_007_21.png";
-
 // import { GUI } from 'dat.gui'
 var container, controls;
 var camera, scene, raycaster, renderer;
 var INTERSECTED;
 let title;
-var loaded_models = [];
 // let titleCategory
 const pointer = new THREE.Vector2();
 
@@ -61,18 +113,13 @@ export default {
   data() {
     return {
       message: "",
-      row: null,
-
     };
   },
   mounted() {
-    this.getapi();
     this.init();
     this.animate();
-    this.add_events();
-    this.add_row();
+    this.getapi();
     // this.getapicategory();
-
   },
 
   methods: {
@@ -81,48 +128,27 @@ export default {
         title = response.data;
       });
     },
-
-    add_row(){
-      let matLine,line;
-      const positions = [];
-      const colors = [];
-
-      const points = GeometryUtils.hilbert3D( new THREE.Vector3( 0, 0, 0 ), 20.0, 1, 0, 1, 2, 3, 4, 5, 6, 7 );
-
-      const spline = new THREE.CatmullRomCurve3( points );
-      const divisions = Math.round( 0.12 * points.length );
-      const point = new THREE.Vector3();
-      const color = new THREE.Color();
-
-      for ( let i = 0, l = divisions; i < l; i ++ ) {
-        const t = i / l;
-        spline.getPoint( t, point );
-        positions.push( point.x, point.y, point.z );
-        color.setHSL( t, 1.0, 0.5 );
-        colors.push( color.r, color.g, color.b );
+    // getapicategory() {
+    //   axios.get("http://Localhost:8081/api/categories").then(function (response){
+    //   let data = response.data
+    //   titleCategory = response.data
+    //   console.log("api category", data)
+    // })
+    // },
+    searchBox1() {
+      let temp_json = json_search;
+      for (let i in temp_json) {
+        if (this.message == temp_json[i]) {
+          let butik_name = i;
+          for (let k in scene.children[3].children) {
+            if (butik_name == scene.children[3].children[k].name) {
+              scene.children[3].children[k].material.color.set("#1eb6ff");
+              console.log("SEARCH-NAME");
+            }
+          }
+        }
       }
-
-      Line2 ( LineGeometry, LineMaterial )
-				const geometry = new LineGeometry();
-				geometry.setPositions( positions );
-				geometry.setColors( colors );
-				matLine = new LineMaterial( {
-					color: 0xffffff,
-					linewidth: 5, // in world units with size attenuation, pixels otherwise
-					vertexColors: true,
-
-					//resolution:  // to be set by renderer, eventually
-					dashed: false,
-					alphaToCoverage: true,
-
-				} );
-
-				line = new Line2( geometry, matLine );
-				line.computeLineDistances();
-				line.scale.set( 1, 1, 1 );
-				scene.add( line );
     },
-    
 
     searchBox2() {
       let temp_json = json_search;
@@ -139,13 +165,13 @@ export default {
       }
     },
 
-    init() {
+    async init() {
       //Camera create and settings
       camera = new THREE.PerspectiveCamera(
-        40,
+        11,
         window.innerWidth / window.innerHeight,
         1,
-        1000
+        100
       );
       camera.position.set(0, 40, 50);
 
@@ -153,6 +179,11 @@ export default {
       scene = new THREE.Scene();
       // scene.background = new THREE.Color(0x222222);
       scene.background = new THREE.Color("#303030");
+
+      // di Добавить задний фон на сцену
+      // this.loader = new THREE.TextureLoader();
+      // this.bgTexture = this.loader.load("images/background.jpg");
+      // scene.background = this.bgTexture;
 
       //Create Light for scene
       const dirLight = new THREE.DirectionalLight(0xffffff);
@@ -174,16 +205,40 @@ export default {
       dirLight.shadow.camera.left = -120;
       dirLight.shadow.camera.right = 120;
 
+
+
+      // Ground
+      // const gt = new THREE.TextureLoader().load("images/asphalt.jpg");
+      // const gg = new THREE.PlaneGeometry(16000, 16000);
+      // const gm = new THREE.MeshPhongMaterial({ color: 0xffffff, map: gt });
+      // const ground = new THREE.Mesh(gg, gm);
+      // ground.rotation.x = -Math.PI / 2;
+      // ground.material.map.repeat.set(256 * 8, 256 * 8);
+      // ground.material.map.wrapS = THREE.RepeatWrapping;
+      // ground.material.map.wrapT = THREE.RepeatWrapping;
+      // ground.material.map.encoding = THREE.sRGBEncoding;
+      // ground.receiveShadow = true;
+      // scene.add(ground);
+
+      //Сетка
+      // scene.add( new THREE.CameraHelper( dirLight.shadow.camera ) );
+      // let gridHelper = new THREE.GridHelper(
+      //   60,
+      //   150,
+      //   new THREE.Color(0x555555),
+      //   new THREE.Color(0x333333)
+      // );
+      // scene.add(gridHelper);
+
       const loader = new GLTFLoader();
       loader.load(
         "models/InUse/first_floor.gltf",
-        (gltf_model1) => {
+        function (gltf_model1) {
           scene.add(gltf_model1.scene);
           gltf_model1.scene.scale.set(4.0, 5.0, 4.0);
           console.log(
             "First floor Loaded",
-            scene.add(gltf_model1.scene),
-            loaded_models.push(gltf_model1.scene)
+            scene.add(gltf_model1.scene)
           );
         },
         undefined,
@@ -191,6 +246,7 @@ export default {
           console.error(error);
         }
       );
+
 
       loader.load(
         "models/InUse/second_floor.gltf",
@@ -199,9 +255,7 @@ export default {
           gltf_model2.scene.scale.set(4.0, 5.0, 3.7);
           console.log(
             "Second floor Loaded",
-            scene.add(gltf_model2.scene),
-            loaded_models.push(gltf_model2.scene)
-
+            scene.add(gltf_model2.scene)
           );
         },
         undefined,
@@ -211,10 +265,13 @@ export default {
       );
 
 
+      
+      
+
+
       //Raycaster-settings
       raycaster = new THREE.Raycaster();
       renderer = new THREE.WebGLRenderer();
-
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -222,9 +279,11 @@ export default {
       controls = new OrbitControls(camera, renderer.domElement);
       controls.listenToKeyEvents(window);
       controls.enableRotate = true;
+      // controls.autoRotate = true;
+      // controls.autoRotateSpeed = 0.4;
       // di Максимальное и минимальное приближение камеры
       controls.minDistance = 15;
-      controls.maxDistance = 500;
+      controls.maxDistance = 50;
       // di Touch fingers
       controls.touches = {
         ONE: THREE.TOUCH.DOLLY_PAN,
@@ -1629,9 +1688,7 @@ export default {
           }
         }
       }, 500);
-
     },
-
 
     //Подгон размера окна к данным матрице
     async onWindowResize() {
@@ -1641,18 +1698,18 @@ export default {
     },
 
     //Выбрать модель через кнопку (1 этаж / 2этаж )
-    buttonModel1() {
+    async buttonModel1() {
       scene.children[3].visible = true;
       scene.children[4].visible = false;
     },
 
-    buttonModel2() {
+    async buttonModel2() {
       scene.children[3].visible = false;
       scene.children[4].visible = true;
     },
 
     //Отслеживание мыши
-    onPointerMove(event) {
+    async onPointerMove(event) {
       pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
       pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
     },
@@ -1664,19 +1721,11 @@ export default {
       //Обновление Орбит контроля
       controls.update();
       //Обновление Твин для более плавного движения модели
-      // TWEEN.update();
+      TWEEN.update();
+      //Рэйкастер для захвата модели на точке где расположена мышь
+      raycaster.setFromCamera(pointer, camera);
       //Функция срабатывающаяя на двойное нажатие мыши
-
-      this.intersects = null;
-      this.render();
-      // this.render_row();
-    },
-
-    add_events(){
       document.addEventListener("dblclick", async function () {
-        //Рэйкастер для захвата модели на точке где расположена мышь
-        raycaster.setFromCamera(pointer, camera);
-
         if (scene.children[3].visible != false) {
           var intersects = raycaster.intersectObjects(
             scene.children[3].children,
@@ -1693,11 +1742,410 @@ export default {
           if (INTERSECTED != intersects[0].object) {
             INTERSECTED = intersects[0].object;
             // Условие для некликабельных моделей
-            const names_1 = ["ff_g-39001", "ff_tr_e008", "ff_tr_e007", "ff_tr_e021", "ff_tr_e023", "ff_toilet_3001", "ff_tr_e020", "ff_tr_e009", "ff_tr_e010", "ff_toilet_3002", "ff_tr_e022", "ff_tr_e011", "ff_tr_e012", "ff_tr_e013", "ff_tr_e018", "ff_tr_e019", "ff_toilet_4001", "ff_tr_e025", "ff_tr_e017", "ff_tr_e015", "ff_tr_e016", "ff_tr_e014", "ff_tr_e024", "ff_tr_e026", "ff_tr_e004", "ff_tr_e003", "ff_tr_e006", "ff_tr_e005", "ff_tr_d028", "ff_tr_d030", "ff_tr_e", "ff_tr_e002", "ff_tr_d025", "ff_tr_d026", "ff_tr_d027", "ff_tr_d029", "ff_tr_d", "ff_tr_d019", "ff_tr_d031", "ff_tr_d024", "ff_tr_d020", "ff_tr_d023", "ff_tr_d002", "ff_tr_d003", "ff_tr_d021", "ff_tr_d005", "ff_tr_d004", "ff_tr_d022", "ff_tr_d014", "ff_tr_d017", "ff_tr_d018", "ff_tr_d006", "ff_tr_d015", "ff_tr_d012", "ff_tr_d013", "ff_tr_d016", "ff_tr_d011", "ff_tr_d032", "ff_tr_d008", "ff_tr_d007", "ff_toilet_7002", "ff_toilet_7001", "ff_tr_d009", "ff_tr_d010", "ff_tr_f002", "ff_tr_f", "ff_toilet_7004", "ff_toilet_7003", "ff_tr_f006", "ff_tr_f005", "ff_tr_f004", "ff_tr_f003", "ff_toilet_6004", "ff_toilet_6001", "ff_toilet_6002", "ff_tr_f007", "ff_toilet_6003", "ff_tr_f018", "ff_tr_f008", "ff_toilet_6005", "ff_tr_f011", "ff_tr_f013", "ff_tr_f009", "ff_tr_f015", "ff_tr_f016", "ff_tr_f010", "ff_tr_f014", "ff_tr_f012", "ff_toilet_5003", "ff_toilet_5002", "ff_toilet_5001", "ff_tr_f017", "ff_tr_a029", "ff_tr_a037", "ff_toilet_5004", "ff_toilet_5005", "ff_tr_a033", "ff_tr_a034", "ff_tr_a035", "ff_tr_a036", "ff_tr_a038", "ff_tr_a026", "ff_tr_a032", "ff_tr_a040", "ff_tr_a027", "ff_tr_a030", "ff_tr_a025", "ff_tr_a024", "ff_tr_a006", "ff_tr_a", "ff_tr_a031", "ff_tr_a028", "ff_tr_a014", "ff_tr_a003", "ff_tr_a004", "ff_tr_a005", "ff_tr_a007", "ff_tr_a008", "ff_tr_a013", "ff_tr_a002", "ff_toilet_2001", "ff_tr_a012", "ff_tr_a011", "ff_tr_a009", "ff_toilet_2002", "ff_toilet_2003", "ff_tr_a010", "ff_tr_a015", "ff_tr_c013", "ff_tr_c023", "ff_tr_c014", "ff_tr_a042", "ff_tr_c022", "ff_tr_c021", "ff_tr_c033", "ff_tr_c034", "ff_tr_c028", "ff_tr_c031", "ff_tr_c029", "ff_tr_c030", "ff_tr_c018", "ff_tr_c020", "ff_tr_c017", "ff_tr_c032", "ff_tr_c015", "ff_tr_c016", "ff_tr_c012", "ff_tr_c019", "ff_tr_c026", "ff_tr_c024", "ff_tr_c025", "ff_tr_c011", "ff_tr_c004", "ff_tr_c002", "ff_tr_c", "ff_tr_c027", "ff_tr_c008", "ff_tr_c009", "ff_tr_c007", "ff_tr_c005", "ff_tr_b037", "ff_tr_c003", "ff_tr_c006", "ff_tr_c010", "ff_tr_b043", "ff_tr_b038", "ff_tr_b025", "ff_tr_b035", "ff_tr_b052", "ff_tr_b017", "ff_tr_b018", "ff_tr_b044", "ff_toilet_1003", "ff_toilet_1002", "ff_toilet_1001", "ff_tr_b016", "ff_tr_b048", "ff_tr_b027", "ff_tr_b047", "ff_toilet_1004", "ff_tr_b023", "ff_tr_b022", "ff_tr_b026", "ff_tr_b046", "ff_tr_b021", "ff_tr_b020", "ff_tr_b019", "ff_tr_b024", "ff_tr_b050", "ff_tr_b051", "ff_tr_b049", "ff_tr_b057", "ff_tr_b036", "ff_tr_b054", "ff_tr_b056", "ff_tr_b053", "ff_tr_b014", "ff_tr_b012", "ff_tr_b041", "ff_tr_b045", "ff_tr_b040", "ff_tr_b042", "ff_tr_b055", "ff_tr_b", "ff_tr_b034", "ff_tr_b039", "ff_tr_b004", "ff_tr_b003", "ff_tr_b032", "ff_tr_b029", "ff_tr_b028", "ff_tr_b033", "ff_tr_b013", "ff_tr_b015", "ff_tr_b030", "ff_tr_b031", "ff_tr_b007", "ff_tr_b006", "ff_tr_g", "ff_tr_b005", "ff_tr_b011", "ff_tr_b010", "ff_tr_b009", "ff_tr_b008", "ff_tr_a017", "ff_tr_a018", "ff_tr_a016", "ff_tr_a041", "ff_tr_a022", "ff_tr_a021", "ff_tr_a020", "ff_tr_a019", "ff_tr_g003", "ff_tr_g004", "ff_tr_a023", "ff_tr_a039", "ff_tr_g001", "ff_tr_g002", "ff_ground", "sf_tr_a039", "sf_tr_c056", "sf_tr_c053", "sf_tr_c052", "sf_tr_c051", "sf_tr_c047", "sf_tr_c048", "sf_tr_c049", "sf_tr_c050", "sf_tr_c058", "sf_tr_c057", "sf_tr_c055", "sf_tr_c054", "sf_tr_c060", "sf_tr_c044", "sf_tr_c045", "sf_tr_c046", "sf_tr_a002", "sf_tr_a001", "sf_tr_a004", "sf_tr_a", "sf_tr_a047", "sf_tr_a048", "sf_tr_a006", "sf_tr_a005", "sf_tr_a013", "sf_tr_a012", "sf_toilet_05001", "sf_tr_a003", "sf_tr_a016", "sf_tr_a015", "sf_tr_a017", "sf_tr_a014", "sf_tr_a008", "sf_tr_a011", "sf_tr_a010", "sf_tr_a007", "sf_toilet_03001", "sf_tr_b031", "sf_toilet_04001", "sf_tr_a009", "sf_tr_b030", "sf_tr_b025", "sf_tr_b033", "sf_tr_b032", "sf_tr_b029", "sf_tr_b028", "sf_tr_b026", "sf_tr_b034", "sf_tr_b036", "sf_tr_b035", "sf_tr_b042", "sf_tr_b027", "sf_tr_b040", "sf_tr_b038", "sf_tr_b039", "sf_tr_b037", "sf_tr_a052", "sf_tr_a050", "sf_tr_a051", "sf_tr_b041", "sf_tr_c040", "sf_tr_c039", "sf_tr_c038", "sf_tr_a053", "sf_tr_c037", "sf_tr_c043", "sf_tr_c042", "sf_tr_c041", "sf_tr_c032", "sf_tr_c030", "sf_tr_c031", "sf_toilet_06001", "sf_tr_c036", "sf_tr_c034", "sf_tr_c033", "sf_tr_c026", "sf_tr_c029", "sf_tr_c022", "sf_tr_c021", "sf_tr_c035", "sf_tr_c024", "sf_tr_c019", "sf_tr_c027", "sf_tr_c025", "sf_tr_c018", "sf_tr_c020", "sf_tr_c023", "sf_tr_c028", "sf_tr_c012", "sf_tr_c011", "sf_tr_c010", "sf_tr_c003", "sf_tr_c002", "sf_tr_c017", "sf_tr_c", "sf_tr_c001", "sf_tr_c005", "sf_tr_c008", "sf_tr_c007", "sf_tr_c006", "sf_tr_c016", "sf_tr_c014", "sf_tr_c009", "sf_tr_c004", "sf_tr_b013", "sf_tr_b012", "sf_tr_c013", "sf_tr_c015", "sf_tr_b010", "sf_tr_b011", "sf_tr_b023", "sf_tr_b024", "sf_tr_b008", "sf_tr_b006", "sf_tr_b007", "sf_tr_b009", "sf_tr_b005", "sf_tr_b004", "sf_tr_b002", "sf_tr_b003", "sf_tr_b018", "sf_tr_b017", "sf_tr_b", "sf_tr_b001", "sf_tr_b019", "sf_tr_b015", "sf_tr_b014", "sf_tr_b016", "sf_tr_a045", "sf_tr_b021", "sf_tr_b022", "sf_tr_b020", "sf_toilet_02001", "sf_tr_a026", "sf_tr_a027", "sf_tr_a046", "sf_tr_a020", "sf_tr_a021", "sf_tr_a022", "sf_tr_a025", "sf_tr_a024", "sf_tr_a023", "sf_tr_a018", "sf_tr_a019", "sf_tr_a033", "sf_tr_a037", "sf_tr_a038", "sf_tr_a028", "sf_tr_a030", "sf_tr_a036", "sf_tr_a034", "sf_tr_a035", "sf_tr_a049", "sf_tr_a029", "sf_tr_a032", "sf_tr_a031", "sf_tr_a041", "sf_tr_a042", "sf_tr_a043", "sf_tr_a044", "sf_tr_a040", "sf_ground", ]
-
-
-
-            if (INTERSECTED.name in names_1) {
+            if (
+              INTERSECTED.name === "ff_g-39001" ||
+              INTERSECTED.name === "ff_tr_e008" ||
+              INTERSECTED.name === "ff_tr_e007" ||
+              INTERSECTED.name === "ff_tr_e021" ||
+              INTERSECTED.name === "ff_tr_e023" ||
+              INTERSECTED.name === "ff_toilet_3001" ||
+              INTERSECTED.name === "ff_tr_e020" ||
+              INTERSECTED.name === "ff_tr_e009" ||
+              INTERSECTED.name === "ff_tr_e010" ||
+              INTERSECTED.name === "ff_toilet_3002" ||
+              INTERSECTED.name === "ff_tr_e022" ||
+              INTERSECTED.name === "ff_tr_e011" ||
+              INTERSECTED.name === "ff_tr_e012" ||
+              INTERSECTED.name === "ff_tr_e013" ||
+              INTERSECTED.name === "ff_tr_e018" ||
+              INTERSECTED.name === "ff_tr_e019" ||
+              INTERSECTED.name === "ff_toilet_4001" ||
+              INTERSECTED.name === "ff_tr_e025" ||
+              INTERSECTED.name === "ff_tr_e017" ||
+              INTERSECTED.name === "ff_tr_e015" ||
+              INTERSECTED.name === "ff_tr_e016" ||
+              INTERSECTED.name === "ff_tr_e014" ||
+              INTERSECTED.name === "ff_tr_e024" ||
+              INTERSECTED.name === "ff_tr_e026" ||
+              INTERSECTED.name === "ff_tr_e004" ||
+              INTERSECTED.name === "ff_tr_e003" ||
+              INTERSECTED.name === "ff_tr_e006" ||
+              INTERSECTED.name === "ff_tr_e005" ||
+              INTERSECTED.name === "ff_tr_d028" ||
+              INTERSECTED.name === "ff_tr_d030" ||
+              INTERSECTED.name === "ff_tr_e" ||
+              INTERSECTED.name === "ff_tr_e002" ||
+              INTERSECTED.name === "ff_tr_d025" ||
+              INTERSECTED.name === "ff_tr_d026" ||
+              INTERSECTED.name === "ff_tr_d027" ||
+              INTERSECTED.name === "ff_tr_d029" ||
+              INTERSECTED.name === "ff_tr_d" ||
+              INTERSECTED.name === "ff_tr_d019" ||
+              INTERSECTED.name === "ff_tr_d031" ||
+              INTERSECTED.name === "ff_tr_d024" ||
+              INTERSECTED.name === "ff_tr_d020" ||
+              INTERSECTED.name === "ff_tr_d023" ||
+              INTERSECTED.name === "ff_tr_d002" ||
+              INTERSECTED.name === "ff_tr_d003" ||
+              INTERSECTED.name === "ff_tr_d021" ||
+              INTERSECTED.name === "ff_tr_d005" ||
+              INTERSECTED.name === "ff_tr_d004" ||
+              INTERSECTED.name === "ff_tr_d022" ||
+              INTERSECTED.name === "ff_tr_d014" ||
+              INTERSECTED.name === "ff_tr_d017" ||
+              INTERSECTED.name === "ff_tr_d018" ||
+              INTERSECTED.name === "ff_tr_d006" ||
+              INTERSECTED.name === "ff_tr_d015" ||
+              INTERSECTED.name === "ff_tr_d012" ||
+              INTERSECTED.name === "ff_tr_d013" ||
+              INTERSECTED.name === "ff_tr_d016" ||
+              INTERSECTED.name === "ff_tr_d011" ||
+              INTERSECTED.name === "ff_tr_d032" ||
+              INTERSECTED.name === "ff_tr_d008" ||
+              INTERSECTED.name === "ff_tr_d007" ||
+              INTERSECTED.name === "ff_toilet_7002" ||
+              INTERSECTED.name === "ff_toilet_7001" ||
+              INTERSECTED.name === "ff_tr_d009" ||
+              INTERSECTED.name === "ff_tr_d010" ||
+              INTERSECTED.name === "ff_tr_f002" ||
+              INTERSECTED.name === "ff_tr_f" ||
+              INTERSECTED.name === "ff_toilet_7004" ||
+              INTERSECTED.name === "ff_toilet_7003" ||
+              INTERSECTED.name === "ff_tr_f006" ||
+              INTERSECTED.name === "ff_tr_f005" ||
+              INTERSECTED.name === "ff_tr_f004" ||
+              INTERSECTED.name === "ff_tr_f003" ||
+              INTERSECTED.name === "ff_toilet_6004" ||
+              INTERSECTED.name === "ff_toilet_6001" ||
+              INTERSECTED.name === "ff_toilet_6002" ||
+              INTERSECTED.name === "ff_tr_f007" ||
+              INTERSECTED.name === "ff_toilet_6003" ||
+              INTERSECTED.name === "ff_tr_f018" ||
+              INTERSECTED.name === "ff_tr_f008" ||
+              INTERSECTED.name === "ff_toilet_6005" ||
+              INTERSECTED.name === "ff_tr_f011" ||
+              INTERSECTED.name === "ff_tr_f013" ||
+              INTERSECTED.name === "ff_tr_f009" ||
+              INTERSECTED.name === "ff_tr_f015" ||
+              INTERSECTED.name === "ff_tr_f016" ||
+              INTERSECTED.name === "ff_tr_f010" ||
+              INTERSECTED.name === "ff_tr_f014" ||
+              INTERSECTED.name === "ff_tr_f012" ||
+              INTERSECTED.name === "ff_toilet_5003" ||
+              INTERSECTED.name === "ff_toilet_5002" ||
+              INTERSECTED.name === "ff_toilet_5001" ||
+              INTERSECTED.name === "ff_tr_f017" ||
+              INTERSECTED.name === "ff_tr_a029" ||
+              INTERSECTED.name === "ff_tr_a037" ||
+              INTERSECTED.name === "ff_toilet_5004" ||
+              INTERSECTED.name === "ff_toilet_5005" ||
+              INTERSECTED.name === "ff_tr_a033" ||
+              INTERSECTED.name === "ff_tr_a034" ||
+              INTERSECTED.name === "ff_tr_a035" ||
+              INTERSECTED.name === "ff_tr_a036" ||
+              INTERSECTED.name === "ff_tr_a038" ||
+              INTERSECTED.name === "ff_tr_a026" ||
+              INTERSECTED.name === "ff_tr_a032" ||
+              INTERSECTED.name === "ff_tr_a040" ||
+              INTERSECTED.name === "ff_tr_a027" ||
+              INTERSECTED.name === "ff_tr_a030" ||
+              INTERSECTED.name === "ff_tr_a025" ||
+              INTERSECTED.name === "ff_tr_a024" ||
+              INTERSECTED.name === "ff_tr_a006" ||
+              INTERSECTED.name === "ff_tr_a" ||
+              INTERSECTED.name === "ff_tr_a031" ||
+              INTERSECTED.name === "ff_tr_a028" ||
+              INTERSECTED.name === "ff_tr_a014" ||
+              INTERSECTED.name === "ff_tr_a003" ||
+              INTERSECTED.name === "ff_tr_a004" ||
+              INTERSECTED.name === "ff_tr_a005" ||
+              INTERSECTED.name === "ff_tr_a007" ||
+              INTERSECTED.name === "ff_tr_a008" ||
+              INTERSECTED.name === "ff_tr_a013" ||
+              INTERSECTED.name === "ff_tr_a002" ||
+              INTERSECTED.name === "ff_toilet_2001" ||
+              INTERSECTED.name === "ff_tr_a012" ||
+              INTERSECTED.name === "ff_tr_a011" ||
+              INTERSECTED.name === "ff_tr_a009" ||
+              INTERSECTED.name === "ff_toilet_2002" ||
+              INTERSECTED.name === "ff_toilet_2003" ||
+              INTERSECTED.name === "ff_tr_a010" ||
+              INTERSECTED.name === "ff_tr_a015" ||
+              INTERSECTED.name === "ff_tr_c013" ||
+              INTERSECTED.name === "ff_tr_c023" ||
+              INTERSECTED.name === "ff_tr_c014" ||
+              INTERSECTED.name === "ff_tr_a042" ||
+              INTERSECTED.name === "ff_tr_c022" ||
+              INTERSECTED.name === "ff_tr_c021" ||
+              INTERSECTED.name === "ff_tr_c033" ||
+              INTERSECTED.name === "ff_tr_c034" ||
+              INTERSECTED.name === "ff_tr_c028" ||
+              INTERSECTED.name === "ff_tr_c031" ||
+              INTERSECTED.name === "ff_tr_c029" ||
+              INTERSECTED.name === "ff_tr_c030" ||
+              INTERSECTED.name === "ff_tr_c018" ||
+              INTERSECTED.name === "ff_tr_c020" ||
+              INTERSECTED.name === "ff_tr_c017" ||
+              INTERSECTED.name === "ff_tr_c032" ||
+              INTERSECTED.name === "ff_tr_c015" ||
+              INTERSECTED.name === "ff_tr_c016" ||
+              INTERSECTED.name === "ff_tr_c012" ||
+              INTERSECTED.name === "ff_tr_c019" ||
+              INTERSECTED.name === "ff_tr_c026" ||
+              INTERSECTED.name === "ff_tr_c024" ||
+              INTERSECTED.name === "ff_tr_c025" ||
+              INTERSECTED.name === "ff_tr_c011" ||
+              INTERSECTED.name === "ff_tr_c004" ||
+              INTERSECTED.name === "ff_tr_c002" ||
+              INTERSECTED.name === "ff_tr_c" ||
+              INTERSECTED.name === "ff_tr_c027" ||
+              INTERSECTED.name === "ff_tr_c008" ||
+              INTERSECTED.name === "ff_tr_c009" ||
+              INTERSECTED.name === "ff_tr_c007" ||
+              INTERSECTED.name === "ff_tr_c005" ||
+              INTERSECTED.name === "ff_tr_b037" ||
+              INTERSECTED.name === "ff_tr_c003" ||
+              INTERSECTED.name === "ff_tr_c006" ||
+              INTERSECTED.name === "ff_tr_c010" ||
+              INTERSECTED.name === "ff_tr_b043" ||
+              INTERSECTED.name === "ff_tr_b038" ||
+              INTERSECTED.name === "ff_tr_b025" ||
+              INTERSECTED.name === "ff_tr_b035" ||
+              INTERSECTED.name === "ff_tr_b052" ||
+              INTERSECTED.name === "ff_tr_b017" ||
+              INTERSECTED.name === "ff_tr_b018" ||
+              INTERSECTED.name === "ff_tr_b044" ||
+              INTERSECTED.name === "ff_toilet_1003" ||
+              INTERSECTED.name === "ff_toilet_1002" ||
+              INTERSECTED.name === "ff_toilet_1001" ||
+              INTERSECTED.name === "ff_tr_b016" ||
+              INTERSECTED.name === "ff_tr_b048" ||
+              INTERSECTED.name === "ff_tr_b027" ||
+              INTERSECTED.name === "ff_tr_b047" ||
+              INTERSECTED.name === "ff_toilet_1004" ||
+              INTERSECTED.name === "ff_tr_b023" ||
+              INTERSECTED.name === "ff_tr_b022" ||
+              INTERSECTED.name === "ff_tr_b026" ||
+              INTERSECTED.name === "ff_tr_b046" ||
+              INTERSECTED.name === "ff_tr_b021" ||
+              INTERSECTED.name === "ff_tr_b020" ||
+              INTERSECTED.name === "ff_tr_b019" ||
+              INTERSECTED.name === "ff_tr_b024" ||
+              INTERSECTED.name === "ff_tr_b050" ||
+              INTERSECTED.name === "ff_tr_b051" ||
+              INTERSECTED.name === "ff_tr_b049" ||
+              INTERSECTED.name === "ff_tr_b057" ||
+              INTERSECTED.name === "ff_tr_b036" ||
+              INTERSECTED.name === "ff_tr_b054" ||
+              INTERSECTED.name === "ff_tr_b056" ||
+              INTERSECTED.name === "ff_tr_b053" ||
+              INTERSECTED.name === "ff_tr_b014" ||
+              INTERSECTED.name === "ff_tr_b012" ||
+              INTERSECTED.name === "ff_tr_b041" ||
+              INTERSECTED.name === "ff_tr_b045" ||
+              INTERSECTED.name === "ff_tr_b040" ||
+              INTERSECTED.name === "ff_tr_b042" ||
+              INTERSECTED.name === "ff_tr_b055" ||
+              INTERSECTED.name === "ff_tr_b" ||
+              INTERSECTED.name === "ff_tr_b034" ||
+              INTERSECTED.name === "ff_tr_b039" ||
+              INTERSECTED.name === "ff_tr_b004" ||
+              INTERSECTED.name === "ff_tr_b003" ||
+              INTERSECTED.name === "ff_tr_b032" ||
+              INTERSECTED.name === "ff_tr_b029" ||
+              INTERSECTED.name === "ff_tr_b028" ||
+              INTERSECTED.name === "ff_tr_b033" ||
+              INTERSECTED.name === "ff_tr_b013" ||
+              INTERSECTED.name === "ff_tr_b015" ||
+              INTERSECTED.name === "ff_tr_b030" ||
+              INTERSECTED.name === "ff_tr_b031" ||
+              INTERSECTED.name === "ff_tr_b007" ||
+              INTERSECTED.name === "ff_tr_b006" ||
+              INTERSECTED.name === "ff_tr_g" ||
+              INTERSECTED.name === "ff_tr_b005" ||
+              INTERSECTED.name === "ff_tr_b011" ||
+              INTERSECTED.name === "ff_tr_b010" ||
+              INTERSECTED.name === "ff_tr_b009" ||
+              INTERSECTED.name === "ff_tr_b008" ||
+              INTERSECTED.name === "ff_tr_a017" ||
+              INTERSECTED.name === "ff_tr_a018" ||
+              INTERSECTED.name === "ff_tr_a016" ||
+              INTERSECTED.name === "ff_tr_a041" ||
+              INTERSECTED.name === "ff_tr_a022" ||
+              INTERSECTED.name === "ff_tr_a021" ||
+              INTERSECTED.name === "ff_tr_a020" ||
+              INTERSECTED.name === "ff_tr_a019" ||
+              INTERSECTED.name === "ff_tr_g003" ||
+              INTERSECTED.name === "ff_tr_g004" ||
+              INTERSECTED.name === "ff_tr_a023" ||
+              INTERSECTED.name === "ff_tr_a039" ||
+              INTERSECTED.name === "ff_tr_g001" ||
+              INTERSECTED.name === "ff_tr_g002" ||
+              INTERSECTED.name === "ff_ground" ||
+              INTERSECTED.name === "sf_tr_a039" ||
+              INTERSECTED.name === "sf_tr_c056" ||
+              INTERSECTED.name === "sf_tr_c053" ||
+              INTERSECTED.name === "sf_tr_c052" ||
+              INTERSECTED.name === "sf_tr_c051" ||
+              INTERSECTED.name === "sf_tr_c047" ||
+              INTERSECTED.name === "sf_tr_c048" ||
+              INTERSECTED.name === "sf_tr_c049" ||
+              INTERSECTED.name === "sf_tr_c050" ||
+              INTERSECTED.name === "sf_tr_c058" ||
+              INTERSECTED.name === "sf_tr_c057" ||
+              INTERSECTED.name === "sf_tr_c055" ||
+              INTERSECTED.name === "sf_tr_c054" ||
+              INTERSECTED.name === "sf_tr_c060" ||
+              INTERSECTED.name === "sf_tr_c044" ||
+              INTERSECTED.name === "sf_tr_c045" ||
+              INTERSECTED.name === "sf_tr_c046" ||
+              INTERSECTED.name === "sf_tr_a002" ||
+              INTERSECTED.name === "sf_tr_a001" ||
+              INTERSECTED.name === "sf_tr_a004" ||
+              INTERSECTED.name === "sf_tr_a" ||
+              INTERSECTED.name === "sf_tr_a047" ||
+              INTERSECTED.name === "sf_tr_a048" ||
+              INTERSECTED.name === "sf_tr_a006" ||
+              INTERSECTED.name === "sf_tr_a005" ||
+              INTERSECTED.name === "sf_tr_a013" ||
+              INTERSECTED.name === "sf_tr_a012" ||
+              INTERSECTED.name === "sf_toilet_05001" ||
+              INTERSECTED.name === "sf_tr_a003" ||
+              INTERSECTED.name === "sf_tr_a016" ||
+              INTERSECTED.name === "sf_tr_a015" ||
+              INTERSECTED.name === "sf_tr_a017" ||
+              INTERSECTED.name === "sf_tr_a014" ||
+              INTERSECTED.name === "sf_tr_a008" ||
+              INTERSECTED.name === "sf_tr_a011" ||
+              INTERSECTED.name === "sf_tr_a010" ||
+              INTERSECTED.name === "sf_tr_a007" ||
+              INTERSECTED.name === "sf_toilet_03001" ||
+              INTERSECTED.name === "sf_tr_b031" ||
+              INTERSECTED.name === "sf_toilet_04001" ||
+              INTERSECTED.name === "sf_tr_a009" ||
+              INTERSECTED.name === "sf_tr_b030" ||
+              INTERSECTED.name === "sf_tr_b025" ||
+              INTERSECTED.name === "sf_tr_b033" ||
+              INTERSECTED.name === "sf_tr_b032" ||
+              INTERSECTED.name === "sf_tr_b029" ||
+              INTERSECTED.name === "sf_tr_b028" ||
+              INTERSECTED.name === "sf_tr_b026" ||
+              INTERSECTED.name === "sf_tr_b034" ||
+              INTERSECTED.name === "sf_tr_b036" ||
+              INTERSECTED.name === "sf_tr_b035" ||
+              INTERSECTED.name === "sf_tr_b042" ||
+              INTERSECTED.name === "sf_tr_b027" ||
+              INTERSECTED.name === "sf_tr_b040" ||
+              INTERSECTED.name === "sf_tr_b038" ||
+              INTERSECTED.name === "sf_tr_b039" ||
+              INTERSECTED.name === "sf_tr_b037" ||
+              INTERSECTED.name === "sf_tr_a052" ||
+              INTERSECTED.name === "sf_tr_a050" ||
+              INTERSECTED.name === "sf_tr_a051" ||
+              INTERSECTED.name === "sf_tr_b041" ||
+              INTERSECTED.name === "sf_tr_c040" ||
+              INTERSECTED.name === "sf_tr_c039" ||
+              INTERSECTED.name === "sf_tr_c038" ||
+              INTERSECTED.name === "sf_tr_a053" ||
+              INTERSECTED.name === "sf_tr_c037" ||
+              INTERSECTED.name === "sf_tr_c043" ||
+              INTERSECTED.name === "sf_tr_c042" ||
+              INTERSECTED.name === "sf_tr_c041" ||
+              INTERSECTED.name === "sf_tr_c032" ||
+              INTERSECTED.name === "sf_tr_c030" ||
+              INTERSECTED.name === "sf_tr_c031" ||
+              INTERSECTED.name === "sf_toilet_06001" ||
+              INTERSECTED.name === "sf_tr_c036" ||
+              INTERSECTED.name === "sf_tr_c034" ||
+              INTERSECTED.name === "sf_tr_c033" ||
+              INTERSECTED.name === "sf_tr_c026" ||
+              INTERSECTED.name === "sf_tr_c029" ||
+              INTERSECTED.name === "sf_tr_c022" ||
+              INTERSECTED.name === "sf_tr_c021" ||
+              INTERSECTED.name === "sf_tr_c035" ||
+              INTERSECTED.name === "sf_tr_c024" ||
+              INTERSECTED.name === "sf_tr_c019" ||
+              INTERSECTED.name === "sf_tr_c027" ||
+              INTERSECTED.name === "sf_tr_c025" ||
+              INTERSECTED.name === "sf_tr_c018" ||
+              INTERSECTED.name === "sf_tr_c020" ||
+              INTERSECTED.name === "sf_tr_c023" ||
+              INTERSECTED.name === "sf_tr_c028" ||
+              INTERSECTED.name === "sf_tr_c012" ||
+              INTERSECTED.name === "sf_tr_c011" ||
+              INTERSECTED.name === "sf_tr_c010" ||
+              INTERSECTED.name === "sf_tr_c003" ||
+              INTERSECTED.name === "sf_tr_c002" ||
+              INTERSECTED.name === "sf_tr_c017" ||
+              INTERSECTED.name === "sf_tr_c" ||
+              INTERSECTED.name === "sf_tr_c001" ||
+              INTERSECTED.name === "sf_tr_c005" ||
+              INTERSECTED.name === "sf_tr_c008" ||
+              INTERSECTED.name === "sf_tr_c007" ||
+              INTERSECTED.name === "sf_tr_c006" ||
+              INTERSECTED.name === "sf_tr_c016" ||
+              INTERSECTED.name === "sf_tr_c014" ||
+              INTERSECTED.name === "sf_tr_c009" ||
+              INTERSECTED.name === "sf_tr_c004" ||
+              INTERSECTED.name === "sf_tr_b013" ||
+              INTERSECTED.name === "sf_tr_b012" ||
+              INTERSECTED.name === "sf_tr_c013" ||
+              INTERSECTED.name === "sf_tr_c015" ||
+              INTERSECTED.name === "sf_tr_b010" ||
+              INTERSECTED.name === "sf_tr_b011" ||
+              INTERSECTED.name === "sf_tr_b023" ||
+              INTERSECTED.name === "sf_tr_b024" ||
+              INTERSECTED.name === "sf_tr_b008" ||
+              INTERSECTED.name === "sf_tr_b006" ||
+              INTERSECTED.name === "sf_tr_b007" ||
+              INTERSECTED.name === "sf_tr_b009" ||
+              INTERSECTED.name === "sf_tr_b005" ||
+              INTERSECTED.name === "sf_tr_b004" ||
+              INTERSECTED.name === "sf_tr_b002" ||
+              INTERSECTED.name === "sf_tr_b003" ||
+              INTERSECTED.name === "sf_tr_b018" ||
+              INTERSECTED.name === "sf_tr_b017" ||
+              INTERSECTED.name === "sf_tr_b" ||
+              INTERSECTED.name === "sf_tr_b001" ||
+              INTERSECTED.name === "sf_tr_b019" ||
+              INTERSECTED.name === "sf_tr_b015" ||
+              INTERSECTED.name === "sf_tr_b014" ||
+              INTERSECTED.name === "sf_tr_b016" ||
+              INTERSECTED.name === "sf_tr_a045" ||
+              INTERSECTED.name === "sf_tr_b021" ||
+              INTERSECTED.name === "sf_tr_b022" ||
+              INTERSECTED.name === "sf_tr_b020" ||
+              INTERSECTED.name === "sf_toilet_02001" ||
+              INTERSECTED.name === "sf_tr_a026" ||
+              INTERSECTED.name === "sf_tr_a027" ||
+              INTERSECTED.name === "sf_tr_a046" ||
+              INTERSECTED.name === "sf_tr_a020" ||
+              INTERSECTED.name === "sf_tr_a021" ||
+              INTERSECTED.name === "sf_tr_a022" ||
+              INTERSECTED.name === "sf_tr_a025" ||
+              INTERSECTED.name === "sf_tr_a024" ||
+              INTERSECTED.name === "sf_tr_a023" ||
+              INTERSECTED.name === "sf_tr_a018" ||
+              INTERSECTED.name === "sf_tr_a019" ||
+              INTERSECTED.name === "sf_tr_a033" ||
+              INTERSECTED.name === "sf_tr_a037" ||
+              INTERSECTED.name === "sf_tr_a038" ||
+              INTERSECTED.name === "sf_tr_a028" ||
+              INTERSECTED.name === "sf_tr_a030" ||
+              INTERSECTED.name === "sf_tr_a036" ||
+              INTERSECTED.name === "sf_tr_a034" ||
+              INTERSECTED.name === "sf_tr_a035" ||
+              INTERSECTED.name === "sf_tr_a049" ||
+              INTERSECTED.name === "sf_tr_a029" ||
+              INTERSECTED.name === "sf_tr_a032" ||
+              INTERSECTED.name === "sf_tr_a031" ||
+              INTERSECTED.name === "sf_tr_a041" ||
+              INTERSECTED.name === "sf_tr_a042" ||
+              INTERSECTED.name === "sf_tr_a043" ||
+              INTERSECTED.name === "sf_tr_a044" ||
+              INTERSECTED.name === "sf_tr_a040" ||
+              INTERSECTED.name === "sf_ground"
+            ) {
               console.log(INTERSECTED.name, "- Nonclickable");
             } else {
               INTERSECTED.material = new THREE.MeshPhongMaterial();
@@ -1711,7 +2159,10 @@ export default {
            console.log("dwda"); 
           }
           // Условие для совместного выделения
-          else if (INTERSECTED.name in  ["ff_g-23001", "ff_g-22001"]) {
+          else if (
+            INTERSECTED.name == "ff_g-23001" ||
+            INTERSECTED.name == "ff_g-22001"
+          ) {
             for (let i in scene.children[3].children) {
               if (scene.children[3].children[i].name === "ff_g-23001") {
                 scene.children[3].children[i].material =
@@ -1724,7 +2175,11 @@ export default {
                 scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
-          } else if (INTERSECTED.name in ["ff_g-17001", "ff_g-16_1001", "ff_g-16_2001"]) {
+          } else if (
+            INTERSECTED.name == "ff_g-17001" ||
+            INTERSECTED.name == "ff_g-16_1001" ||
+            INTERSECTED.name == "ff_g-16_2001"
+          ) {
             for (let i in scene.children[3].children) {
               if (scene.children[3].children[i].name === "ff_g-17001") {
                 scene.children[3].children[i].material =
@@ -1759,7 +2214,9 @@ export default {
               }
             }
           } else if (
-            INTERSECTED.name == ["ff_g-01001","ff_g-02_1001","ff_g-02_2001"]
+            INTERSECTED.name == "ff_g-01001" ||
+            INTERSECTED.name == "ff_g-02_1001" ||
+            INTERSECTED.name == "ff_g-02_2001"
           ) {
             for (let i in scene.children[3].children) {
               if (scene.children[3].children[i].name === "ff_g-01001") {
@@ -1778,7 +2235,11 @@ export default {
                 scene.children[3].children[i].material.color.set("#1eb6ff");
               }
             }
-          } else if (INTERSECTED.name == ["ff_g-49001", "ff_g-48001" , "ff_g-47001"]) {
+          } else if (
+            INTERSECTED.name == "ff_g-49001" ||
+            INTERSECTED.name == "ff_g-48001" ||
+            INTERSECTED.name == "ff_g-47001"
+          ) {
             for (let i in scene.children[3].children) {
               if (scene.children[3].children[i].name === "ff_g-49001") {
                 scene.children[3].children[i].material =
@@ -2065,10 +2526,11 @@ export default {
         }
       });
 
+      this.intersects = null;
+      this.render();
     },
-
     //Функция рендера страницы
-    render() {
+    async render() {
       renderer.render(scene, camera);
     },
   },

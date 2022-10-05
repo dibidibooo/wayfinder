@@ -28,6 +28,7 @@
     "three": "^0.141.0",
     "three-nebula": "^10.0.3",
     "three-path-builder": "^1.0.9",
+    "three-path-geometry": "^1.0.2",
     "three-pathfinding": "^1.1.0",
     "three-text2d": "^0.6.0",
     "three.interactive": "^1.4.0",
