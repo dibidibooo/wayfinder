@@ -142,17 +142,17 @@ export default {
     init() {
       //Camera create and settings
       camera = new THREE.PerspectiveCamera(
-        40,
+        11,
         window.innerWidth / window.innerHeight,
         1,
-        1000
+        100
       );
       camera.position.set(0, 40, 50);
 
       //Create Scene and settings
       scene = new THREE.Scene();
       // scene.background = new THREE.Color(0x222222);
-      scene.background = new THREE.Color("#303030");
+      scene.background = new THREE.Color("#D7D7D7");
 
       //Create Light for scene
       const dirLight = new THREE.DirectionalLight(0xffffff);

@@ -8,6 +8,201 @@
           </a>
           <div class="modules-links-wrapper modules-big-links">
             <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/search.png"
+                    width="200"
+                    height="100"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text"></div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/foodcourt.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Фудкорт</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/atm.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Банкоматы</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/toilet.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Туалеты</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/babyroom.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Комната матери и ребенка</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/medcenter.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Мед. центр</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/administrator.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Администрация</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/wardrobe.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Гардероб</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/elevator.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Лифт</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/stairs.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Лестница</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/escalator.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Эскалатор</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/parking_car.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Паркинг</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/parking_bycicle.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Велопарковка</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/parkomat.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Паркомат</div>
+              </a>
+            </div>
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/info.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Информация</div>
+              </a>
+            </div>
+            <!-- <div class="modules-link-wrapper" id="navbar-home">
               <a href="#open-modal1">
                 <div class="modules-link-content">
                   <img
@@ -161,6 +356,19 @@
                   />
                 </div>
                 <div class="modules-link-text">{{ category_name12 }}</div>
+              </a>
+            </div> -->
+            <div class="modules-link-wrapper" id="navbar-home">
+              <a href="#">
+                <div class="modules-link-content">
+                  <img
+                    src="images/Category/emergency.png"
+                    width="80"
+                    height="80"
+                    alt="lorem"
+                  />
+                </div>
+                <div class="modules-link-text">Аварийный выход</div>
               </a>
             </div>
           </div>
@@ -737,8 +945,8 @@ export default {
 }
 
 .modules-quotes-bg {
-  background: #222222;
-  filter: drop-shadow(0 0 24px #222222);
+  background: #F1F1F1;
+  filter: drop-shadow(0 0 16px #787878);
 }
 
 .modules-private-logo {
@@ -770,7 +978,7 @@ a {
   font-family: Impact, Charcoal, sans-serif;
   font-weight: 100;
   font-size: 32px;
-  color: white;
+  color: #B91E67;
 }
 
 .modules-big-links {
@@ -878,6 +1086,7 @@ a {
 
 @media (min-width: 900px) {
   .modules-link-text {
+    color: #4c4c4c;
     font-size: 16px;
     padding: 0.25em 0 0;
     padding-bottom: 1em;
