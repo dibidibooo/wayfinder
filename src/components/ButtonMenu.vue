@@ -1,14 +1,45 @@
 <template>
-<div>
+<div class="footer">
 </div>
 </template>
 
 
 <style>
+.footer{
+  background: #f1f1f1df;
+  filter: drop-shadow(0 0 16px #787878);
+  margin-top: 62em;
+  margin-left: 52.4em;
+  width: 350px;
+  height: 170px;
+  border-radius: 50px 50px 0 0;
+  position:fixed;
+  z-index: 99;
+}
+
+
 .bubbly-button {
   position: absolute;
   width: 130px;
-  height: 120px;
+  height: 100px;
+  background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 48%, rgba(185,30,103,1) 81%, rgba(255,255,255,1) 100%);
+  border-radius: 10px;
+  /* border-color: #B91E67; */
+  /* box-shadow: 0 0 10px #B91E67; */
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 43em;
+  z-index: 100;
+}
+
+
+/* .bubbly-button {
+  position: absolute;
+  width: 110px;
+  height: 100px;
   background: transparent;
   border: 1px solid #434343;
   border-radius: 18px;
@@ -18,7 +49,8 @@
   font-family: Arial;
   font-size: 24px;
   font-weight: 700;
-  margin-top: 42em;
+  margin-top: 43em;
+  z-index: 100;
 }
 
 .bubbly-button a {
@@ -73,7 +105,7 @@
   transform: translateY(50%) translateX(50%);
   height: 32%;
   width: 32%;
-}
+} */
 
 </style>
 

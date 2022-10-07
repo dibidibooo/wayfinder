@@ -1,10 +1,10 @@
 <template>
   <div id="container">
-    
+    <div class="ololo">
     <button
       @click="buttonModel1()"
       class="bubbly-button"
-      style="margin-left:-6em"
+      style="margin-left:-5.5em"
     >
       <a>1 Этаж</a>
     </button>
@@ -14,6 +14,64 @@
     >
       <a>2 Этаж</a>
     </button>
+
+
+
+    <button @click="add_row_by_name('0')">Построить маршрут</button>
+    <button @click="add_row_by_name('1')">1</button>
+    <button @click="add_row_by_name('2')">2</button>
+    <button @click="add_row_by_name('3')">3</button>
+    <button @click="add_row_by_name('4')">4</button>
+    <button @click="add_row_by_name('5')">5</button>
+    <button @click="add_row_by_name('6')">6</button>
+    <button @click="add_row_by_name('7')">7</button>
+    <button @click="add_row_by_name('8')">8</button>
+    <button @click="add_row_by_name('9')">9</button>
+    <button @click="add_row_by_name('10')">10</button>
+    <button @click="add_row_by_name('11')">11</button>
+    <button @click="add_row_by_name('12')">12</button>
+    <button @click="add_row_by_name('13')">13</button>
+    <button @click="add_row_by_name('14')">14</button>
+    <button @click="add_row_by_name('15')">15</button>
+    <button @click="add_row_by_name('16')">16</button>
+    <button @click="add_row_by_name('17')">17</button>
+    <button @click="add_row_by_name('18')">18</button>
+    <button @click="add_row_by_name('19')">19</button>
+    <button @click="add_row_by_name('20')">20</button>
+    <button @click="add_row_by_name('21')">21</button>
+    <button @click="add_row_by_name('22')">22</button>
+    <button @click="add_row_by_name('23')">23</button>
+    <button @click="add_row_by_name('24')">24</button>
+    <button @click="add_row_by_name('25')">25</button>
+    <button @click="add_row_by_name('26')">26</button>
+    <button @click="add_row_by_name('27')">27</button>
+    <button @click="add_row_by_name('28')">28</button>
+    <button @click="add_row_by_name('29')">29</button>
+    <button @click="add_row_by_name('30')">30</button>
+    <button @click="add_row_by_name('31')">31</button>
+    <button @click="add_row_by_name('32')">32</button>
+    <button @click="add_row_by_name('33')">33</button>
+    <button @click="add_row_by_name('34')">34</button>
+    <button @click="add_row_by_name('35')">35</button>
+    <button @click="add_row_by_name('36')">36</button>
+    <button @click="add_row_by_name('37')">37</button>
+    <button @click="add_row_by_name('38')">38</button>
+    <button @click="add_row_by_name('39')">39</button>
+    <button @click="add_row_by_name('40')">40</button>
+    <button @click="add_row_by_name('41')">41</button>
+    <button @click="add_row_by_name('42')">42</button>
+    <button @click="add_row_by_name('43')">43</button>
+    <button @click="add_row_by_name('44')">44</button>
+    <button @click="add_row_by_name('45')">45</button>
+    <button @click="add_row_by_name('46')">46</button>
+    <button @click="add_row_by_name('47')">47</button>
+    <button @click="add_row_by_name('48')">48</button>
+    <button @click="add_row_by_name('49')">49</button>
+    <button @click="remove_row">remove</button>
+
+
+    
+  </div>
     <ButtonSearch />
     <ButtonMenu />
   </div>
@@ -28,11 +86,6 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 // import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 import axios from "axios";
 
-import { Line2 } from 'three/examples/jsm/lines/Line2.js';
-import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
-import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
-import * as GeometryUtils from 'three/examples/jsm/utils/GeometryUtils.js'
-
 
 import TextSprite from "@seregpie/three.text-sprite";
 import ButtonMenu from "@/components/ButtonMenu.vue";
@@ -40,6 +93,7 @@ import ButtonSearch from "@/components/ButtonSearch.vue";
 // import Autocomplete from 'vue2-autocomplete-js'
 
 import json_search from "/public/search.json";
+import all_path from "/public/roads.json"
 // import road_texture from "/public/images/threejs/images/path_007_21.png";
 
 // import { GUI } from 'dat.gui'
@@ -61,6 +115,17 @@ export default {
     return {
       message: "",
       row: null,
+      
+      t_line: {
+        objects: [],
+      },
+      path_lsit: all_path,
+      clock: null,
+
+      t_row: null,
+      material_mixers: [],
+
+      selected_objects: [],
 
     };
   },
@@ -69,7 +134,6 @@ export default {
     this.init();
     this.animate();
     this.add_events();
-    this.add_row();
     // this.getapicategory();
 
   },
@@ -81,46 +145,126 @@ export default {
       });
     },
 
-    add_row(){
-      let matLine,line;
-      const positions = [];
-      const colors = [];
+    add_row_by_name(name="0"){
+      this.create_row(this.path_lsit[name].road);
+      this.select_objects(this.path_lsit[name].objects);
+    },
 
-      const points = GeometryUtils.hilbert3D( new THREE.Vector3( 0, 0, 0 ), 20.0, 1, 0, 1, 2, 3, 4, 5, 6, 7 );
+    create_row(path_list){
+      this.remove_row();
+      let path_points = []
+      path_list.forEach(p => {
+        path_points.push(new THREE.Vector3(
+          p[0],
+          p[1],
+          p[2]
+        ))
+      });
+      var curve = new THREE.CatmullRomCurve3(path_points, false/*is it closed*/);
+      var tubeGeometry = new THREE.TubeGeometry(curve, 100, 0.05, 20, false);
+      var tubeMaterial = this.getAnimatedMaterial();
 
-      const spline = new THREE.CatmullRomCurve3( points );
-      const divisions = Math.round( 0.12 * points.length );
-      const point = new THREE.Vector3();
-      const color = new THREE.Color();
+      var tube = new THREE.Mesh(tubeGeometry, tubeMaterial);
+      tube.name = "row_tube"
+      scene.add(tube)
+    },
 
-      for ( let i = 0, l = divisions; i < l; i ++ ) {
-        const t = i / l;
-        spline.getPoint( t, point );
-        positions.push( point.x, point.y, point.z );
-        color.setHSL( t, 1.0, 0.5 );
-        colors.push( color.r, color.g, color.b );
+
+    getAnimatedMaterial() {
+      const animate_material_param = {
+          "object_name": "row_tube",
+          "texture": "full",
+          "color": "#ffffff",
+          "wrap": true,
+          "repeat": {
+              "x": 2,
+              "y": 10
+          },
+          "offset": {
+              "duration": 1,
+              "time": [],
+              "values": [
+                  0,
+                  0,
+                  0, 
+                  -1
+              ]
+          },
+          "rotation": -90,
+          "center": {
+              "x": 0.5,
+              "y": 0
+          }
+      }
+      // create material
+      var texture = new THREE.TextureLoader().load('images/threejs/images/a.png');
+
+      // wrap
+      if (animate_material_param.wrap) {
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
       }
 
-      Line2 ( LineGeometry, LineMaterial )
-				const geometry = new LineGeometry();
-				geometry.setPositions( positions );
-				geometry.setColors( colors );
-				matLine = new LineMaterial( {
-					color: 0xffffff,
-					linewidth: 5, // in world units with size attenuation, pixels otherwise
-					vertexColors: true,
+      // repeat
+      texture.repeat.set(
+        animate_material_param.repeat.x,
+        animate_material_param.repeat.y
+      );
+      texture.rotation = (animate_material_param.rotation * Math.PI) / 180.0;
+      texture.center = animate_material_param.center;
 
-					//resolution:  // to be set by renderer, eventually
-					dashed: false,
-					alphaToCoverage: true,
+      // animation
+      let time = [...animate_material_param.offset.time];
+      time.unshift(0);
+      time.push(animate_material_param.offset.duration);
 
-				} );
+      let values = [...animate_material_param.offset.values];
 
-				line = new Line2( geometry, matLine );
-				line.computeLineDistances();
-				line.scale.set( 1, 1, 1 );
-				scene.add( line );
+      var offset = new THREE.VectorKeyframeTrack(
+        `${texture.uuid}.offset`,
+        time,
+        values
+      );
+      var clip = new THREE.AnimationClip(
+        "texture_animation",
+        animate_material_param.offset.duration,
+        [offset]
+      );
+      var mixer = new THREE.AnimationMixer(texture);
+      var clipAction = mixer.clipAction(clip);
+      clipAction.play();
+      this.material_mixers.push(mixer);
+
+      return new THREE.MeshBasicMaterial({
+        color: animate_material_param.color,
+        map: texture,
+        // polygonOffset: true,
+        transparent: true,
+      });
     },
+
+    remove_row(){
+      var selectedObject = scene.getObjectByName("row_tube");
+      scene.remove( selectedObject );
+    },
+
+    // select+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    select_objects(objects_list){
+      objects_list.forEach(obj_name => {
+        var selectedObject = scene.getObjectByName(obj_name);
+        if(selectedObject) {
+          // selectedObject.userData['old_color'] = 
+          selectedObject.material.color = "#00ff00"
+          console.log(">> selected objecdts", selectedObject);
+          this.selected_objects.push(selectedObject);
+
+        } else {
+          console.error(">>> not found:", obj_name);
+        }
+        
+      })
+    },
+
+
     
 
     searchBox2() {
@@ -230,8 +374,8 @@ export default {
         ONE: THREE.TOUCH.DOLLY_PAN,
       };
       // di Ограничение по Rotate
-      controls.minPolarAngle = 0.9;
-      controls.maxPolarAngle = 0.9;
+      // controls.minPolarAngle = 0.9;
+      // controls.maxPolarAngle = 0.9;
       // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
       controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
@@ -253,7 +397,7 @@ export default {
             case 45: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -269,7 +413,7 @@ export default {
             case 44: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -285,7 +429,7 @@ export default {
             case 43: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -301,7 +445,7 @@ export default {
             case 42: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -317,7 +461,7 @@ export default {
             case 41: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -333,7 +477,7 @@ export default {
             case 40: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -349,7 +493,7 @@ export default {
             case 39: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -365,7 +509,7 @@ export default {
             case 38: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -381,7 +525,7 @@ export default {
             case 37: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -397,7 +541,7 @@ export default {
             case 36: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -413,7 +557,7 @@ export default {
             case 35: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -429,7 +573,7 @@ export default {
             case 34: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -445,7 +589,7 @@ export default {
             case 33: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -461,7 +605,7 @@ export default {
             case 32: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -477,7 +621,7 @@ export default {
             case 31: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -493,7 +637,7 @@ export default {
             case 30: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -509,7 +653,7 @@ export default {
             case 29: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -525,7 +669,7 @@ export default {
             case 28: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -541,7 +685,7 @@ export default {
             case 27: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -557,7 +701,7 @@ export default {
             case 26: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -573,7 +717,7 @@ export default {
             case 25: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -589,7 +733,7 @@ export default {
             case 24: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -605,7 +749,7 @@ export default {
             case 23: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -621,7 +765,7 @@ export default {
             case 22: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -637,7 +781,7 @@ export default {
             case 21: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -653,7 +797,7 @@ export default {
             case 20: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -669,7 +813,7 @@ export default {
             case 19: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -685,7 +829,7 @@ export default {
             case 18: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -701,7 +845,7 @@ export default {
             case 17: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -717,7 +861,7 @@ export default {
             case 16: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -733,7 +877,7 @@ export default {
             case 15: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -749,7 +893,7 @@ export default {
             case 14: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -765,7 +909,7 @@ export default {
             case 13: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -781,7 +925,7 @@ export default {
             case 12: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -797,7 +941,7 @@ export default {
             case 11: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -813,7 +957,7 @@ export default {
             case 10: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -829,7 +973,7 @@ export default {
             case 9: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -845,7 +989,7 @@ export default {
             case 8: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -861,7 +1005,7 @@ export default {
             case 7: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -877,7 +1021,7 @@ export default {
             case 6: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -893,7 +1037,7 @@ export default {
             case 5: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -909,7 +1053,7 @@ export default {
             case 4: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -925,7 +1069,7 @@ export default {
             case 3: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -941,7 +1085,7 @@ export default {
             case 2: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -957,7 +1101,7 @@ export default {
             case 1: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,                
@@ -973,7 +1117,7 @@ export default {
             case 46: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -989,7 +1133,7 @@ export default {
             case 47: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1005,7 +1149,7 @@ export default {
             case 48: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1021,7 +1165,7 @@ export default {
             case 49: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1037,7 +1181,7 @@ export default {
             case 50: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1053,7 +1197,7 @@ export default {
             case 51: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1069,7 +1213,7 @@ export default {
             case 52: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1085,7 +1229,7 @@ export default {
             case 53: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1101,7 +1245,7 @@ export default {
             case 54: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1117,7 +1261,7 @@ export default {
             case 55: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1133,7 +1277,7 @@ export default {
             case 56: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1149,7 +1293,7 @@ export default {
             case 57: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1165,7 +1309,7 @@ export default {
             case 58: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1181,7 +1325,7 @@ export default {
             case 59: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1197,7 +1341,7 @@ export default {
             case 60: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1213,7 +1357,7 @@ export default {
             case 61: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1229,7 +1373,7 @@ export default {
             case 62: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1245,7 +1389,7 @@ export default {
             case 63: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1261,7 +1405,7 @@ export default {
             case 64: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1277,7 +1421,7 @@ export default {
             case 65: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1293,7 +1437,7 @@ export default {
             case 66: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1309,7 +1453,7 @@ export default {
             case 67: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1325,7 +1469,7 @@ export default {
             case 68: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1341,7 +1485,7 @@ export default {
             case 69: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1357,7 +1501,7 @@ export default {
             case 70: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1373,7 +1517,7 @@ export default {
             case 71: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1389,7 +1533,7 @@ export default {
             case 72: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1405,7 +1549,7 @@ export default {
             case 73: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1421,7 +1565,7 @@ export default {
             case 74: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1437,7 +1581,7 @@ export default {
             case 75: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1453,7 +1597,7 @@ export default {
             case 76: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1469,7 +1613,7 @@ export default {
             case 77: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1485,7 +1629,7 @@ export default {
             case 78: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1501,7 +1645,7 @@ export default {
             case 79: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1517,7 +1661,7 @@ export default {
             case 80: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1533,7 +1677,7 @@ export default {
             case 81: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1549,7 +1693,7 @@ export default {
             case 82: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1565,7 +1709,7 @@ export default {
             case 83: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1581,7 +1725,7 @@ export default {
             case 84: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1597,7 +1741,7 @@ export default {
             case 85: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1613,7 +1757,7 @@ export default {
             case 86: {
               let instance = new TextSprite({
                 // alignment: "center",
-                fontFamily: 'fantasy ',
+                fontFamily: 'fantasy',
                 color: "#ffffff",
                 strokeColor: '#000000',
                 strokeWidth: 0.03,
@@ -1630,6 +1774,7 @@ export default {
         }
       }, 500);
 
+      this.clock = new THREE.Clock();
     },
 
 
@@ -1666,8 +1811,17 @@ export default {
       //Обновление Твин для более плавного движения модели
       // TWEEN.update();
       //Функция срабатывающаяя на двойное нажатие мыши
-
       this.intersects = null;
+
+      const delta = this.clock.getDelta()
+
+      if (this.material_mixers.length > 0) {
+        this.material_mixers.forEach((material_mixer) => {
+          console.log(">! ANIMATED MATERIAL");
+          material_mixer.update(delta);
+        });
+      }
+
       this.render();
       // this.render_row();
     },
