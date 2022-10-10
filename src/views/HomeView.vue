@@ -1,6 +1,5 @@
 <template>
   <div id="container">
-    <div class="ololo">
     <button
       @click="buttonModel1()"
       class="bubbly-button"
@@ -17,9 +16,9 @@
 
 
 
-    <button @click="add_row_by_name('0')">Построить маршрут</button>
+    <button @click="add_row_by_name('0')">0</button>
     <button @click="add_row_by_name('1')">1</button>
-    <button @click="add_row_by_name('2')">2</button>
+    <!-- <button @click="add_row_by_name('2')">2</button>
     <button @click="add_row_by_name('3')">3</button>
     <button @click="add_row_by_name('4')">4</button>
     <button @click="add_row_by_name('5')">5</button>
@@ -65,13 +64,53 @@
     <button @click="add_row_by_name('45')">45</button>
     <button @click="add_row_by_name('46')">46</button>
     <button @click="add_row_by_name('47')">47</button>
-    <button @click="add_row_by_name('48')">48</button>
-    <button @click="add_row_by_name('49')">49</button>
+    <button @click="add_row_by_name('48')">48</button> -->
+    <button @click="add_row_by_name('Эскалатор 1')">Эскалатор 1</button>
+    <button @click="add_row_by_name('Эскалатор 2')">Эскалатор 2</button>
+    <button @click="add_row_by_name('Эскалатор 3')">Эскалатор 3</button>
     <button @click="remove_row">remove</button>
+    <button @click="add_row_by_name('49')">49</button>
+    <button @click="add_row_by_name('50')">50</button>
+    <!-- <button @click="add_row_by_name('51')">51</button>
+    <button @click="add_row_by_name('52')">52</button>
+    <button @click="add_row_by_name('53')">53</button>
+    <button @click="add_row_by_name('54')">54</button>
+    <button @click="add_row_by_name('55')">55</button>
+    <button @click="add_row_by_name('56')">56</button>
+    <button @click="add_row_by_name('57')">57</button>
+    <button @click="add_row_by_name('58')">58</button>
+    <button @click="add_row_by_name('59')">59</button>
+    <button @click="add_row_by_name('60')">60</button>
+    <button @click="add_row_by_name('61')">61</button>
+    <button @click="add_row_by_name('62')">62</button>
+    <button @click="add_row_by_name('63')">63</button>
+    <button @click="add_row_by_name('64')">64</button>
+    <button @click="add_row_by_name('65')">65</button>
+    <button @click="add_row_by_name('66')">66</button>
+    <button @click="add_row_by_name('67')">67</button>
+    <button @click="add_row_by_name('68')">68</button>
+    <button @click="add_row_by_name('69')">69</button>
+    <button @click="add_row_by_name('70')">70</button>
+    <button @click="add_row_by_name('71')">71</button>
+    <button @click="add_row_by_name('72')">72</button>
+    <button @click="add_row_by_name('73')">73</button>
+    <button @click="add_row_by_name('74')">74</button>
+    <button @click="add_row_by_name('75')">75</button>
+    <button @click="add_row_by_name('76')">76</button>
+    <button @click="add_row_by_name('77')">77</button>
+    <button @click="add_row_by_name('78')">78</button>
+    <button @click="add_row_by_name('79')">79</button>
+    <button @click="add_row_by_name('80')">80</button>
+    <button @click="add_row_by_name('81')">81</button>
+    <button @click="add_row_by_name('82')">82</button>
+    <button @click="add_row_by_name('83')">83</button>
+    <button @click="add_row_by_name('84')">84</button>
+    <button @click="add_row_by_name('85')">85</button>
+    <button @click="add_row_by_name('86')">86</button>
+    <button @click="add_row_by_name('87')">87</button>
+    <button @click="add_row_by_name('88')">88</button> -->
 
 
-    
-  </div>
     <ButtonSearch />
     <ButtonMenu />
   </div>
@@ -115,18 +154,14 @@ export default {
     return {
       message: "",
       row: null,
-      
       t_line: {
         objects: [],
       },
       path_lsit: all_path,
       clock: null,
-
       t_row: null,
       material_mixers: [],
-
       selected_objects: [],
-
     };
   },
   mounted() {
@@ -135,7 +170,6 @@ export default {
     this.animate();
     this.add_events();
     // this.getapicategory();
-
   },
 
   methods: {
@@ -163,12 +197,10 @@ export default {
       var curve = new THREE.CatmullRomCurve3(path_points, false/*is it closed*/);
       var tubeGeometry = new THREE.TubeGeometry(curve, 100, 0.05, 20, false);
       var tubeMaterial = this.getAnimatedMaterial();
-
       var tube = new THREE.Mesh(tubeGeometry, tubeMaterial);
       tube.name = "row_tube"
       scene.add(tube)
     },
-
 
     getAnimatedMaterial() {
       const animate_material_param = {
@@ -178,7 +210,7 @@ export default {
           "wrap": true,
           "repeat": {
               "x": 2,
-              "y": 10
+              "y": 15
           },
           "offset": {
               "duration": 1,
@@ -216,9 +248,7 @@ export default {
       let time = [...animate_material_param.offset.time];
       time.unshift(0);
       time.push(animate_material_param.offset.duration);
-
       let values = [...animate_material_param.offset.values];
-
       var offset = new THREE.VectorKeyframeTrack(
         `${texture.uuid}.offset`,
         time,
@@ -256,11 +286,9 @@ export default {
           selectedObject.material.color = "#00ff00"
           console.log(">> selected objecdts", selectedObject);
           this.selected_objects.push(selectedObject);
-
         } else {
           console.error(">>> not found:", obj_name);
         }
-        
       })
     },
 
@@ -296,7 +324,7 @@ export default {
       scene = new THREE.Scene();
       // scene.background = new THREE.Color(0x222222);
       scene.background = new THREE.Color("#D7D7D7");
-
+      
       //Create Light for scene
       const dirLight = new THREE.DirectionalLight(0xffffff);
       const dirLight_1 = new THREE.AmbientLight(0xffffff);
@@ -337,7 +365,7 @@ export default {
       );
 
       loader.load(
-        "models/InUse/second_floor.gltf",
+        "models/InUse/second_floor1.gltf",
         function (gltf_model2) {
           scene.add(gltf_model2.scene);
           gltf_model2.scene.scale.set(5.0, 6.0, 4.7);
@@ -1785,7 +1813,7 @@ export default {
       renderer.setSize(window.innerWidth, window.innerHeight);
     },
 
-    //Выбрать модель через кнопку (1 этаж / 2этаж )
+    //Выбрать модель через кнопку (1 этаж / 2 этаж )
     buttonModel1() {
       scene.children[3].visible = true;
       scene.children[4].visible = false;
@@ -1812,7 +1840,6 @@ export default {
       // TWEEN.update();
       //Функция срабатывающаяя на двойное нажатие мыши
       this.intersects = null;
-
       const delta = this.clock.getDelta()
 
       if (this.material_mixers.length > 0) {
@@ -2234,27 +2261,5 @@ body {
   overflow: hidden;
   z-index: -1;
   display: block;
-}
-
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 5s linear forwards;
-}
-
-svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -50%;
-  margin-top: -50vh;
-  width: 100%;
-  height: 100vh;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
 }
 </style>
