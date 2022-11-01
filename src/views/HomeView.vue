@@ -2,20 +2,22 @@
   <div id="container">
 
       <button
-        @click="change_floor(1)"
-        class="bubbly-button button-active"
+        @click="change_floor(1), activeBtn = 'btn1'"
+        :class="{buttonactive: activeBtn === 'btn1' }"
+        class="bubblybutton"
         style="margin-left: -5.5em"
       >
         <a>1 Этаж</a>
-        <!-- light: {{this.road_floors.includes(1)? 1: 0}}
-        selected: {{this.selected_floor == 1? 1: 0}} -->
+        <!-- {{this.road_floors.includes(1)? 1: 0}}
+        {{this.selected_floor == 1? 1: 0}} -->
 
       </button>
-      <button @click="change_floor(2)" class="bubbly-button">
+      <button @click="change_floor(2), activeBtn = 'btn2'"
+      :class="{buttonactive: activeBtn === 'btn2' }" 
+      class="bubblybutton">
         <a>2 Этаж</a>
-        
-        <!-- light: {{this.road_floors.includes(2)? 1: 0}}
-        selected: {{this.selected_floor == 2? 1: 0}} -->
+        <!-- {{this.road_floors.includes(2)? 1: 0}}
+        {{this.selected_floor == 2? 1: 0}} -->
       </button>
 
     <div style="position: absolute; margin-top: 10em">
@@ -152,16 +154,16 @@ const pointer = new THREE.Vector2();
 
 const floors_info = {
   1:{
-    src: "models/InUse/first_floor1.gltf",
+    src: "models/InUse/first_floor.gltf",
     scale: {x: 3.5, y: 4.5, z: 3.5},
     floor_code: 1,
-    position: {x: 0, y: 10, z: 5}
+    position: {x: 0, y: 5, z: 0}
   },
   2:{
-    src: "models/InUse/second_floor1.gltf",
+    src: "models/InUse/second_floor.gltf",
     scale: {x: 3.5, y: 4.5, z: 3.5},
     floor_code: 2,
-    position: {x: 0, y: 5, z: 5}
+    position: {x: 0, y: 4, z: 0}
   },
 }
 
@@ -173,6 +175,7 @@ export default {
   },
   data() {
     return {
+      activeBtn:'btn1',
       message: "",
       row: null,
       t_line: {
@@ -190,7 +193,7 @@ export default {
       selected_floor: 1,
       loded_floors: 0,
       road_floors: [],
-      change_floor_speed: 9000,
+      change_floor_speed: 1000,
     };
   },
   mounted() {
@@ -411,8 +414,8 @@ export default {
 
     select_material(){
       let material = new THREE.MeshStandardMaterial( {
-        metalness: 0.5,
-        roughness: 0.5,
+        metalness: 1,
+        roughness: 1,
         envMapIntensity: 1.0,
       } );
       return material;
@@ -629,8 +632,8 @@ export default {
         ONE: THREE.TOUCH.DOLLY_PAN,
       };
       // di Ограничение по Rotate
-      controls.minPolarAngle = 0.8;
-      controls.maxPolarAngle = 0.8;
+      controls.minPolarAngle = 0.1;
+      controls.maxPolarAngle = 0.9;
       // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
       controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
@@ -1582,5 +1585,54 @@ body {
   overflow: hidden;
   z-index: -1;
   display: block;
+}
+
+/* Мигающая кнопка */
+.buttonactive {
+  border: none;
+  background: rgb(251, 33, 117);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 33, 117, 1) 0%,
+    rgba(234, 76, 137, 1) 100%
+  );
+  color: #fff;
+  overflow: hidden;
+}
+.buttonactive:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 3s ease-in-out infinite;
+}
+.buttonactive:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+@-webkit-keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
 }
 </style>
