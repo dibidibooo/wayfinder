@@ -143,6 +143,12 @@ import text_config from "/public/text_config.json";
 import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
 // import road_texture from "/public/images/threejs/images/path_007_21.png";
 
+
+import { loadScript } from "vue-plugin-load-script";
+loadScript("https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js")
+
+
+
 // import { GUI } from 'dat.gui'
 var container, controls;
 var camera, scene, raycaster, renderer;
@@ -719,7 +725,6 @@ export default {
     },
 
     test_create_text(){
-      
       this.create_text("000", "SUPER MEGA TEXXT")
     },
       
@@ -1579,6 +1584,10 @@ export default {
 </script>
 
 <style>
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css';
+
 body {
   height: 100%;
   margin: 0;
