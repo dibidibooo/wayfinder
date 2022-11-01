@@ -4,12 +4,12 @@
       <div class="navbar-big navbar-content">
         <div class="navbar-big-wrapper modules-quotes-bg">
           <a class="modules-private-logo">
-            <div class="modules-private-name">Abi Dhabi Plaza</div>
+            <div class="modules-private-name">Abu Dhabi Plaza</div>
           </a>
           <div class="modules-links-wrapper modules-big-links">
             <div
               class="modules-link-wrapper"
-              id="navbar-home"
+              id="#"
               style="position: absolute; margin-right: 90em"
             >
               <a href="#open-modal1">
@@ -24,7 +24,7 @@
                 <div class="modules-link-text"></div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -37,7 +37,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -50,7 +50,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -63,7 +63,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -76,7 +76,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -89,7 +89,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -102,7 +102,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -115,7 +115,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -128,7 +128,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -141,7 +141,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -154,7 +154,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -167,7 +167,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -180,7 +180,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -193,7 +193,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -206,7 +206,7 @@
                 </div>
               </a>
             </div>
-            <div class="modules-link-wrapper" id="navbar-home">
+            <div class="modules-link-wrapper" id="#">
               <a href="#">
                 <div class="modules-link-content">
                   <img
@@ -224,524 +224,234 @@
       </div>
     </div>
 
+
+
+
+
+
     <div id="open-modal1" class="modal-window">
       <div>
         <a href="#" title="Close" class="modal-close"><b>X</b></a>
-<div class="row">
-        <div class="modules-link-wrapper" id="navbar-home">
-          <a href="#open-modal1">
-            <div class="modules-link-content">
+        <h1 class="header_text_modal"><b>Please select the type of shop</b></h1>
+
+        <div class="modal-area">
+
+
+
+
+          <input id="opentab1" type="radio" name="modaltabs" checked="checked" />
+          <label for="opentab1">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu1.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name1 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name1 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-athlete">
-          <a href="#open-modal2">
-            <div class="modules-link-content">
+          </label>
+
+
+
+          <input id="opentab2" type="radio" name="modaltabs" />
+          <label for="opentab2">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu2.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name2 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name2 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-event">
-          <a href="#open-modal3">
-            <div class="modules-link-content">
+          </label>
+
+
+
+          <input id="opentab3" type="radio" name="modaltabs" />
+          <label for="opentab3">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu3.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name3 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name3 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal4">
-            <div class="modules-link-content">
+          </label>
+
+
+
+          <input id="opentab4" type="radio" name="modaltabs" />
+          <label for="opentab4">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu4.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name4 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name4 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal5">
-            <div class="modules-link-content">
+          </label>
+
+          
+          
+          <input id="opentab5" type="radio" name="modaltabs" />
+          <label for="opentab5">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu5.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name5 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name5 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal6">
-            <div class="modules-link-content">
+          </label>
+
+
+
+          <input id="opentab6" type="radio" name="modaltabs" />
+          <label for="opentab6">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu6.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name6 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name6 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal7">
-            <div class="modules-link-content">
+          </label>
+          
+          
+          
+          <input id="opentab7" type="radio" name="modaltabs" />
+          <label for="opentab7">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu7.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name7 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name7 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal8">
-            <div class="modules-link-content">
+          </label>
+          
+          
+          
+          <input id="opentab8" type="radio" name="modaltabs" />
+          <label for="opentab8">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu8.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name8 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name8 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal9">
-            <div class="modules-link-content">
+          </label>
+          
+          
+          
+          <input id="opentab9" type="radio" name="modaltabs" />
+          <label for="opentab9">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu9.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name9 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name9 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal10">
-            <div class="modules-link-content">
+          </label>
+          
+          
+          
+          <input id="opentab10" type="radio" name="modaltabs" />
+          <label for="opentab10">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu10.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name10 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name10 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal11">
-            <div class="modules-link-content">
+          </label>
+          
+          
+          
+          <input id="opentab11" type="radio" name="modaltabs" />
+          <label for="opentab11">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu11.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name11 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name11 }}</div>
-          </a>
-        </div>
-        <div class="modules-link-wrapper" id="navbar-tour">
-          <a href="#open-modal12">
-            <div class="modules-link-content">
+          </label>
+          
+          
+          
+          <input id="opentab12" type="radio" name="modaltabs" />
+          <label for="opentab12">
+            <div class="modal-modules-link-content">
               <img
                 src="images/Category/menu12.png"
                 width="110"
                 height="80"
                 alt="lorem"
               />
+              <div class="modal-modules-link-text">{{ category_name12 }}</div>
             </div>
-            <div class="modules-link-text">{{ category_name12 }}</div>
-          </a>
+          </label>
+
+
+          <ul class="tab-list">
+            <li class="modal-tab tab1">
+              <button>cscdcmsdckmd</button>
+              <button>cscdcmsdckmd</button>
+              <button>cscdcmsdckmd</button>
+              <button>cscdcmsdckmd</button>
+              <button>cscdcmsdckmd</button>
+            </li>
+            <li class="modal-tab tab2"><p>Tab 2 Content</p></li>
+            <li class="modal-tab tab3"><p>Tab 3 Content</p></li>
+            <li class="modal-tab tab4"><p>Tab 4 Content</p></li>
+            <li class="modal-tab tab5"><p>Tab 5 Content</p></li>
+            <li class="modal-tab tab6"><p>Tab 6 Content</p></li>
+            <li class="modal-tab tab7"><p>Tab 7 Content</p></li>
+            <li class="modal-tab tab8"><p>Tab 8 Content</p></li>
+            <li class="modal-tab tab9"><p>Tab 9 Content</p></li>
+            <li class="modal-tab tab10"><p>Tab 10 Content</p></li>
+            <li class="modal-tab tab11"><p>Tab 11 Content</p></li>
+            <li class="modal-tab tab12"><p>Tab 12 Content</p></li>
+          </ul>
         </div>
-      </div>
-        <!-- <ul class="categories-list">
-          <a href="#open-modal999">
-          <li>            
-            <div>{{ store1[0].title }}</div>
-          </li>
-        </a>
-          <li>            
-            <div>{{ store1[1].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[2].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[3].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[4].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[5].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[6].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[7].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[8].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[9].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[10].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[11].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[12].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[13].title }}</div>
-          </li>
-          <li>            
-            <div>{{ store1[14].title }}</div>
-          </li>
-        </ul> -->
-      </div>
-    </div>
 
-    <div id="open-modal999" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <div>cdsjncjdsnckjdsncdsjkcndjkn</div>
-      </div>
-    </div>
+        
 
-    <div id="open-modal2" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store2[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store2[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store2[2].title }}</div>
-          </li>
-          <li>
-            <div>{{ store2[3].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
+        
 
-    <div id="open-modal3" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store3[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store3[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store3[2].title }}</div>
-          </li>
-          <li>
-            <div>{{ store3[3].title }}</div>
-          </li>
-          <li>
-            <div>{{ store3[4].title }}</div>
-          </li>
-          <li>
-            <div>{{ store3[5].title }}</div>
-          </li>
-          <li>
-            <div>{{ store3[6].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal4" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store4[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store4[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store4[2].title }}</div>
-          </li>
-          <li>
-            <div>{{ store4[3].title }}</div>
-          </li>
-          <li>
-            <div>{{ store4[4].title }}</div>
-          </li>
-          <li>
-            <div>{{ store4[5].title }}</div>
-          </li>
-          <li>
-            <div>{{ store4[6].title }}</div>
-          </li>
-          <li>
-            <div>{{ store4[7].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal5" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store5[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store5[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store5[2].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal6" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store6[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store6[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store6[2].title }}</div>
-          </li>
-          <li>
-            <div>{{ store6[3].title }}</div>
-          </li>
-          <li>
-            <div>{{ store6[4].title }}</div>
-          </li>
-          <li>
-            <div>{{ store6[5].title }}</div>
-          </li>
-          <li>
-            <div>{{ store6[6].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal7" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store7[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[2].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[3].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[4].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[5].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[6].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[7].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[8].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[9].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[10].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[11].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[12].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[13].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[14].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[15].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[16].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[17].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[18].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[19].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[20].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[21].title }}</div>
-          </li>
-          <li>
-            <div>{{ store7[22].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal8" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store8[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store8[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store8[2].title }}</div>
-          </li>
-          <li>
-            <div>{{ store8[3].title }}</div>
-          </li>
-          <li>
-            <div>{{ store8[4].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal9" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store9[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store9[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store9[2].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal10" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store10[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store10[1].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div id="open-modal11" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store11[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store11[1].title }}</div>
-          </li>
-          <li>
-            <div>{{ store11[2].title }}</div>
-          </li>
-          <li>
-            <div>{{ store11[3].title }}</div>
-          </li>
-          <li>
-            <div>{{ store11[4].title }}</div>
-          </li>
-          <li>
-            <div>{{ store11[5].title }}</div>
-          </li>
-          <li>
-            <div>{{ store11[6].title }}</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="open-modal12" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <ul class="categories-list">
-          <li>
-            <div>{{ store12[0].title }}</div>
-          </li>
-          <li>
-            <div>{{ store12[1].title }}</div>
-          </li>
-        </ul>
       </div>
     </div>
   </div>
@@ -797,7 +507,7 @@ export default {
   methods: {
     getStores() {
       axios
-        .get("http://Localhost:8081/api/categories")
+        .get("http://Localhost:8100/api/categories")
         .then((response) => {
           this.category_name1 = response.data[0].title;
           this.category_name2 = response.data[1].title;
@@ -906,6 +616,7 @@ export default {
 
 
 <style scoped>
+/* _________________________________ NAVBAR _________________________________ */
 .navbar-wrapper {
   display: flex;
   justify-content: center;
@@ -1098,6 +809,23 @@ a {
   }
 }
 
+@media (min-width: 600px) {
+  .modal-modules-link-text {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    padding: 0 1em;
+  }
+}
+
+@media (min-width: 900px) {
+  .modal-modules-link-text {
+    color: #ffffff;
+    font-size: 10px;
+    padding: 1em 0 0;
+  }
+}
+
 .modules-links-tracker {
   height: 0.3em;
   background: #fff;
@@ -1171,8 +899,84 @@ a {
 .spacer {
   height: 800px;
 }
+/* _________________________________ END OF THE NAVBAR _________________________________ */
+
+/* _________________________________ CUSTOM STYLE _________________________________ */
+
+.header_text_modal {
+  color: #ffffff;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70px;
+  line-height: 50px;
+  float: right;
+  text-decoration: none;
+  padding: 22px 22px;
+  color: #fff;
+  font-size: 80%;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+  z-index: +1;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 0 4px 0 0;
+}
+.modal-close:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#opentab1:checked ~ .tab-list .tab1,
+#opentab2:checked ~ .tab-list .tab2,
+#opentab3:checked ~ .tab-list .tab3,
+#opentab4:checked ~ .tab-list .tab4,
+#opentab5:checked ~ .tab-list .tab5,
+#opentab6:checked ~ .tab-list .tab6,
+#opentab7:checked ~ .tab-list .tab7,
+#opentab8:checked ~ .tab-list .tab8,
+#opentab9:checked ~ .tab-list .tab9,
+#opentab10:checked ~ .tab-list .tab10,
+#opentab11:checked ~ .tab-list .tab11,
+#opentab12:checked ~ .tab-list .tab12 {
+  transform: translateX(0%);
+  opacity: 1;
+}
+/* _________________________________ END OF THE CUSTOM STYLE _________________________________ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ------------------------MODAL-------------------------- */
+
 
 .modal-window {
   position: fixed;
@@ -1194,7 +998,7 @@ a {
 }
 .modal-window > div {
   width: 1200px;
-  max-height: 700px;
+  max-height: 800px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1210,61 +1014,141 @@ a {
   margin: 0 0 15px;
 }
 
-.modal-close {
-  color: #fff;
-  line-height: 50px;
-  font-size: 80%;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  top: 0;
-  width: 70px;
-  text-decoration: none;
-}
-.modal-close:hover {
-  color: black;
-}
-
 .modal-window > div {
   border-style: ridge;
   border-width: 5px;
 }
-
-
 .modal-window div:not(:last-of-type) {
   margin-bottom: 15px;
 }
 
-/* ------------------------MODAL-------------------------- */
+/* ------------------------END OF THE MODAL-------------------------- */
 
-.categories-list {
-  display: flex;
-  flex-wrap: wrap;
-  max-height: 650px;
-  overflow-y: auto;
-  justify-content: space-between;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a.modal-open {
+  display: block;
+  padding: 20px;
+  color: #424242;
+  font-weight: bold;
+  margin: 50px auto;
+  width: 200px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  text-align: center;
+  text-decoration: none;
 }
-.categories-list li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1rem;
-  border: 2px solid;
-  border-color: #b91e67;
-  box-shadow: 0 0 5px #b91e67;
-  margin-right: 1rem;
-  border-radius: 5px;
-  min-width: 150px;
-  min-height: 100px;
-  margin: 10px;
+.modal {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+.modal:target {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  z-index: +1;
+}
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  background: #fff;
+  border-radius: 4px;
+  transform: translate(-50%, -200%);
+  transition: all 0.5s ease-in-out;
+  perspective: 1000;
+  outline: 1px solid transparent;
+  opacity: 0;
+}
+.modal:target .modal-content {
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
+  z-index: 9999;
+  opacity: 1;
+}
+.modal-content h3 {
+  padding: 20px;
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  text-transform: uppercase;
+  background: rgba(2, 162, 239, 1);
   color: #fff;
+  border-radius: 4px 4px 0 0;
 }
 
-.categories-list li img {
-  width: 30px;
-  height: 30px;
-}
 
-/* -------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-area {
+  padding: 0px;
+}
+.modal-area input[type="radio"] {
+  display: none;
+} 
+.modal-area label {
+  float: left;
+  display: block;
+  padding: 10px 10px;
+  font-weight: 700;
+  cursor: pointer;
+  /* z-index: +2;
+  background:transparent;
+  color: #fff; */
+  transition: all 0.5s ease-in-out;
+}
+.modal-area input[type="radio"]:checked + label {
+  background: rgb(217, 8, 81);
+  color: #424242;
+}
+.modal-tab {
+  color: #b91e67;
+  display: inline-block;
+  width: 100%;
+  transform: translateX(-150%);
+  transition: all 300ms cubic-bezier(0, 0, 0.4, 1);
+}
 </style>

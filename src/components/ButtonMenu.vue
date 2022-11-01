@@ -1,40 +1,94 @@
 <template>
-<div class="footer">
-</div>
+  <div class="footer"></div>
 </template>
 
 
 <style>
-.footer{
+.footer {
   background: #f1f1f1df;
   filter: drop-shadow(0 0 16px #787878);
   margin-top: 62em;
-  margin-left: 52.4em;
+  margin-left: 52.9em;
   width: 350px;
   height: 170px;
   border-radius: 50px 50px 0 0;
-  position:fixed;
+  position: fixed;
   z-index: 99;
 }
-
 
 .bubbly-button {
   position: absolute;
   width: 130px;
   height: 100px;
-  background: rgb(2,0,36);
-background: linear-gradient(180deg, rgba(2,0,36,1) 48%, rgba(185,30,103,1) 81%, rgba(255,255,255,1) 100%);
+  background: #b91e67;
   border-radius: 10px;
-  /* border-color: #B91E67; */
-  /* box-shadow: 0 0 10px #B91E67; */
+  border-color: #ffffff;
   color: rgba(255, 255, 255, 0.8);
   font-family: Arial;
   font-size: 24px;
   font-weight: 700;
   margin-top: 43em;
   z-index: 100;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
 
+/* 11 */
+.button-active {
+  border: none;
+  background: rgb(251, 33, 117);
+  background: linear-gradient(
+    0deg,
+    rgba(251, 33, 117, 1) 0%,
+    rgba(234, 76, 137, 1) 100%
+  );
+  color: #fff;
+  overflow: hidden;
+}
+.button-active:hover {
+  text-decoration: none;
+  color: #fff;
+}
+.button-active:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 3s ease-in-out infinite;
+}
+.button-active:hover {
+  opacity: 0.7;
+}
+.button-active:active {
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+@-webkit-keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
 
 /* .bubbly-button {
   position: absolute;
@@ -106,6 +160,5 @@ background: linear-gradient(180deg, rgba(2,0,36,1) 48%, rgba(185,30,103,1) 81%, 
   height: 32%;
   width: 32%;
 } */
-
 </style>
 
