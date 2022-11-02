@@ -774,8 +774,8 @@ export default {
     create_text(id, name) {
       id = id.toString();
       const obj = this.text_config[id];
-      const position = this.get_bound(obj.objects);
-      console.log(">>> create_text", position);
+      // const position = this.get_bound(obj.position);
+      // console.log(">>> create_text", position);
       if (obj) {
         console.log(
           ">>>create_text",
@@ -794,8 +794,8 @@ export default {
           text: name,
         });
         instance.scale.set(0.5, 0.5, 0.5);
-        // instance.position.set(obj.position[0], obj.position[1], obj.position[2]);
-        instance.position.set(position);
+        instance.position.set(obj.position[0], obj.position[1], obj.position[2]);
+        // instance.position.set(position);
         instance.rotation.set(0, 0, 150);
         this.floors[obj.floor].add(instance);
       }
