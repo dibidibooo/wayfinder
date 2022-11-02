@@ -12,7 +12,7 @@
               id="#"
               style="position: absolute; margin-right: 90em"
             >
-              <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+              <a data-mdb-toggle="modal" data-mdb-target="#modaltab">
                 <div class="modules-link-content">
                   <img
                     src="images/Category/search.png"
@@ -227,7 +227,7 @@
     <!-- Modal -->
     <div
       class="modal bottom fade"
-      id="exampleModal"
+      id="modaltab"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -239,10 +239,10 @@
           modal-dialog modal-xl modal-frame modal-bottom modal-dialog-centered
         "
       >
-        <div class="modal-content">
+        <div class="modal-content modalminheight">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              <b>Выберите категрию</b>
+              <b>Выберите категорию</b>
             </h5>
             <button
               type="button"
@@ -264,6 +264,7 @@
                   aria-controls="tab13"
                   aria-selected="true"
                 >
+                <i class="fas fa-tshirt"></i>
                   {{ category_name1 }}
                 </button>
               </li>
@@ -278,6 +279,7 @@
                   aria-controls="tab21"
                   aria-selected="false"
                 >
+                <i class="fas fa-dice"></i>
                   {{ category_name2 }}
                 </button>
               </li>
@@ -292,6 +294,7 @@
                   aria-controls="tab33"
                   aria-selected="false"
                 >
+                <i class="fas fa-hands-helping"></i>
                   {{ category_name3 }}
                 </button>
               </li>
@@ -306,10 +309,11 @@
                   aria-controls="tab43"
                   aria-selected="false"
                 >
+                <i class="fas fa-ring"></i>
                   {{ category_name4 }}
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+              <!-- <li class="nav-item" role="presentation">
                 <button
                   class="nav-link"
                   id="tab51"
@@ -320,12 +324,13 @@
                   aria-controls="tab53"
                   aria-selected="false"
                 >
+                <i class="fas fa-shoe-prints"></i>
                   {{ category_name5 }}
                 </button>
-              </li>
+              </li> -->
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link"
+                  class="nav-link nav-custom-button"
                   id="tab61"
                   data-mdb-toggle="tab"
                   data-mdb-target="#tab62"
@@ -334,6 +339,7 @@
                   aria-controls="tab63"
                   aria-selected="false"
                 >
+                <i class="fas fa-home"></i>
                   {{ category_name6 }}
                 </button>
               </li>
@@ -348,10 +354,11 @@
                   aria-controls="tab73"
                   aria-selected="false"
                 >
+                <i class="fas fa-coffee"></i>
                   {{ category_name7 }}
                 </button>
               </li>
-              <li class="nav-item" role="presentation">
+              <!-- <li class="nav-item" role="presentation">
                 <button
                   class="nav-link"
                   id="tab81"
@@ -420,7 +427,7 @@
                 >
                   {{ category_name12 }}
                 </button>
-              </li>
+              </li> -->
             </ul>
 
             <div class="tab-content" id="myTabContent0">
@@ -443,7 +450,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store1[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store1[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -462,7 +469,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store1[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store1[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -481,7 +488,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store1[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store1[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -500,7 +507,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store1[3].title}}</p>
+                              <p class="fw-bold mb-1">{{ store1[3].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -519,7 +526,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store1[4].title}}</p>
+                              <p class="fw-bold mb-1">{{ store1[4].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -538,7 +545,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store1[5].title}}</p>
+                              <p class="fw-bold mb-1">{{ store1[5].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -557,7 +564,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store1[6].title}}</p>
+                              <p class="fw-bold mb-1">{{ store1[6].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -572,9 +579,9 @@
                 role="tabpanel"
                 aria-labelledby="tab21"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -585,7 +592,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store2[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store2[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -604,7 +611,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store2[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store2[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -623,7 +630,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store2[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store2[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -642,7 +649,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store2[3].title}}</p>
+                              <p class="fw-bold mb-1">{{ store2[3].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -657,7 +664,7 @@
                 role="tabpanel"
                 aria-labelledby="tab31"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -670,7 +677,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store3[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store3[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -689,7 +696,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store3[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store3[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -708,7 +715,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store3[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store3[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -727,7 +734,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store3[3].title}}</p>
+                              <p class="fw-bold mb-1">{{ store3[3].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -746,7 +753,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store3[4].title}}</p>
+                              <p class="fw-bold mb-1">{{ store3[4].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -765,7 +772,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store3[5].title}}</p>
+                              <p class="fw-bold mb-1">{{ store3[5].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -784,7 +791,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store3[6].title}}</p>
+                              <p class="fw-bold mb-1">{{ store3[6].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -799,7 +806,7 @@
                 role="tabpanel"
                 aria-labelledby="tab41"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -812,7 +819,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -831,7 +838,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -850,7 +857,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -869,7 +876,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[3].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[3].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -888,7 +895,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[4].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[4].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -907,7 +914,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[5].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[5].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -926,7 +933,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[6].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[6].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -945,7 +952,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store4[7].title}}</p>
+                              <p class="fw-bold mb-1">{{ store4[7].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -960,7 +967,7 @@
                 role="tabpanel"
                 aria-labelledby="tab41"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -973,7 +980,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store5[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store5[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -992,7 +999,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store5[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store5[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1011,7 +1018,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store5[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store5[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1026,7 +1033,7 @@
                 role="tabpanel"
                 aria-labelledby="tab61"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -1039,7 +1046,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store6[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store6[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1058,7 +1065,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store6[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store6[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1077,7 +1084,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store6[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store6[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1096,7 +1103,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store6[3].title}}</p>
+                              <p class="fw-bold mb-1">{{ store6[3].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1115,7 +1122,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store6[4].title}}</p>
+                              <p class="fw-bold mb-1">{{ store6[4].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1134,7 +1141,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store6[5].title}}</p>
+                              <p class="fw-bold mb-1">{{ store6[5].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1153,7 +1160,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store6[6].title}}</p>
+                              <p class="fw-bold mb-1">{{ store6[6].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1168,7 +1175,7 @@
                 role="tabpanel"
                 aria-labelledby="tab71"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -1181,7 +1188,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1200,7 +1207,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1219,7 +1226,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1238,7 +1245,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[3].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[3].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1257,7 +1264,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[4].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[4].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1276,7 +1283,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[5].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[5].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1295,7 +1302,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[6].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[6].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1314,7 +1321,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[7].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[7].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1333,7 +1340,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[8].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[8].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1352,7 +1359,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[9].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[9].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1371,7 +1378,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[10].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[10].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1390,7 +1397,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[11].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[11].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1409,7 +1416,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[12].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[12].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1428,7 +1435,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[13].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[13].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1447,7 +1454,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store7[14].title}}</p>
+                              <p class="fw-bold mb-1">{{ store7[14].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1462,7 +1469,7 @@
                 role="tabpanel"
                 aria-labelledby="tab81"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -1475,7 +1482,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store8[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store8[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1494,7 +1501,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store8[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store8[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1513,7 +1520,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store8[2].title}}</p>
+                              <p class="fw-bold mb-1">{{ store8[2].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1532,7 +1539,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store8[3].title}}</p>
+                              <p class="fw-bold mb-1">{{ store8[3].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1551,7 +1558,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store8[4].title}}</p>
+                              <p class="fw-bold mb-1">{{ store8[4].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1566,7 +1573,7 @@
                 role="tabpanel"
                 aria-labelledby="tab91"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -1579,7 +1586,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store9[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store9[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1598,7 +1605,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store9[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store9[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1613,7 +1620,7 @@
                 role="tabpanel"
                 aria-labelledby="tab101"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -1626,7 +1633,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store10[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store10[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1645,7 +1652,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store10[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store10[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1660,7 +1667,7 @@
                 role="tabpanel"
                 aria-labelledby="tab111"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -1673,7 +1680,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store11[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store11[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1692,7 +1699,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store11[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store11[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1707,7 +1714,7 @@
                 role="tabpanel"
                 aria-labelledby="tab121"
               >
-              <div class="row">
+                <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
                     <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                       <div class="card">
@@ -1720,7 +1727,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store12[0].title}}</p>
+                              <p class="fw-bold mb-1">{{ store12[0].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1739,7 +1746,7 @@
                               class="rounded-circle"
                             />
                             <div class="ms-3">
-                              <p class="fw-bold mb-1">{{store12[1].title}}</p>
+                              <p class="fw-bold mb-1">{{ store12[1].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1762,266 +1769,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="category1modal1"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-mdb-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-mdb-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div id="open-modal1" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close"><b>X</b></a>
-        <h1 class="header_text_modal"><b>Please select the type of shop</b></h1>
-
-        <div class="modal-area">
-
-
-
-
-          <input id="opentab1" type="radio" name="modaltabs" checked="checked" />
-          <label for="opentab1">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu1.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name1 }}</div>
-            </div>
-          </label>
-
-
-
-          <input id="opentab2" type="radio" name="modaltabs" />
-          <label for="opentab2">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu2.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name2 }}</div>
-            </div>
-          </label>
-
-
-
-          <input id="opentab3" type="radio" name="modaltabs" />
-          <label for="opentab3">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu3.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name3 }}</div>
-            </div>
-          </label>
-
-
-
-          <input id="opentab4" type="radio" name="modaltabs" />
-          <label for="opentab4">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu4.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name4 }}</div>
-            </div>
-          </label>
-
-          
-          
-          <input id="opentab5" type="radio" name="modaltabs" />
-          <label for="opentab5">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu5.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name5 }}</div>
-            </div>
-          </label>
-
-
-
-          <input id="opentab6" type="radio" name="modaltabs" />
-          <label for="opentab6">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu6.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name6 }}</div>
-            </div>
-          </label>
-          
-          
-          
-          <input id="opentab7" type="radio" name="modaltabs" />
-          <label for="opentab7">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu7.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name7 }}</div>
-            </div>
-          </label>
-          
-          
-          
-          <input id="opentab8" type="radio" name="modaltabs" />
-          <label for="opentab8">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu8.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name8 }}</div>
-            </div>
-          </label>
-          
-          
-          
-          <input id="opentab9" type="radio" name="modaltabs" />
-          <label for="opentab9">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu9.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name9 }}</div>
-            </div>
-          </label>
-          
-          
-          
-          <input id="opentab10" type="radio" name="modaltabs" />
-          <label for="opentab10">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu10.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name10 }}</div>
-            </div>
-          </label>
-          
-          
-          
-          <input id="opentab11" type="radio" name="modaltabs" />
-          <label for="opentab11">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu11.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name11 }}</div>
-            </div>
-          </label>
-          
-          
-          
-          <input id="opentab12" type="radio" name="modaltabs" />
-          <label for="opentab12">
-            <div class="modal-modules-link-content">
-              <img
-                src="images/Category/menu12.png"
-                width="110"
-                height="80"
-                alt="lorem"
-              />
-              <div class="modal-modules-link-text">{{ category_name12 }}</div>
-            </div>
-          </label>
-
-
-          <ul class="tab-list">
-            <li class="modal-tab tab1">
-              <button>cscdcmsdckmd</button>
-              <button>cscdcmsdckmd</button>
-              <button>cscdcmsdckmd</button>
-              <button>cscdcmsdckmd</button>
-              <button>cscdcmsdckmd</button>
-            </li>
-            <li class="modal-tab tab2"><p>Tab 2 Content</p></li>
-            <li class="modal-tab tab3"><p>Tab 3 Content</p></li>
-            <li class="modal-tab tab4"><p>Tab 4 Content</p></li>
-            <li class="modal-tab tab5"><p>Tab 5 Content</p></li>
-            <li class="modal-tab tab6"><p>Tab 6 Content</p></li>
-            <li class="modal-tab tab7"><p>Tab 7 Content</p></li>
-            <li class="modal-tab tab8"><p>Tab 8 Content</p></li>
-            <li class="modal-tab tab9"><p>Tab 9 Content</p></li>
-            <li class="modal-tab tab10"><p>Tab 10 Content</p></li>
-            <li class="modal-tab tab11"><p>Tab 11 Content</p></li>
-            <li class="modal-tab tab12"><p>Tab 12 Content</p></li>
-          </ul>
-        </div>
-
-        
-
-        
-
-
-
-
-
-
-
-
-
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -2073,6 +1820,21 @@ export default {
     this.getStores();
   },
   methods: {
+    add_row_by_name(name = "0") {
+      this.unselect_objects(this.path_lsit[name].objects);
+      this.road_floors = [];
+
+      this.create_floor_rows(name);
+
+      if (this.road_floors.length == 1) {
+        this.change_floor(this.road_floors[0]);
+      } else {
+        this.change_floor(this.selected_floor);
+      }
+      // this.create_row(this.path_lsit[name].road);
+      this.select_objects(this.path_lsit[name].objects);
+    },
+
     getStores() {
       axios
         .get("http://Localhost:8100/api/categories")
@@ -2184,12 +1946,24 @@ export default {
 
 
 <style scoped>
+.nav-link.active {
+  color: #fff !important;
+  background: #e65398 !important;
+  border-radius: 8px !important;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border-color: #f18eb4 !important;
+  outline: none;
+}
 
-.modal-content {
+.card:hover {
+  background-color: #f18eb4;
+}
+.modalminheight {
   /* background: #1d1d1d;
   border-style: ridge;
   border-width: 5px; */
-  min-height: 48em;
+  min-height: 30em;
 }
 /* _________________________________ NAVBAR _________________________________ */
 .navbar-wrapper {
@@ -2354,20 +2128,6 @@ a {
 }
 
 @media (min-width: 600px) {
-  .modules-link-icon {
-    font-size: 28px;
-    max-height: 3em;
-  }
-}
-
-@media (min-width: 900px) {
-  .modules-link-icon {
-    font-size: 28px;
-    max-width: 6em;
-  }
-}
-
-@media (min-width: 600px) {
   .modules-link-text {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     font-weight: 700;
@@ -2384,45 +2144,6 @@ a {
   }
 }
 
-@media (min-width: 600px) {
-  .modal-modules-link-text {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    padding: 0 1em;
-  }
-}
-
-@media (min-width: 900px) {
-  .modal-modules-link-text {
-    color: #ffffff;
-    font-size: 10px;
-    padding: 1em 0 0;
-  }
-}
-
-.modules-links-tracker {
-  height: 0.3em;
-  background: #fff;
-  position: absolute;
-  top: 105%;
-  -webkit-transition: left 0.25s linear;
-  transition: left 0.25s linear;
-  /* border-radius: 0.5em; */
-}
-
-@media (min-width: 600px) {
-  .modules-links-tracker {
-    display: none;
-  }
-}
-
-@media (min-width: 900px) {
-  .modules-links-tracker {
-    display: block;
-  }
-}
-
 .modules-big-contact,
 .modules-big-links {
   display: -webkit-box;
@@ -2436,228 +2157,9 @@ a {
   align-items: center;
 }
 
-.modules-buttons-blank {
-  border: none;
-  cursor: pointer;
-}
-
-.modules-buttons-base {
-  padding: 0.5em 2em;
-  /* border-radius: 5em; */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-size: 1em;
-}
-
-.modules-buttons-white {
-  background: #fff;
-  /* border-radius: 5px; */
-}
-
-.modules-nav-big-button {
-  padding: 0.5em 0.5em;
-  /* border: 1px solid #fff; */
-  color: #b91e67;
-}
-
-.modules-nav-big-button .modules-link-icon {
-  font-size: 48px;
-}
-
-.spacer {
-  height: 800px;
-}
 /* _________________________________ END OF THE NAVBAR _________________________________ */
 
 /* _________________________________ CUSTOM STYLE _________________________________ */
 
-.header_text_modal {
-  color: #ffffff;
-}
-
-.modal-close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 70px;
-  line-height: 50px;
-  float: right;
-  text-decoration: none;
-  padding: 22px 22px;
-  color: #fff;
-  font-size: 80%;
-  font-weight: 800;
-  transition: all 0.5s ease-in-out;
-  z-index: +1;
-  background: rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border-radius: 0 4px 0 0;
-}
-.modal-close:hover {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-#opentab1:checked ~ .tab-list .tab1,
-#opentab2:checked ~ .tab-list .tab2,
-#opentab3:checked ~ .tab-list .tab3,
-#opentab4:checked ~ .tab-list .tab4,
-#opentab5:checked ~ .tab-list .tab5,
-#opentab6:checked ~ .tab-list .tab6,
-#opentab7:checked ~ .tab-list .tab7,
-#opentab8:checked ~ .tab-list .tab8,
-#opentab9:checked ~ .tab-list .tab9,
-#opentab10:checked ~ .tab-list .tab10,
-#opentab11:checked ~ .tab-list .tab11,
-#opentab12:checked ~ .tab-list .tab12 {
-  transform: translateX(0%);
-  opacity: 1;
-}
 /* _________________________________ END OF THE CUSTOM STYLE _________________________________ */
-
-/* ------------------------MODAL-------------------------- */
-
-/* .modal-window {
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.25);
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s;
-}
-.modal-window:target {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-}
-.modal-window > div {
-  width: 1200px;
-  max-height: 800px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 2em;
-  background: #1d1d1d;
-}
-.modal-window header {
-  font-weight: bold;
-}
-.modal-window h1 {
-  font-size: 150%;
-  margin: 0 0 15px;
-}
-
-.modal-window > div {
-  border-style: ridge;
-  border-width: 5px;
-}
-.modal-window div:not(:last-of-type) {
-  margin-bottom: 15px;
-} */
-
-/* ------------------------END OF THE MODAL-------------------------- */
-
-/* 
-a.modal-open {
-  display: block;
-  padding: 20px;
-  color: #424242;
-  font-weight: bold;
-  margin: 50px auto;
-  width: 200px;
-  background: #e0e0e0;
-  border-radius: 2px;
-  text-align: center;
-  text-decoration: none;
-}
-.modal {
-  background: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  transition: all 0.5s ease-in-out;
-  opacity: 0;
-  z-index: 9999;
-}
-.modal:target {
-  opacity: 1;
-  transition: all 0.5s ease-in-out;
-  z-index: +1;
-}
-.modal-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  background: #fff;
-  border-radius: 4px;
-  transform: translate(-50%, -200%);
-  transition: all 0.5s ease-in-out;
-  perspective: 1000;
-  outline: 1px solid transparent;
-  opacity: 0;
-}
-.modal:target .modal-content {
-  transform: translate(-50%, -50%);
-  transition: all 0.5s ease-in-out;
-  transition-delay: 0.5s;
-  z-index: 9999;
-  opacity: 1;
-}
-.modal-content h3 {
-  padding: 20px;
-  display: block;
-  text-align: center;
-  border-bottom: 1px solid #e0e0e0;
-  text-transform: uppercase;
-  background: rgba(2, 162, 239, 1);
-  color: #fff;
-  border-radius: 4px 4px 0 0;
-} */
-
-/* 
-.modal-area {
-  padding: 0px;
-}
-.modal-area input[type="radio"] {
-  display: none;
-} 
-.modal-area label {
-  float: left;
-  display: block;
-  padding: 10px 10px;
-  font-weight: 700;
-  cursor: pointer;
-  z-index: +2;
-  background:transparent;
-  color: #fff;
-  transition: all 0.5s ease-in-out;
-}
-.modal-area input[type="radio"]:checked + label {
-  background: rgb(217, 8, 81);
-  color: #424242;
-}
-.modal-tab {
-  color: #b91e67;
-  display: inline-block;
-  width: 100%;
-  transform: translateX(-150%);
-  transition: all 300ms cubic-bezier(0, 0, 0.4, 1);
-} */
 </style>

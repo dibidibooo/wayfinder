@@ -1,31 +1,29 @@
 <template>
   <div id="container">
-
-      <button
-        @click="change_floor(1), activeBtn = 'btn1'"
-        :class="{buttonactive: activeBtn === 'btn1' }"
-        class="bubblybutton"
-        style="margin-left: -5.5em"
-      >
-        <a>1 Этаж</a>
-        <!-- {{this.road_floors.includes(1)? 1: 0}}
+    <button
+      @click="change_floor(1), (activeBtn = 'btn1')"
+      :class="{ buttonactive: activeBtn === 'btn1' }"
+      class="bubblybutton"
+      style="margin-left: -5.5em"
+    >
+      <a>1 Этаж</a>
+      <!-- {{this.road_floors.includes(1)? 1: 0}}
         {{this.selected_floor == 1? 1: 0}} -->
-
-      </button>
-      <button @click="change_floor(2), activeBtn = 'btn2'"
-      :class="{buttonactive: activeBtn === 'btn2' }" 
-      class="bubblybutton">
-        <a>2 Этаж</a>
-        <!-- {{this.road_floors.includes(2)? 1: 0}}
+    </button>
+    <button
+      @click="change_floor(2), (activeBtn = 'btn2')"
+      :class="{ buttonactive: activeBtn === 'btn2' }"
+      class="bubblybutton"
+    >
+      <a>2 Этаж</a>
+      <!-- {{this.road_floors.includes(2)? 1: 0}}
         {{this.selected_floor == 2? 1: 0}} -->
-      </button>
+    </button>
 
     <div style="position: absolute; margin-top: 10em">
-    <button @click="test_create_text()">test box</button>
-    <button @click="change_floor(1)">floor 1</button>
-    <button @click="change_floor(2)">floor 2</button>
-    <button @click="add_row_by_name('0')">0</button>
-    <button @click="add_row_by_name('1')">1</button>
+      <!-- <button @click="test_create_text()">test box</button> -->
+      <!-- <button @click="add_row_by_name('0')">0</button> -->
+      <!-- <button @click="add_row_by_name('1')">1</button>
     <button @click="add_row_by_name('2')">2</button>
     <button @click="add_row_by_name('3')">3</button>
     <button @click="add_row_by_name('4')">4</button>
@@ -116,7 +114,95 @@
     <button @click="add_row_by_name('85')">85</button>
     <button @click="add_row_by_name('86')">86</button>
     <button @click="add_row_by_name('87')">87</button>
-    <button @click="add_row_by_name('88')">88</button>
+    <button @click="add_row_by_name('88')">88</button> -->
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal top fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-mdb-backdrop="true"
+      data-mdb-keyboard="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="card left">
+              <div
+                class="bg-image hover-overlay ripple"
+                data-mdb-ripple-color="light"
+              >
+                <img src="../../public/images/dior.webp" class="img-fluid" />
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Название магазина</h5>
+                <p class="card-text">Подробное описание магазина</p>
+                <button
+                  @click="add_row_by_name('0')"
+                  type="button"
+                  class="btn text-white"
+                  style="background-color: #b91e67"
+                >
+                  Указать маршрут <i class="fas fa-angle-double-right"></i>
+                </button>
+              </div>
+              <div class="card-footer">График работы: с 10:00 - 22:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Modal -->
+        <div
+      class="modal top fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      data-mdb-backdrop="true"
+      data-mdb-keyboard="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="card left">
+              <div
+                class="bg-image hover-overlay ripple"
+                data-mdb-ripple-color="light"
+              >
+                <img src="../../public/images/dior.webp" class="img-fluid" />
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Название магазина</h5>
+                <p class="card-text">Подробное описание магазина</p>
+                <button
+                  @click="add_row_by_name('51')"
+                  type="button"
+                  class="btn text-white"
+                  style="background-color: #b91e67"
+                >
+                  Указать маршрут
+                </button>
+              </div>
+              <div class="card-footer">График работы: с 10:00 - 22:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <ButtonSearch />
@@ -132,6 +218,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import axios from "axios";
 
+
 import TextSprite from "@seregpie/three.text-sprite";
 import ButtonMenu from "@/components/ButtonMenu.vue";
 import ButtonSearch from "@/components/ButtonSearch.vue";
@@ -140,14 +227,13 @@ import ButtonSearch from "@/components/ButtonSearch.vue";
 // import json_search from "/public/search.json";
 import all_path from "/public/roads.json";
 import text_config from "/public/text_config.json";
-import { TWEEN } from 'three/examples/jsm/libs/tween.module.min'
+import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 // import road_texture from "/public/images/threejs/images/path_007_21.png";
 
-
 import { loadScript } from "vue-plugin-load-script";
-loadScript("https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js")
-
-
+loadScript(
+  "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
+);
 
 // import { GUI } from 'dat.gui'
 var container, controls;
@@ -159,19 +245,19 @@ var loaded_models = [];
 const pointer = new THREE.Vector2();
 
 const floors_info = {
-  1:{
+  1: {
     src: "models/InUse/first_floor.gltf",
-    scale: {x: 3.5, y: 4.5, z: 3.5},
+    scale: { x: 3.5, y: 4.5, z: 3.5 },
     floor_code: 1,
-    position: {x: 0, y: 5, z: 0}
+    position: { x: 0, y: 5, z: 0 },
   },
-  2:{
+  2: {
     src: "models/InUse/second_floor.gltf",
-    scale: {x: 3.5, y: 4.5, z: 3.5},
+    scale: { x: 3.5, y: 4.5, z: 3.5 },
     floor_code: 2,
-    position: {x: 0, y: 4, z: 0}
+    position: { x: 0, y: 4, z: 0 },
   },
-}
+};
 
 export default {
   components: {
@@ -181,7 +267,7 @@ export default {
   },
   data() {
     return {
-      activeBtn:'btn1',
+      activeBtn: "btn1",
       message: "",
       row: null,
       t_line: {
@@ -193,9 +279,9 @@ export default {
       t_row: null,
       material_mixers: [],
       selected_objects: [],
-      
+
       FLOOR_COUNT: 2,
-      floors: {}, 
+      floors: {},
       selected_floor: 1,
       loded_floors: 0,
       road_floors: [],
@@ -203,86 +289,95 @@ export default {
     };
   },
   mounted() {
-    
     this.init();
     this.animate();
     this.add_events();
     // this.getapicategory();
   },
 
-  methods: {
+  methods: {  
     getapi() {
-      axios.get("http://Localhost:8100/api/stores").then(response => {
+      axios.get("http://Localhost:8100/api/stores").then((response) => {
         console.log(">>> getapi", response);
         title = response.data;
         this.add_text();
       });
     },
-    
+
     // _____________________________________ row _____________________________________
     add_row_by_name(name = "0") {
-      this.unselect_objects(this.path_lsit[name].objects)
-      this.road_floors = []
-      
+      this.unselect_objects(this.path_lsit[name].objects);
+      this.road_floors = [];
+
       this.create_floor_rows(name);
-      
-      if(this.road_floors.length == 1){
-        this.change_floor(this.road_floors[0])
+
+      if (this.road_floors.length == 1) {
+        this.change_floor(this.road_floors[0]);
       } else {
-        this.change_floor(this.selected_floor)
+        this.change_floor(this.selected_floor);
       }
       // this.create_row(this.path_lsit[name].road);
       this.select_objects(this.path_lsit[name].objects);
     },
 
-    create_floor_rows(name="0"){
+    create_floor_rows(name = "0") {
       this.remove_row();
 
       const FIRST = 0;
       const SECOND = 1;
 
-
-      const floor_roads = this.path_lsit[name].road
-      console.log(">>> floor_roads", name, floor_roads[FIRST], floor_roads[SECOND]);
-      if (floor_roads[FIRST].length > 0){
+      const floor_roads = this.path_lsit[name].road;
+      console.log(
+        ">>> floor_roads",
+        name,
+        floor_roads[FIRST],
+        floor_roads[SECOND]
+      );
+      if (floor_roads[FIRST].length > 0) {
         this.create_row(floor_roads[FIRST], 1);
-        this.road_floors.push(FIRST+1)
+        this.road_floors.push(FIRST + 1);
       }
-      
-      if (floor_roads[SECOND].length > 0){
+
+      if (floor_roads[SECOND].length > 0) {
         this.create_row(floor_roads[SECOND], 2);
-        this.road_floors.push(SECOND+1)
+        this.road_floors.push(SECOND + 1);
       }
     },
 
     create_row(path_list, floor_ind) {
       let path_points = [];
-      let path_lenght = 0
+      let path_lenght = 0;
       path_list.forEach((p) => {
         path_points.push(new THREE.Vector3(p[0], p[1], p[2]));
-        path_lenght += Math.sqrt(p[0]*p[0] + p[1]*p[1] + p[2]*p[2] )
+        path_lenght += Math.sqrt(p[0] * p[0] + p[1] * p[1] + p[2] * p[2]);
       });
-      path_lenght = Math.fround(path_lenght)
+      path_lenght = Math.fround(path_lenght);
       // console.log(">>> path_lenght", floor_ind, path_lenght);
       var curve = new THREE.CatmullRomCurve3(
         path_points,
         false /*is it closed*/
       );
       var tubeGeometry = new THREE.TubeGeometry(curve, 100, 0.05, 20, false);
-      var tubeMaterial = this.getAnimatedMaterial(path_lenght/2);
+      var tubeMaterial = this.getAnimatedMaterial(path_lenght / 2);
       var tube = new THREE.Mesh(tubeGeometry, tubeMaterial);
       tube.name = "row_tube";
-      this.floors[floor_ind].add(tube)
-      tube.visible = this.selected_floor == floor_ind
-      tube.opacity = this.selected_floor == floor_ind? 1: 0;
-      tube.scale.x /= floors_info[floor_ind].scale.x
-      tube.scale.y /= floors_info[floor_ind].scale.y
-      tube.scale.z /= floors_info[floor_ind].scale.z
-      console.log(">>> tube.visible", this.selected_floor, floor_ind, tube.visible, this.selected_floor == floor_ind);
+      this.floors[floor_ind].add(tube);
+      tube.visible = this.selected_floor == floor_ind;
+      tube.opacity = this.selected_floor == floor_ind ? 1 : 0;
+      tube.scale.x /= floors_info[floor_ind].scale.x;
+      tube.scale.y /= floors_info[floor_ind].scale.y;
+      tube.scale.z /= floors_info[floor_ind].scale.z;
+      console.log(
+        ">>> tube.visible",
+        this.selected_floor,
+        floor_ind,
+        tube.visible,
+        this.selected_floor == floor_ind
+      );
       // scene.add(tube);
     },
 
-    getAnimatedMaterial(count=15) {
+    getAnimatedMaterial(count = 15) {
       const animate_material_param = {
         object_name: "row_tube",
         texture: "full",
@@ -351,44 +446,48 @@ export default {
 
     remove_row() {
       let find = true;
-      while (find){
+      while (find) {
         // var selectedObject = scene.getObjectByName("row_tube");
-        const row_floor_1 = this.floors[1].getObjectByName("row_tube")
-        const row_floor_2 = this.floors[2].getObjectByName("row_tube")
-        if(row_floor_1 || row_floor_2){
-          if(row_floor_1) {
-            this.floors[1].remove(row_floor_1)
+        const row_floor_1 = this.floors[1].getObjectByName("row_tube");
+        const row_floor_2 = this.floors[2].getObjectByName("row_tube");
+        if (row_floor_1 || row_floor_2) {
+          if (row_floor_1) {
+            this.floors[1].remove(row_floor_1);
           }
-          if(row_floor_2) {
-            this.floors[2].remove(row_floor_2)
+          if (row_floor_2) {
+            this.floors[2].remove(row_floor_2);
           }
           // scene.remove(selectedObject);
           find = true;
         } else {
-          find = false
+          find = false;
         }
       }
     },
-    
+
     // _____________________________________ select _____________________________________
     select_objects(objects_list) {
       objects_list.forEach((obj_name) => {
         var selectedObject = scene.getObjectByName(obj_name);
-        selectedObject.material.copy(selectedObject.material.clone())
+        selectedObject.material.copy(selectedObject.material.clone());
         if (selectedObject) {
           console.log(">>> selectedObject", selectedObject);
-          this.add_animation(selectedObject, {x:1, y:3, z:1})
+          this.add_animation(selectedObject, { x: 1, y: 3, z: 1 });
           // selectedObject.userData.defaultMaterial = selectedObject.material.clone()
-          if (!("defaultMaterial" in Object.keys(selectedObject.userData))){
+          if (!("defaultMaterial" in Object.keys(selectedObject.userData))) {
             selectedObject.userData.defaultMaterial = {
               r: selectedObject.material.color.r,
               g: selectedObject.material.color.g,
               b: selectedObject.material.color.b,
-            }
+            };
           }
           // console.log(">>> color", selectedObject.userData.defaultMaterial);
-          this.add_material_bounce(selectedObject.material, {r:44, g:0.66, b:0.63}, 1)
-          // selectedObject.material.copy(this.select_material()) 
+          this.add_material_bounce(
+            selectedObject.material,
+            { r: 44, g: 0.66, b: 0.63 },
+            1
+          );
+          // selectedObject.material.copy(this.select_material())
 
           console.log(">> material", selectedObject);
 
@@ -399,76 +498,82 @@ export default {
       });
     },
 
-    unselect_objects(){
+    unselect_objects() {
       this.selected_objects.forEach((obj_name) => {
         var selectedObject = scene.getObjectByName(obj_name);
         if (selectedObject) {
-          this.add_animation(selectedObject, {x:1, y:1, z:1})
-          this.add_material_bounce(selectedObject.material, selectedObject.userData.defaultMaterial, 0)
+          this.add_animation(selectedObject, { x: 1, y: 1, z: 1 });
+          this.add_material_bounce(
+            selectedObject.material,
+            selectedObject.userData.defaultMaterial,
+            0
+          );
           console.log(">>> unselect_objects", selectedObject);
         } else {
           console.error(">>> not found:", obj_name);
         }
       });
-      this.selected_objects = []
+      this.selected_objects = [];
     },
 
-    add_animation(selectedObject, to_scale){
-      const from_scale = {x: selectedObject.scale.x, y: selectedObject.scale.y, z: selectedObject.scale.z}
-      this.add_bounce(selectedObject.scale, from_scale,  to_scale)
+    add_animation(selectedObject, to_scale) {
+      const from_scale = {
+        x: selectedObject.scale.x,
+        y: selectedObject.scale.y,
+        z: selectedObject.scale.z,
+      };
+      this.add_bounce(selectedObject.scale, from_scale, to_scale);
     },
 
-    select_material(){
-      let material = new THREE.MeshStandardMaterial( {
+    select_material() {
+      let material = new THREE.MeshStandardMaterial({
         metalness: 1,
         roughness: 1,
         envMapIntensity: 1.0,
-      } );
+      });
       return material;
     },
 
-    add_material_bounce(material, color_to, opacity){
+    add_material_bounce(material, color_to, opacity) {
       material.color.r = color_to.r;
       material.color.g = color_to.g;
       material.color.b = color_to.b;
-      material.opacity = opacity
+      material.opacity = opacity;
     },
 
-    add_bounce(obj_scale, scale_from, scale_to){
+    add_bounce(obj_scale, scale_from, scale_to) {
       new TWEEN.Tween(scale_from)
-        .to({x: scale_to.x, y: scale_to.y, z: scale_to.z},
-            2000
-        )
+        .to({ x: scale_to.x, y: scale_to.y, z: scale_to.z }, 2000)
         .easing(TWEEN.Easing.Bounce.Out)
-        .onUpdate(()=>{
+        .onUpdate(() => {
           obj_scale.set(scale_from.x, scale_from.y, scale_from.z);
         })
-        .start()
+        .start();
     },
 
     // ==============================================================
 
-    add_floor(src, scale, floor=0, deltaPosition=null){
+    add_floor(src, scale, floor = 0, deltaPosition = null) {
       const loader = new GLTFLoader();
       loader.load(
         src,
         (gltf_model1) => {
-          const obj = gltf_model1.scene
+          const obj = gltf_model1.scene;
           // set scale
           obj.scale.set(scale.x, scale.y, scale.z);
 
           // select floor
-          this.floors[floor] = obj
-          if (floor != this.selected_floor){
-            this.setOpacity(obj, 0)
+          this.floors[floor] = obj;
+          if (floor != this.selected_floor) {
+            this.setOpacity(obj, 0);
             // this.floors[floor].visible = false
           } else {
-            this.setOpacity(obj, 1)
+            this.setOpacity(obj, 1);
           }
-          
-					obj.traverse( function ( object ) {
-            if ( object.isMesh ) object.castShadow = true;
-          } );
+
+          obj.traverse(function (object) {
+            if (object.isMesh) object.castShadow = true;
+          });
 
           // set position
           if (deltaPosition) {
@@ -478,9 +583,9 @@ export default {
           }
 
           // add to scene
-          scene.add(obj)
+          scene.add(obj);
 
-          loaded_models.push(obj)
+          loaded_models.push(obj);
           this.on_all_loaded_models();
         },
         undefined,
@@ -490,84 +595,79 @@ export default {
       );
     },
 
-    change_floor(curr_floor){
-      Object.keys(this.floors).forEach(floor => {
+    change_floor(curr_floor) {
+      Object.keys(this.floors).forEach((floor) => {
         // let from;
         let to = 0;
-        if(curr_floor == floor){
+        if (curr_floor == floor) {
           // from = 0;
-          to = 1
+          to = 1;
         } else {
           // from = 1;
-          to = 0
+          to = 0;
         }
         // console.log(">>> floor", curr_floor, floor, to);
         this.change_opacity(this.floors[floor], to);
-      })
-      this.selected_floor = curr_floor
+      });
+      this.selected_floor = curr_floor;
 
       // move camera
       new TWEEN.Tween(controls.target)
-      .to(floors_info[curr_floor].position,
-        2000
-      )
-      .start()
+        .to(floors_info[curr_floor].position, 2000)
+        .start();
 
-      console.log(">>> position",curr_floor, this.floors[curr_floor]);
-      
+      console.log(">>> position", curr_floor, this.floors[curr_floor]);
     },
 
-    select_floor(obj, select=false){
+    select_floor(obj, select = false) {
       let from, to;
-      if(select == true){
+      if (select == true) {
         from = 0;
-        to = 1
+        to = 1;
       } else {
         from = 1;
-        to = 0
+        to = 0;
       }
 
       console.log(">>> select_floor", obj, select);
       new TWEEN.Tween(obj)
-      .to(to,
-        this.change_floor_speed
-      )
-      .easing(TWEEN.Easing.Bounce.Out)
-      .onUpdate(()=>{
-        console.log(">>> set_opacity", from);
-        this.setOpacity(obj, from);
-      })
-      .start()
-    },
-
-    change_opacity(obj, to_opacity){
-      obj.children.forEach((child)=>{
-        this.change_opacity( child, to_opacity );
-      })
-
-      if ( obj.material ) {
-        new TWEEN.Tween( obj.material )
-        .to( { opacity: to_opacity }, 1000 )
+        .to(to, this.change_floor_speed)
+        .easing(TWEEN.Easing.Bounce.Out)
         .onUpdate(() => {
-          // console.log(">> change opacity", obj.material.opacity, to_opacity);
-          if(obj.material.opacity == 0) {
-            obj.visible = false
-          } else {
-            obj.visible = true
-          }
+          console.log(">>> set_opacity", from);
+          this.setOpacity(obj, from);
         })
         .start();
+    },
+
+    change_opacity(obj, to_opacity) {
+      obj.children.forEach((child) => {
+        this.change_opacity(child, to_opacity);
+      });
+
+      if (obj.material) {
+        new TWEEN.Tween(obj.material)
+          .to({ opacity: to_opacity }, 1000)
+          .onUpdate(() => {
+            // console.log(">> change opacity", obj.material.opacity, to_opacity);
+            if (obj.material.opacity == 0) {
+              obj.visible = false;
+            } else {
+              obj.visible = true;
+            }
+          })
+          .start();
       }
     },
 
-    setOpacity( obj, opacity ) {
-      obj.children.forEach((child)=>{
-        this.setOpacity( child, opacity );
-      })
+    setOpacity(obj, opacity) {
+      obj.children.forEach((child) => {
+        this.setOpacity(child, opacity);
+      });
 
-      if ( obj.material ) {
+      if (obj.material) {
         // console.log(">>> opacity",obj.material, opacity);
-        obj.material.opacity = opacity ;
+        obj.material.opacity = opacity;
         obj.material.transparent = true;
         // obj.material.emissive.g = 1 ;
       }
@@ -586,33 +686,40 @@ export default {
       //Create Scene and settings
       scene = new THREE.Scene();
       scene.background = new THREE.Color("#dcdcdc");
-      scene.fog = new THREE.FogExp2( 0x000000, 0.0025 );
-    
-      
+      scene.fog = new THREE.FogExp2(0x000000, 0.0025);
 
-      const hemiLight = new THREE.HemisphereLight( 0xddeeff, 0x0f0e0d, 0.02 );
-      hemiLight.intensity = 3
+      const hemiLight = new THREE.HemisphereLight(0xddeeff, 0x0f0e0d, 0.02);
+      hemiLight.intensity = 3;
       // hemiLight.castShadow = true
-      scene.add( hemiLight );
+      scene.add(hemiLight);
 
       // const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444 );
       // hemiLight.position.set( 0, 2, 0 );
       // scene.add( hemiLight );
 
-      const dirLight = new THREE.DirectionalLight( 0xffffff );
-      dirLight.position.set( 0.3, 1, 1 );
+      const dirLight = new THREE.DirectionalLight(0xffffff);
+      dirLight.position.set(0.3, 1, 1);
       dirLight.castShadow = true;
       dirLight.shadow.camera.top = 0.2;
-      dirLight.shadow.camera.bottom = - 0.2;
-      dirLight.shadow.camera.left = - 0.2;
+      dirLight.shadow.camera.bottom = -0.2;
+      dirLight.shadow.camera.left = -0.2;
       dirLight.shadow.camera.right = 0.2;
       dirLight.shadow.camera.near = 0.1;
       dirLight.shadow.camera.far = 40;
-      scene.add( dirLight );
-      
+      scene.add(dirLight);
 
-      this.add_floor(floors_info[1].src, floors_info[1].scale, floors_info[1].floor_code, floors_info[1].position)
-      this.add_floor(floors_info[2].src, floors_info[2].scale, floors_info[2].floor_code, floors_info[2].position)
+      this.add_floor(
+        floors_info[1].src,
+        floors_info[1].scale,
+        floors_info[1].floor_code,
+        floors_info[1].position
+      );
+      this.add_floor(
+        floors_info[2].src,
+        floors_info[2].scale,
+        floors_info[2].floor_code,
+        floors_info[2].position
+      );
 
       //Raycaster-settings
       raycaster = new THREE.Raycaster();
@@ -620,11 +727,10 @@ export default {
 
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.physicallyCorrectLights = true
-      renderer.shadowMap.enabled = true
-      renderer.toneMappingExposure = Math.pow( 1, 5.0 );
+      renderer.physicallyCorrectLights = true;
+      renderer.shadowMap.enabled = true;
+      renderer.toneMappingExposure = Math.pow(1, 5.0);
       renderer.outputEncoding = THREE.sRGBEncoding;
-      
 
       //Orbit-controls create and settings
       controls = new OrbitControls(camera, renderer.domElement);
@@ -655,23 +761,29 @@ export default {
       this.clock = new THREE.Clock();
     },
 
-    on_all_loaded_models(){
-      this.loded_floors ++
+    on_all_loaded_models() {
+      this.loded_floors++;
       console.log(">>> on_all_loaded_models", this.loded_floors);
-      if(this.loded_floors >= this.FLOOR_COUNT){
-        console.log(">>> load end", );
+      if (this.loded_floors >= this.FLOOR_COUNT) {
+        console.log(">>> load end");
         this.getapi();
-        this.change_floor(this.selected_floor)
+        this.change_floor(this.selected_floor);
       }
     },
 
-    create_text(id, name){
+    create_text(id, name) {
       id = id.toString();
-      const obj = this.text_config[id]
-      const position = this.get_bound(obj.objects)
+      const obj = this.text_config[id];
+      const position = this.get_bound(obj.objects);
       console.log(">>> create_text", position);
-      if(obj){
-        console.log(">>>create_text",id, name, this.text_config[id], this.text_config);
+      if (obj) {
+        console.log(
+          ">>>create_text",
+          id,
+          name,
+          this.text_config[id],
+          this.text_config
+        );
         let instance = new TextSprite({
           // alignment: "center",
           fontFamily: "fantasy",
@@ -689,55 +801,56 @@ export default {
       }
     },
 
-    get_bound(names=["ff_g-45001", "ff_g-44001"]){
-      let object_centers = []
-      let obj_height = 0
-      names.forEach(name => {
-        const obj = scene.getObjectByName(name)
-        obj.geometry.computeBoundingBox()
-        const box = obj.geometry.boundingBox
-        obj_height = box.max.y
-        const center = new THREE.Vector3()
-        box.getCenter(center)
-        object_centers.push(center)
-      })
+    get_bound(names = ["ff_g-45001", "ff_g-44001"]) {
+      let object_centers = [];
+      let obj_height = 0;
+      names.forEach((name) => {
+        const obj = scene.getObjectByName(name);
+        obj.geometry.computeBoundingBox();
+        const box = obj.geometry.boundingBox;
+        obj_height = box.max.y;
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+        object_centers.push(center);
+      });
       console.log(">> object_centers", object_centers);
 
-      let center_v = new THREE.Vector3(0, 0, 0)
-      const count = object_centers.length
-      object_centers.forEach(cent => {
-        center_v.addScaledVector(cent, 1)
-      })      
-      console.log(">>center_v",count, center_v,obj_height);
-      console.log(">>> center_v.divide", center_v.divide(new THREE.Vector3(count, count, count)));
-      center_v.y = 0.1
-      return center_v
-
-
+      let center_v = new THREE.Vector3(0, 0, 0);
+      const count = object_centers.length;
+      object_centers.forEach((cent) => {
+        center_v.addScaledVector(cent, 1);
+      });
+      console.log(">>center_v", count, center_v, obj_height);
+      console.log(
+        ">>> center_v.divide",
+        center_v.divide(new THREE.Vector3(count, count, count))
+      );
+      center_v.y = 0.1;
+      return center_v;
     },
 
-    add_text(){
+    add_text() {
       console.log("Text from DB loaded");
       for (let i in title) {
-          console.log(">>> text:",i, title[i] );
-          // this.create_text(title[i].id, title[i].title)
-        }
+        console.log(">>> text:", i, title[i]);
+        // this.create_text(title[i].id, title[i].title)
+      }
     },
 
-    test_create_text(){
-      this.create_text("000", "SUPER MEGA TEXXT")
+    test_create_text() {
+      this.create_text("000", "SUPER MEGA TEXXT");
     },
-      
-      //Подгон размера окна к данным матрице
-      async onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      },
 
-      //Выбрать модель через кнопку (1 этаж / 2 этаж )
-      buttonModel1() {
-      this.floors[1].visible = true;  
+    //Подгон размера окна к данным матрице
+    async onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    },
+
+    //Выбрать модель через кнопку (1 этаж / 2 этаж )
+    buttonModel1() {
+      this.floors[1].visible = true;
       this.floors[2].visible = false;
     },
 
@@ -745,8 +858,6 @@ export default {
       this.floors[1].visible = false;
       this.floors[2].visible = true;
     },
-
-   
 
     //Отслеживание мыши
     onPointerMove(event) {
@@ -1584,9 +1695,9 @@ export default {
 </script>
 
 <style>
-@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
-@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap';
-@import 'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css';
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap";
+@import "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css";
 
 body {
   height: 100%;
