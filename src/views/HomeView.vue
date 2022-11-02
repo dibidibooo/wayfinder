@@ -20,10 +20,10 @@
         {{this.selected_floor == 2? 1: 0}} -->
     </button>
 
-    <div style="position: absolute; margin-top: 10em">
-      <!-- <button @click="test_create_text()">test box</button> -->
-      <!-- <button @click="add_row_by_name('0')">0</button> -->
-      <!-- <button @click="add_row_by_name('1')">1</button>
+    <!-- <div style="position: absolute; margin-top: 10em">
+    <button @click="test_create_text()">test box</button>
+    <button @click="add_row_by_name('0')">0</button>
+    <button @click="add_row_by_name('1')">1</button>
     <button @click="add_row_by_name('2')">2</button>
     <button @click="add_row_by_name('3')">3</button>
     <button @click="add_row_by_name('4')">4</button>
@@ -114,97 +114,17 @@
     <button @click="add_row_by_name('85')">85</button>
     <button @click="add_row_by_name('86')">86</button>
     <button @click="add_row_by_name('87')">87</button>
-    <button @click="add_row_by_name('88')">88</button> -->
-    </div>
+    <button @click="add_row_by_name('88')">88</button>
+    </div> -->
 
-    <!-- Modal -->
-    <div
-      class="modal top fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-      data-mdb-backdrop="true"
-      data-mdb-keyboard="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="card left">
-              <div
-                class="bg-image hover-overlay ripple"
-                data-mdb-ripple-color="light"
-              >
-                <img src="../../public/images/dior.webp" class="img-fluid" />
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.15)"
-                ></div>
-              </div>
+    
 
-              <div class="card-body">
-                <h5 class="card-title">Название магазина</h5>
-                <p class="card-text">Подробное описание магазина</p>
-                <button
-                  @click="add_row_by_name('0')"
-                  type="button"
-                  class="btn text-white"
-                  style="background-color: #b91e67"
-                >
-                  Указать маршрут <i class="fas fa-angle-double-right"></i>
-                </button>
-              </div>
-              <div class="card-footer">График работы: с 10:00 - 22:00</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-        <!-- Modal -->
-        <div
-      class="modal top fade"
-      id="exampleModal2"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-      data-mdb-backdrop="true"
-      data-mdb-keyboard="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body">
-            <div class="card left">
-              <div
-                class="bg-image hover-overlay ripple"
-                data-mdb-ripple-color="light"
-              >
-                <img src="../../public/images/dior.webp" class="img-fluid" />
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.15)"
-                ></div>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Название магазина</h5>
-                <p class="card-text">Подробное описание магазина</p>
-                <button
-                  @click="add_row_by_name('51')"
-                  type="button"
-                  class="btn text-white"
-                  style="background-color: #b91e67"
-                >
-                  Указать маршрут
-                </button>
-              </div>
-              <div class="card-footer">График работы: с 10:00 - 22:00</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <CategoryOne />
+    <CategoryTwo />
+    <CategoryThree />
+    <CategoryFour />
+    <CategorySix />
+    <CategorySeven />
     <ButtonSearch />
     <ButtonMenu />
   </div>
@@ -217,7 +137,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import axios from "axios";
-
+import $ from "jquery";
 
 import TextSprite from "@seregpie/three.text-sprite";
 import ButtonMenu from "@/components/ButtonMenu.vue";
@@ -229,6 +149,14 @@ import all_path from "/public/roads.json";
 import text_config from "/public/text_config.json";
 import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
 // import road_texture from "/public/images/threejs/images/path_007_21.png";
+
+import CategoryOne from "@/components/Categories/category1.vue";
+import CategoryTwo from "@/components/Categories/category2.vue";
+import CategoryThree from "@/components/Categories/category3.vue";
+import CategoryFour from "@/components/Categories/category4.vue";
+import CategorySix from "@/components/Categories/category6.vue";
+import CategorySeven from "@/components/Categories/category7.vue";
+
 
 import { loadScript } from "vue-plugin-load-script";
 loadScript(
@@ -263,6 +191,12 @@ export default {
   components: {
     ButtonMenu,
     ButtonSearch,
+    CategoryOne,
+    CategoryTwo,
+    CategoryThree,
+    CategoryFour, 
+    CategorySix,
+    CategorySeven
     // Autocomplete,
   },
   data() {
@@ -295,7 +229,15 @@ export default {
     // this.getapicategory();
   },
 
-  methods: {  
+  methods: {
+    closeModal() {
+      //  $("#exampleModal .close").click()
+      $("#exampleModal .btn-close").click();
+    },
+    closeModal2() {
+      //  $("#exampleModal .close").click()
+      $("#exampleModal2 .btn-close").click();
+    },
     getapi() {
       axios.get("http://Localhost:8100/api/stores").then((response) => {
         console.log(">>> getapi", response);
@@ -682,7 +624,7 @@ export default {
         1000
       );
       camera.position.set(0, 30, 50);
-
+      
       //Create Scene and settings
       scene = new THREE.Scene();
       scene.background = new THREE.Color("#dcdcdc");
@@ -790,11 +732,11 @@ export default {
           color: "#ffffff",
           strokeColor: "#000000",
           strokeWidth: 0.03,
-          fontSize: 0.02,
+          fontSize: 0.04,
           text: name,
         });
-        instance.scale.set(0.5, 0.5, 0.5);
-        instance.position.set(obj.position[0], obj.position[1], obj.position[2]);
+        instance.scale.set(0.7, 0.7, 0.7);
+        instance.position.set(obj.position[0],obj.position[1],obj.position[2]);
         // instance.position.set(position);
         instance.rotation.set(0, 0, 150);
         this.floors[obj.floor].add(instance);
@@ -833,13 +775,13 @@ export default {
       console.log("Text from DB loaded");
       for (let i in title) {
         console.log(">>> text:", i, title[i]);
-        // this.create_text(title[i].id, title[i].title)
+        this.create_text(title[i].id, title[i].title)
       }
     },
 
-    test_create_text() {
-      this.create_text("000", "SUPER MEGA TEXXT");
-    },
+    // test_create_text() {
+    //   this.create_text("000", "SUPER MEGA TEXXT");
+    // },
 
     //Подгон размера окна к данным матрице
     async onWindowResize() {

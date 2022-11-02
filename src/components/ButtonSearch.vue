@@ -439,7 +439,7 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal11">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -458,7 +458,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal12">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -477,7 +477,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal13">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -496,7 +496,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal14">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -515,7 +515,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal15">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -533,44 +533,6 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store1[5].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store1[6].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
                 </div>
               </div>
               <div
@@ -581,7 +543,7 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal21">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -600,7 +562,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal22">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -619,7 +581,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal23">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -638,7 +600,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal24">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -666,7 +628,7 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal31">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -685,7 +647,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal32">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -704,7 +666,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal33">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -723,7 +685,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal34">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -742,7 +704,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal35">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -760,44 +722,6 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store3[5].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store3[6].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
                 </div>
               </div>
               <div
@@ -808,7 +732,7 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal41">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -827,7 +751,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal42">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -846,7 +770,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal43">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -865,7 +789,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal44">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -884,7 +808,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal45">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -896,63 +820,6 @@
                             />
                             <div class="ms-3">
                               <p class="fw-bold mb-1">{{ store4[4].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store4[5].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store4[6].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store4[7].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1035,7 +902,7 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal61">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1054,7 +921,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal62">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1073,7 +940,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal63">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1092,7 +959,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal64">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1111,7 +978,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal65">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1129,44 +996,6 @@
                       </div>
                     </a>
                   </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store6[5].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store6[6].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
                 </div>
               </div>
               <div
@@ -1177,7 +1006,7 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal71">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1196,7 +1025,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal72">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1215,7 +1044,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal73">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1234,7 +1063,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal74">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1253,7 +1082,7 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal75">
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1265,196 +1094,6 @@
                             />
                             <div class="ms-3">
                               <p class="fw-bold mb-1">{{ store7[4].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[5].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[6].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[7].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[8].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[9].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[10].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[11].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[12].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[13].title }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                      <div class="card">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <img
-                              src="../assets/logo.png"
-                              alt=""
-                              style="width: 45px; height: 45px"
-                              class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                              <p class="fw-bold mb-1">{{ store7[14].title }}</p>
                             </div>
                           </div>
                         </div>
