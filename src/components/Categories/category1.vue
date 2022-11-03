@@ -36,7 +36,7 @@
                 <h5 class="card-title">Название магазина [1.1]</h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('36'), closeModal1()"
+                  @click="callMethodInParentComponent1(), closeModal1()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -87,7 +87,7 @@
                 <h5 class="card-title">Название магазина [1.2]</h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('37'), closeModal2()"
+                  @click="callMethodInParentComponent2(), closeModal2()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -138,7 +138,7 @@
                 <h5 class="card-title">Название магазина [1.3]</h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('83'), closeModal3()"
+                  @click="callMethodInParentComponent3(), closeModal3()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -189,7 +189,7 @@
                 <h5 class="card-title">Название магазина [1.4]</h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('53'), closeModal4()"
+                  @click="callMethodInParentComponent4(), closeModal4()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -240,7 +240,7 @@
                 <h5 class="card-title">Название магазина [1.5]</h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('34'), closeModal5()"
+                  @click="callMethodInParentComponent5(), closeModal5()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -259,27 +259,43 @@
 </template>
 
 <script>
+import EventBus from '../../store/event-bus.js'
 import $ from "jquery";
+import store from '@/store';
 export default {
   methods: {
+
+    // Вызывает функцию с родительского компонента HomeView и вызывает функцию маршрута
+    callMethodInParentComponent1() {
+      EventBus.$emit("callMethodInChild", store.state.name='36');
+    },
+    callMethodInParentComponent2() {
+      EventBus.$emit("callMethodInChild", store.state.name='37');
+    },
+    callMethodInParentComponent3() {
+      EventBus.$emit("callMethodInChild", store.state.name='83');
+    },
+    callMethodInParentComponent4() {
+      EventBus.$emit("callMethodInChild", store.state.name='53');
+    },
+    callMethodInParentComponent5() {
+      EventBus.$emit("callMethodInChild", store.state.name='35');
+    },
+    
+    // Закрыть модальное окно, когда нажимает на кнопку "Показать маршрут" 
     closeModal1() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal11 .btn-close").click();
     },
     closeModal2() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal12 .btn-close").click();
     },
     closeModal3() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal13 .btn-close").click();
     },
     closeModal4() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal14 .btn-close").click();
     },
     closeModal5() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal15 .btn-close").click();
     },
   }

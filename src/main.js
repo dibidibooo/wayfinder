@@ -10,6 +10,7 @@ import LoadScript from "vue-plugin-load-script";
 
 
 Vue.config.productionTip = false
+Vue.prototype.$eventBus = new Vue();
 
 new Vue({
   store,

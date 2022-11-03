@@ -117,8 +117,6 @@
     <button @click="add_row_by_name('88')">88</button>
     </div> -->
 
-    
-
     <CategoryOne />
     <CategoryTwo />
     <CategoryThree />
@@ -137,7 +135,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import axios from "axios";
-import $ from "jquery";
+import EventBus from "../store/event-bus.js";
 
 import TextSprite from "@seregpie/three.text-sprite";
 import ButtonMenu from "@/components/ButtonMenu.vue";
@@ -157,8 +155,9 @@ import CategoryFour from "@/components/Categories/category4.vue";
 import CategorySix from "@/components/Categories/category6.vue";
 import CategorySeven from "@/components/Categories/category7.vue";
 
-
+// Позволяет импортировать сторонние javascript
 import { loadScript } from "vue-plugin-load-script";
+import store from "@/store/index.js";
 loadScript(
   "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
 );
@@ -186,7 +185,6 @@ const floors_info = {
     position: { x: 0, y: 4, z: 0 },
   },
 };
-
 export default {
   components: {
     ButtonMenu,
@@ -194,9 +192,9 @@ export default {
     CategoryOne,
     CategoryTwo,
     CategoryThree,
-    CategoryFour, 
+    CategoryFour,
     CategorySix,
-    CategorySeven
+    CategorySeven,
     // Autocomplete,
   },
   data() {
@@ -227,17 +225,13 @@ export default {
     this.animate();
     this.add_events();
     // this.getapicategory();
+    //Шина которая передает данные в дочерний компонент (category1, category2 ...) 
+    EventBus.$on("callMethodInChild", () => {
+      this.add_row_by_name(store.state.name);
+    });
   },
 
   methods: {
-    closeModal() {
-      //  $("#exampleModal .close").click()
-      $("#exampleModal .btn-close").click();
-    },
-    closeModal2() {
-      //  $("#exampleModal .close").click()
-      $("#exampleModal2 .btn-close").click();
-    },
     getapi() {
       axios.get("http://Localhost:8100/api/stores").then((response) => {
         console.log(">>> getapi", response);
@@ -624,7 +618,7 @@ export default {
         1000
       );
       camera.position.set(0, 30, 50);
-      
+
       //Create Scene and settings
       scene = new THREE.Scene();
       scene.background = new THREE.Color("#dcdcdc");
@@ -736,7 +730,11 @@ export default {
           text: name,
         });
         instance.scale.set(0.7, 0.7, 0.7);
-        instance.position.set(obj.position[0],obj.position[1],obj.position[2]);
+        instance.position.set(
+          obj.position[0],
+          obj.position[1],
+          obj.position[2]
+        );
         // instance.position.set(position);
         instance.rotation.set(0, 0, 150);
         this.floors[obj.floor].add(instance);
@@ -775,7 +773,7 @@ export default {
       console.log("Text from DB loaded");
       for (let i in title) {
         console.log(">>> text:", i, title[i]);
-        this.create_text(title[i].id, title[i].title)
+        this.create_text(title[i].id, title[i].title);
       }
     },
 
