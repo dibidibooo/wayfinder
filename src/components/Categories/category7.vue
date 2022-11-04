@@ -33,10 +33,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [7.1]</h5>
+                <h5 class="card-title"><b>AFSONA RESTAURANT</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('29'), closeModal1()"
+                  @click="callMethodInParentComponent1(), closeModal1()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -51,8 +51,8 @@
         </div>
       </div>
     </div>
-        <!-- Modal -->
-        <div
+    <!-- Modal -->
+    <div
       class="modal top fade"
       id="exampleModal72"
       tabindex="-1"
@@ -84,10 +84,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [7.2]</h5>
+                <h5 class="card-title"><b>BLA BLA BAR</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('82'), closeModal2()"
+                  @click="callMethodInParentComponent2(), closeModal2()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -102,8 +102,8 @@
         </div>
       </div>
     </div>
-        <!-- Modal -->
-        <div
+    <!-- Modal -->
+    <div
       class="modal top fade"
       id="exampleModal73"
       tabindex="-1"
@@ -135,10 +135,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [7.3]</h5>
+                <h5 class="card-title"><b>NEXXIO PIZZA</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('56'), closeModal3()"
+                  @click="callMethodInParentComponent3(), closeModal3()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -153,8 +153,8 @@
         </div>
       </div>
     </div>
-        <!-- Modal -->
-        <div
+    <!-- Modal -->
+    <div
       class="modal top fade"
       id="exampleModal74"
       tabindex="-1"
@@ -186,10 +186,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [7.4]</h5>
+                <h5 class="card-title"><b>CHINA CITY</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('57'), closeModal4()"
+                  @click="callMethodInParentComponent4(), closeModal4()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -204,8 +204,8 @@
         </div>
       </div>
     </div>
-        <!-- Modal -->
-        <div
+    <!-- Modal -->
+    <div
       class="modal top fade"
       id="exampleModal75"
       tabindex="-1"
@@ -237,10 +237,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [7.5]</h5>
+                <h5 class="card-title"><b>EXPRESSO COFFEE BUS</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('50'), closeModal5()"
+                  @click="callMethodInParentComponent5(), closeModal5()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -259,29 +259,44 @@
 </template>
 
 <script>
+import EventBus from "../../store/event-bus.js";
 import $ from "jquery";
+import store from "@/store";
 export default {
   methods: {
+
+    // Вызывает функцию с родительского компонента HomeView и вызывает функцию маршрута
+    callMethodInParentComponent1() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "29"));
+    },
+    callMethodInParentComponent2() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "82"));
+    },
+    callMethodInParentComponent3() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "56"));
+    },
+    callMethodInParentComponent4() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "57"));
+    },
+    callMethodInParentComponent5() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "50"));
+    },
+
     closeModal1() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal71 .btn-close").click();
     },
     closeModal2() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal72 .btn-close").click();
     },
     closeModal3() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal73 .btn-close").click();
     },
     closeModal4() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal74 .btn-close").click();
     },
     closeModal5() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal75 .btn-close").click();
     },
-  }
-}
+  },
+};
 </script>

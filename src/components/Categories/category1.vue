@@ -33,7 +33,7 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [1.1]</h5>
+                <h5 class="card-title"><b>LPP STORAGE</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
                   @click="callMethodInParentComponent1(), closeModal1()"
@@ -84,7 +84,7 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [1.2]</h5>
+                <h5 class="card-title"><b>KANZLER</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
                   @click="callMethodInParentComponent2(), closeModal2()"
@@ -135,7 +135,7 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [1.3]</h5>
+                <h5 class="card-title"><b>LPP STORAGE-2</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
                   @click="callMethodInParentComponent3(), closeModal3()"
@@ -186,7 +186,7 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [1.4]</h5>
+                <h5 class="card-title"><b>IZBUSHKA</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
                   @click="callMethodInParentComponent4(), closeModal4()"
@@ -237,7 +237,7 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [1.5]</h5>
+                <h5 class="card-title"><b>SOLIDO</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
                   @click="callMethodInParentComponent5(), closeModal5()"

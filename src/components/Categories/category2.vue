@@ -33,10 +33,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [2.1]</h5>
+                <h5 class="card-title"><b>MOHITO</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('38'), closeModal1()"
+                  @click="callMethodInParentComponent1(), closeModal1()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -51,8 +51,8 @@
         </div>
       </div>
     </div>
-        <!-- Modal -->
-        <div
+    <!-- Modal -->
+    <div
       class="modal top fade"
       id="exampleModal22"
       tabindex="-1"
@@ -84,10 +84,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [2.2]</h5>
+                <h5 class="card-title"><b>OWN STORY</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('39'), closeModal2()"
+                  @click="callMethodInParentComponent2(), closeModal2()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -102,8 +102,8 @@
         </div>
       </div>
     </div>
-        <!-- Modal -->
-        <div
+    <!-- Modal -->
+    <div
       class="modal top fade"
       id="exampleModal23"
       tabindex="-1"
@@ -135,10 +135,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [2.3]</h5>
+                <h5 class="card-title"><b>DETSKIY MIR</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('76'), closeModal3()"
+                  @click="callMethodInParentComponent3(), closeModal3()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -153,8 +153,8 @@
         </div>
       </div>
     </div>
-        <!-- Modal -->
-        <div
+    <!-- Modal -->
+    <div
       class="modal top fade"
       id="exampleModal24"
       tabindex="-1"
@@ -186,10 +186,10 @@
                 ></div>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Название магазина [2.4]</h5>
+                <h5 class="card-title"><b>GLOBAL NOMADS</b></h5>
                 <p class="card-text">Подробное описание магазина</p>
                 <button
-                  @click="add_row_by_name('72'), closeModal4()"
+                  @click="callMethodInParentComponent4(), closeModal4()"
                   id="closeButton"
                   type="button"
                   class="btn text-white"
@@ -208,25 +208,38 @@
 </template>
 
 <script>
+import EventBus from "../../store/event-bus.js";
 import $ from "jquery";
+import store from "@/store";
 export default {
   methods: {
+
+    // Вызывает функцию с родительского компонента HomeView и вызывает функцию маршрута
+    callMethodInParentComponent1() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "38"));
+    },
+    callMethodInParentComponent2() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "39"));
+    },
+    callMethodInParentComponent3() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "76"));
+    },
+    callMethodInParentComponent4() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "72"));
+    },
+
     closeModal1() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal21 .btn-close").click();
     },
     closeModal2() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal22 .btn-close").click();
     },
     closeModal3() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal23 .btn-close").click();
     },
     closeModal4() {
-      //  $("#exampleModal .close").click()
       $("#exampleModal24 .btn-close").click();
-    }
-  }
-}
+    },
+  },
+};
 </script>

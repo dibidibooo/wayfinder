@@ -233,7 +233,7 @@ export default {
 
   methods: {
     getapi() {
-      axios.get("http://Localhost:8100/api/stores").then((response) => {
+      axios.get("https://adp.admin.datams.org/api/stores").then((response) => {
         console.log(">>> getapi", response);
         title = response.data;
         this.add_text();

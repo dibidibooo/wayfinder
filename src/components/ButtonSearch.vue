@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbar-wrapper">
+    <!-- <div class="navbar-wrapper">
       <div class="navbar-big navbar-content">
         <div class="navbar-big-wrapper modules-quotes-bg">
           <a class="modules-private-logo">
@@ -222,7 +222,198 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="col-2">
+        <a class="" href="#">
+          <small class="modules-private-name">ABU DHABI<br> PLAZA</small>
+        </a>
+      </div>
+        <div class="d-flex mx-auto col-10">
+          <div class="modules-link-content">
+            <a data-mdb-toggle="modal" data-mdb-target="#modaltab">
+            <img
+              src="images/Category/search.png"
+              width="160"
+              height="80"
+              alt="icon"
+              loading="lazy"
+            />
+            <p class="mb-0 modules-link-text"></p>
+          </a>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/info.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ИНФОРМАЦИЯ</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/foodcourt.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ФУДКОРТ</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/atm.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">БАНКОМАТЫ</p>
+            </div>
+          </div>
+          <div class="modules-link-content">
+            <img
+              src="images/Category/toilet.png"
+              width="65"
+              height="65"
+              alt="icon"
+              loading="lazy"
+            />
+            <p class="mb-0 modules-link-text">ТУАЛЕТЫ</p>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/administrator.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">РЕСЕПШН</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/wardrobe.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ГАРДЕРОБ</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/elevator.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ЛИФТ</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/stairs.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ЭСКАЛАТОР</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/escalator.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ПАРКИНГ</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/parking_car.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ВЕЛОПАРКОВКА</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/parking_bycicle.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">ПАРКОМАТ</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/parkomat.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">КОМНАТА МАТЕРИ</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/babyroom.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">МЕДИЦИНСКИЙ ЦЕНТР</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/medcenter.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text">АВАРИЙНЫЙ ВЫХОД</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <!-- Modal -->
     <div
@@ -264,7 +455,7 @@
                   aria-controls="tab13"
                   aria-selected="true"
                 >
-                <i class="fas fa-tshirt"></i>
+                  <i class="fas fa-tshirt"></i>
                   {{ category_name1 }}
                 </button>
               </li>
@@ -279,7 +470,7 @@
                   aria-controls="tab21"
                   aria-selected="false"
                 >
-                <i class="fas fa-dice"></i>
+                  <i class="fas fa-dice"></i>
                   {{ category_name2 }}
                 </button>
               </li>
@@ -294,7 +485,7 @@
                   aria-controls="tab33"
                   aria-selected="false"
                 >
-                <i class="fas fa-hands-helping"></i>
+                  <i class="fas fa-hands-helping"></i>
                   {{ category_name3 }}
                 </button>
               </li>
@@ -309,7 +500,7 @@
                   aria-controls="tab43"
                   aria-selected="false"
                 >
-                <i class="fas fa-ring"></i>
+                  <i class="fas fa-ring"></i>
                   {{ category_name4 }}
                 </button>
               </li>
@@ -339,7 +530,7 @@
                   aria-controls="tab63"
                   aria-selected="false"
                 >
-                <i class="fas fa-home"></i>
+                  <i class="fas fa-home"></i>
                   {{ category_name6 }}
                 </button>
               </li>
@@ -354,7 +545,7 @@
                   aria-controls="tab73"
                   aria-selected="false"
                 >
-                <i class="fas fa-coffee"></i>
+                  <i class="fas fa-coffee"></i>
                   {{ category_name7 }}
                 </button>
               </li>
@@ -439,7 +630,10 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal11">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal11"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -458,7 +652,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal12">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal12"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -477,7 +674,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal13">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal13"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -496,7 +696,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal14">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal14"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -515,7 +718,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal15">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal15"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -543,7 +749,10 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal21">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal21"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -562,7 +771,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal22">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal22"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -581,7 +793,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal23">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal23"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -600,7 +815,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal24">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal24"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -628,7 +846,10 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal31">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal31"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -647,7 +868,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal32">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal32"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -666,7 +890,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal33">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal33"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -685,7 +912,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal34">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal34"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -704,7 +934,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal35">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal35"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -732,7 +965,10 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal41">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal41"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -751,7 +987,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal42">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal42"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -770,7 +1009,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal43">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal43"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -789,7 +1031,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal44">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal44"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -808,7 +1053,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal45">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal45"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -902,7 +1150,10 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal61">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal61"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -921,7 +1172,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal62">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal62"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -940,7 +1194,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal63">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal63"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -959,7 +1216,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal64">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal64"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -978,7 +1238,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal65">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal65"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1006,7 +1269,10 @@
               >
                 <div class="row">
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal71">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal71"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1025,7 +1291,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal72">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal72"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1044,7 +1313,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal73">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal73"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1063,7 +1335,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal74">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal74"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1082,7 +1357,10 @@
                     </a>
                   </div>
                   <div class="col-xl-3 col-lg-6 mb-3">
-                    <a data-mdb-toggle="modal" data-mdb-target="#exampleModal75">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal75"
+                    >
                       <div class="card">
                         <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -1459,24 +1737,9 @@ export default {
     this.getStores();
   },
   methods: {
-    add_row_by_name(name = "0") {
-      this.unselect_objects(this.path_lsit[name].objects);
-      this.road_floors = [];
-
-      this.create_floor_rows(name);
-
-      if (this.road_floors.length == 1) {
-        this.change_floor(this.road_floors[0]);
-      } else {
-        this.change_floor(this.selected_floor);
-      }
-      // this.create_row(this.path_lsit[name].road);
-      this.select_objects(this.path_lsit[name].objects);
-    },
-
     getStores() {
       axios
-        .get("http://Localhost:8100/api/categories")
+        .get("https://adp.admin.datams.org/api/categories")
         .then((response) => {
           this.category_name1 = response.data[0].title;
           this.category_name2 = response.data[1].title;
@@ -1683,6 +1946,7 @@ a {
   font-weight: 100;
   font-size: 32px;
   color: #b91e67;
+  line-height: 30px;
 }
 
 .modules-big-links {
@@ -1739,7 +2003,7 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 1em;
+  padding: 0.7em;
 }
 
 @media (min-width: 600px) {
