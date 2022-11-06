@@ -739,6 +739,226 @@
                       </div>
                     </a>
                   </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal16"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[5].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal17"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[6].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal18"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[7].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal19"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[8].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal110"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[9].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal111"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[10].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal112"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[11].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal113"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[12].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal114"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[13].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal115"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store1[14].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
               <div
@@ -955,6 +1175,50 @@
                       </div>
                     </a>
                   </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal36"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store3[5].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal37"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store3[6].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
               <div
@@ -1068,6 +1332,72 @@
                             />
                             <div class="ms-3">
                               <p class="fw-bold mb-1">{{ store4[4].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal46"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store4[5].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal47"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store4[6].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal48"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store4[7].title }}</p>
                             </div>
                           </div>
                         </div>
@@ -1259,6 +1589,50 @@
                       </div>
                     </a>
                   </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal66"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store6[5].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal67"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store6[6].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
               <div
@@ -1372,6 +1746,402 @@
                             />
                             <div class="ms-3">
                               <p class="fw-bold mb-1">{{ store7[4].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal76"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[5].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal77"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[6].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal78"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[7].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal79"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[8].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal710"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[9].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal711"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[10].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal712"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[11].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal713"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[12].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal714"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[13].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal715"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[14].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal716"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[15].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal717"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[16].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal718"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[17].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal719"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[18].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal720"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[19].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal721"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[20].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal722"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[21].title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 mb-3">
+                    <a
+                      data-mdb-toggle="modal"
+                      data-mdb-target="#exampleModal723"
+                    >
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="d-flex align-items-center">
+                            <img
+                              src="../assets/logo.png"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                              <p class="fw-bold mb-1">{{ store7[22].title }}</p>
                             </div>
                           </div>
                         </div>

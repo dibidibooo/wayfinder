@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div>
     <button
       @click="change_floor(1), (activeBtn = 'btn1')"
       :class="{ buttonactive: activeBtn === 'btn1' }"
@@ -58,6 +58,7 @@
     <button @click="add_row_by_name('33')">33</button>
     <button @click="add_row_by_name('34')">34</button>
     <button @click="add_row_by_name('35')">35</button>
+    <button @click="add_row_by_name('35.1')">35.1</button>
     <button @click="add_row_by_name('36')">36</button>
     <button @click="add_row_by_name('37')">37</button>
     <button @click="add_row_by_name('38')">38</button>
