@@ -1,249 +1,28 @@
 <template>
   <div>
-    <!-- <div class="navbar-wrapper">
-      <div class="navbar-big navbar-content">
-        <div class="navbar-big-wrapper modules-quotes-bg">
-          <a class="modules-private-logo">
-            <div class="modules-private-name">Abu Dhabi Plaza</div>
-          </a>
-          <div class="modules-links-wrapper modules-big-links">
-            <div
-              class="modules-link-wrapper"
-              id="#"
-              style="position: absolute; margin-right: 90em"
-            >
-              <a data-mdb-toggle="modal" data-mdb-target="#modaltab">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/search.png"
-                    width="160"
-                    height="80"
-                    alt="lorem"
-                  />
-                </div>
-                <div class="modules-link-text"></div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/info.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ИНФОРМАЦИЯ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/foodcourt.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ФУДКОРТ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/atm.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">БАНКОМАТЫ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/toilet.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ТУАЛЕТЫ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/administrator.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">РЕСЕПШН</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/wardrobe.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ГАРДЕРОБ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/elevator.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ЛИФТ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/stairs.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ЛЕСТНИЦА</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/escalator.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ЭСКАЛАТОР</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/parking_car.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ПАРКИНГ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/parking_bycicle.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ВЕЛОПАРКОВКА</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/parkomat.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">ПАРКОМАТ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/babyroom.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">КОМНАТА МАТЕРИ</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/medcenter.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">МЕД. ЦЕНТР</div>
-                </div>
-              </a>
-            </div>
-            <div class="modules-link-wrapper" id="#">
-              <a href="#">
-                <div class="modules-link-content">
-                  <img
-                    src="images/Category/emergency.png"
-                    width="65"
-                    height="65"
-                    alt="lorem"
-                  />
-                  <div class="modules-link-text">АВАРИЙНЫЙ ВЫХОД</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
         <div class="col-2">
-        <a class="" href="#">
-          <small class="modules-private-name">ABU DHABI<br> PLAZA</small>
-        </a>
-      </div>
+          <a class="" href="#">
+            <small class="modules-private-name"
+              >ABU DHABI<br />
+              PLAZA</small
+            >
+          </a>
+        </div>
         <div class="d-flex mx-auto col-10">
           <div class="modules-link-content">
             <a data-mdb-toggle="modal" data-mdb-target="#modaltab">
-            <img
-              src="images/Category/search.png"
-              width="160"
-              height="80"
-              alt="icon"
-              loading="lazy"
-            />
-            <p class="mb-0 modules-link-text"></p>
-          </a>
+              <img
+                src="images/Category/search.png"
+                width="160"
+                height="80"
+                alt="icon"
+                loading="lazy"
+              />
+              <p class="mb-0 modules-link-text"></p>
+            </a>
           </div>
           <div class="modules-link-wrapper">
             <div class="modules-link-content">
@@ -253,6 +32,7 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent1()"
               />
               <p class="mb-0 modules-link-text">ИНФОРМАЦИЯ</p>
             </div>
@@ -265,6 +45,7 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent2()"
               />
               <p class="mb-0 modules-link-text">ФУДКОРТ</p>
             </div>
@@ -277,6 +58,7 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent3()"
               />
               <p class="mb-0 modules-link-text">БАНКОМАТЫ</p>
             </div>
@@ -288,6 +70,7 @@
               height="65"
               alt="icon"
               loading="lazy"
+              @click="callMethodInParentComponent4()"
             />
             <p class="mb-0 modules-link-text">ТУАЛЕТЫ</p>
           </div>
@@ -299,6 +82,7 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent5()"
               />
               <p class="mb-0 modules-link-text">РЕСЕПШН</p>
             </div>
@@ -311,6 +95,7 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent6()"
               />
               <p class="mb-0 modules-link-text">ГАРДЕРОБ</p>
             </div>
@@ -323,6 +108,7 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent7()"
               />
               <p class="mb-0 modules-link-text">ЛИФТ</p>
             </div>
@@ -335,8 +121,9 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent8()"
               />
-              <p class="mb-0 modules-link-text">ЭСКАЛАТОР</p>
+              <p class="mb-0 modules-link-text">ЛЕСТНИЦА</p>
             </div>
           </div>
           <div class="modules-link-wrapper">
@@ -347,8 +134,9 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent9()"
               />
-              <p class="mb-0 modules-link-text">ПАРКИНГ</p>
+              <p class="mb-0 modules-link-text">ЭСКАЛАТОР</p>
             </div>
           </div>
           <div class="modules-link-wrapper">
@@ -359,8 +147,9 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent10()"
               />
-              <p class="mb-0 modules-link-text">ВЕЛОПАРКОВКА</p>
+              <p class="mb-0 modules-link-text">ПАРКИНГ</p>
             </div>
           </div>
           <div class="modules-link-wrapper">
@@ -371,8 +160,9 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent11()"
               />
-              <p class="mb-0 modules-link-text">ПАРКОМАТ</p>
+              <p class="mb-0 modules-link-text">ВЕЛОПАРКОВКА</p>
             </div>
           </div>
           <div class="modules-link-wrapper">
@@ -383,8 +173,9 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent12()"
               />
-              <p class="mb-0 modules-link-text">КОМНАТА МАТЕРИ</p>
+              <p class="mb-0 modules-link-text">ПАРКОМАТ</p>
             </div>
           </div>
           <div class="modules-link-wrapper">
@@ -395,8 +186,9 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent13()"
               />
-              <p class="mb-0 modules-link-text">МЕДИЦИНСКИЙ ЦЕНТР</p>
+              <p class="mb-0 modules-link-text">КОМНАТА МАТЕРИ</p>
             </div>
           </div>
           <div class="modules-link-wrapper">
@@ -407,6 +199,20 @@
                 height="65"
                 alt="icon"
                 loading="lazy"
+                @click="callMethodInParentComponent14()"
+              />
+              <p class="mb-0 modules-link-text">МЕДИЦИНСКИЙ ЦЕНТР</p>
+            </div>
+          </div>
+          <div class="modules-link-wrapper">
+            <div class="modules-link-content">
+              <img
+                src="images/Category/emergency.png"
+                width="65"
+                height="65"
+                alt="icon"
+                loading="lazy"
+                @click="callMethodInParentComponent15()"
               />
               <p class="mb-0 modules-link-text">АВАРИЙНЫЙ ВЫХОД</p>
             </div>
@@ -2461,6 +2267,8 @@
 
 
 <script>
+import EventBus from "../store/event-bus.js";
+import store from "@/store";
 import axios from "axios";
 export default {
   data: () => ({
@@ -2507,6 +2315,74 @@ export default {
     this.getStores();
   },
   methods: {
+    // Вызывает функцию с родительского компонента HomeView и вызывает функцию маршрута
+    callMethodInParentComponent1() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_info"));
+    },
+    callMethodInParentComponent2() {
+      EventBus.$emit(
+        "callMethodInChild",
+        (store.state.name = "icon_foodcourt")
+      );
+    },
+    callMethodInParentComponent3() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_atm"));
+    },
+    callMethodInParentComponent4() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_toilet"));
+    },
+    callMethodInParentComponent5() {
+      EventBus.$emit(
+        "callMethodInChild",
+        (store.state.name = "icon_administrator")
+      );
+    },
+    callMethodInParentComponent6() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_wardrobe"));
+    },
+    callMethodInParentComponent7() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_elevator"));
+    },
+    callMethodInParentComponent8() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_stairs"));
+    },
+    callMethodInParentComponent9() {
+      EventBus.$emit(
+        "callMethodInChild",
+        (store.state.name = "icon_escalator")
+      );
+    },
+    callMethodInParentComponent10() {
+      EventBus.$emit(
+        "callMethodInChild",
+        (store.state.name = "icon_parking_car")
+      );
+    },
+    callMethodInParentComponent11() {
+      EventBus.$emit(
+        "callMethodInChild",
+        (store.state.name = "icon_parking_bycicle")
+      );
+    },
+    callMethodInParentComponent12() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_parkomat"));
+    },
+    callMethodInParentComponent13() {
+      EventBus.$emit("callMethodInChild", (store.state.name = "icon_babyroom"));
+    },
+    callMethodInParentComponent14() {
+      EventBus.$emit(
+        "callMethodInChild",
+        (store.state.name = "icon_medcenter")
+      );
+    },
+    callMethodInParentComponent15() {
+      EventBus.$emit(
+        "callMethodInChild",
+        (store.state.name = "icon_emergency")
+      );
+    },
+
     getStores() {
       axios
         .get("https://adp.admin.datams.org/api/categories")
@@ -2627,7 +2503,6 @@ export default {
   border-color: #f18eb4 !important;
   outline: none;
 }
-
 .card:hover {
   background-color: #f18eb4;
 }
@@ -2638,79 +2513,14 @@ export default {
   min-height: 30em;
 }
 /* _________________________________ NAVBAR _________________________________ */
-.navbar-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-}
-
-.navbar-content {
-  width: 100%;
-}
-
-@media (min-width: 600px) {
-  .navbar-big {
-    display: none;
-  }
-}
-
-@media (min-width: 900px) {
-  .navbar-big {
-    display: block;
-  }
-}
-
-.navbar-big-wrapper {
-  -webkit-transition: background 0.5s linear;
-  transition: background 0.5s linear;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  color: #fff;
-  padding: 0px;
-}
-
-.modules-quotes-bg {
-  background: #f1f1f1;
-  filter: drop-shadow(0 0 16px #787878);
-}
-
-.modules-private-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  margin-right: auto;
-  line-height: 1;
-}
-
 a {
   text-decoration: none;
 }
-
 a {
   color: inherit;
   font-weight: 700;
   font-family: inherit;
 }
-
 .modules-private-name {
   font-family: Impact, Charcoal, sans-serif;
   font-weight: 100;
@@ -2718,46 +2528,19 @@ a {
   color: #b91e67;
   line-height: 30px;
 }
-
-.modules-big-links {
-  width: 100%;
-  /* margin-right: 50em; */
-}
-
-.modules-big-contact,
-.modules-big-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.modules-links-wrapper {
-  position: relative;
-  /* border-right: 1px solid hsla(0, 0%, 100%, 0.4); */
-}
-
 .modules-link-wrapper {
   cursor: pointer;
 }
-
 @media (min-width: 600px) {
   .modules-link-wrapper {
     width: auto;
   }
 }
-
 @media (min-width: 900px) {
   .modules-link-wrapper {
     width: 85px;
   }
 }
-
 .modules-link-content {
   color: #fff;
   display: -webkit-box;
@@ -2775,7 +2558,6 @@ a {
   justify-content: center;
   padding: 0.7em;
 }
-
 @media (min-width: 600px) {
   .modules-link-content {
     -webkit-box-orient: horizontal;
@@ -2788,7 +2570,6 @@ a {
     /* border-bottom: 1px solid hsla(0, 0%, 100%, 0.4); */
   }
 }
-
 @media (min-width: 900px) {
   .modules-link-content {
     -webkit-box-orient: vertical;
@@ -2799,7 +2580,6 @@ a {
     border-bottom: none;
   }
 }
-
 @media (min-width: 600px) {
   .modules-link-text {
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -2808,7 +2588,6 @@ a {
     padding: 0 1em;
   }
 }
-
 @media (min-width: 900px) {
   .modules-link-text {
     color: #000000;
@@ -2816,23 +2595,8 @@ a {
     padding: 1em 0 0;
   }
 }
-
-.modules-big-contact,
-.modules-big-links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 /* _________________________________ END OF THE NAVBAR _________________________________ */
 
 /* _________________________________ CUSTOM STYLE _________________________________ */
-
 /* _________________________________ END OF THE CUSTOM STYLE _________________________________ */
 </style>

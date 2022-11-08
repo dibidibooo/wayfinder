@@ -1,6 +1,7 @@
 <template>
   <div>
-    <button
+    <div class="footer">
+      <button
       @click="change_floor(1), (activeBtn = 'btn1')"
       :class="{ buttonactive: activeBtn === 'btn1' }"
       class="bubblybutton"
@@ -18,7 +19,8 @@
       <a>2 Этаж</a>
       <!-- {{this.road_floors.includes(2)? 1: 0}}
         {{this.selected_floor == 2? 1: 0}} -->
-    </button>
+    </button>  
+</div>
 
     <!-- <div style="position: absolute; margin-top: 10em">
     <button @click="test_create_text()">test box</button>
@@ -136,9 +138,10 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import axios from "axios";
+import {Text} from 'troika-three-text'
 import EventBus from "../store/event-bus.js";
 
-import TextSprite from "@seregpie/three.text-sprite";
+// import TextSprite from "@seregpie/three.text-sprite";
 import ButtonMenu from "@/components/ButtonMenu.vue";
 import ButtonSearch from "@/components/ButtonSearch.vue";
 // import Autocomplete from 'vue2-autocomplete-js'
@@ -318,7 +321,7 @@ export default {
       const animate_material_param = {
         object_name: "row_tube",
         texture: "full",
-        color: "#000000",
+        color: "#b91e67",
         wrap: true,
         repeat: {
           x: 2,
@@ -409,7 +412,7 @@ export default {
         selectedObject.material.copy(selectedObject.material.clone());
         if (selectedObject) {
           console.log(">>> selectedObject", selectedObject);
-          this.add_animation(selectedObject, { x: 1, y: 3, z: 1 });
+          this.add_animation(selectedObject, { x: 1, y: 4, z: 1 });
           // selectedObject.userData.defaultMaterial = selectedObject.material.clone()
           if (!("defaultMaterial" in Object.keys(selectedObject.userData))) {
             selectedObject.userData.defaultMaterial = {
@@ -721,23 +724,23 @@ export default {
           this.text_config[id],
           this.text_config
         );
-        let instance = new TextSprite({
-          // alignment: "center",
-          fontFamily: "fantasy",
-          color: "#ffffff",
-          strokeColor: "#000000",
-          strokeWidth: 0.03,
-          fontSize: 0.04,
-          text: name,
-        });
+
+        let instance = new Text({});
+        instance.text = name;
+        instance.fontSize = obj.fontSize;
+        instance.maxWidth = obj.maxWidth;
+        instance.color = "#000000";
         instance.scale.set(0.7, 0.7, 0.7);
         instance.position.set(
           obj.position[0],
           obj.position[1],
           obj.position[2]
         );
-        // instance.position.set(position);
-        instance.rotation.set(0, 0, 150);
+        instance.rotation.set(
+          obj.rotation[0],
+          obj.rotation[1],
+          obj.rotation[2]
+        );
         this.floors[obj.floor].add(instance);
       }
     },
@@ -777,10 +780,6 @@ export default {
         this.create_text(title[i].id, title[i].title);
       }
     },
-
-    // test_create_text() {
-    //   this.create_text("000", "SUPER MEGA TEXXT");
-    // },
 
     //Подгон размера окна к данным матрице
     async onWindowResize() {
