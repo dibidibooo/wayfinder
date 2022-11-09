@@ -6,8 +6,8 @@
         <div class="col-2">
           <a class="" href="#">
             <small class="modules-private-name"
-              >ABU DHABI<br />
-              PLAZA</small
+              >ENTERTAIMENT<br />
+              CENTER</small
             >
           </a>
         </div>
@@ -2264,6 +2264,8 @@
     </div>
   </div>
 </template>
+
+
 
 
 <script>

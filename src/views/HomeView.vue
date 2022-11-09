@@ -684,8 +684,8 @@ export default {
         ONE: THREE.TOUCH.DOLLY_PAN,
       };
       // di Ограничение по Rotate
-      controls.minPolarAngle = 0.1;
-      controls.maxPolarAngle = 0.9;
+      controls.minPolarAngle = 0.2;
+      controls.maxPolarAngle = 0.8;
       // di Передвигает картой через ЛКМ, а не через ПКМ (по умолчанию)
       controls.mouseButtons = {
         LEFT: THREE.MOUSE.PAN,
