@@ -134,47 +134,41 @@
 <!-- <script src="./threejs/Path3D.js"></script> -->
 
 <script>
-import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import axios from "axios";
-import {Text} from 'troika-three-text'
+import * as THREE from "three"; // import Библиотеки three.js
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"; // библиотека three.js (отвечает за то, чтобы можно было загрузить GLTF модель)
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"; // библиотека three.js (Позволяет двигать, крутить, приближать модели)
+import axios from "axios"; 
+import {Text} from 'troika-three-text' // Библиотека чтобы показать название бутиков поверх моделей
 import EventBus from "../store/event-bus.js";
 
-// import TextSprite from "@seregpie/three.text-sprite";
-import ButtonMenu from "@/components/ButtonMenu.vue";
-import ButtonSearch from "@/components/ButtonSearch.vue";
-// import Autocomplete from 'vue2-autocomplete-js'
+import ButtonMenu from "@/components/ButtonMenu.vue"; // Кнопки 1|2 этаж
+import ButtonSearch from "@/components/ButtonSearch.vue"; // Верхний navbar
+import all_path from "/public/roads.json"; // json где прописаны пути до бутиков по координатам 
+import text_config from "/public/text_config.json"; // json где прописаны название бутиков по координатам
+import { TWEEN } from "three/examples/jsm/libs/tween.module.min"; // библиотека three.js
 
-// import json_search from "/public/search.json";
-import all_path from "/public/roads.json";
-import text_config from "/public/text_config.json";
-import { TWEEN } from "three/examples/jsm/libs/tween.module.min";
-// import road_texture from "/public/images/threejs/images/path_007_21.png";
+import CategoryOne from "@/components/Categories/category1.vue"; // import component Где описаны модалки бутиков, разделил vue файлы на кажду категорию
+import CategoryTwo from "@/components/Categories/category2.vue"; 
+import CategoryThree from "@/components/Categories/category3.vue";  
+import CategoryFour from "@/components/Categories/category4.vue";  
+import CategorySix from "@/components/Categories/category6.vue";  
+import CategorySeven from "@/components/Categories/category7.vue";  
 
-import CategoryOne from "@/components/Categories/category1.vue";
-import CategoryTwo from "@/components/Categories/category2.vue";
-import CategoryThree from "@/components/Categories/category3.vue";
-import CategoryFour from "@/components/Categories/category4.vue";
-import CategorySix from "@/components/Categories/category6.vue";
-import CategorySeven from "@/components/Categories/category7.vue";
-
-// Позволяет импортировать сторонние javascript
-import { loadScript } from "vue-plugin-load-script";
+import { loadScript } from "vue-plugin-load-script"; // Позволяет импортировать сторонние javascript
 import store from "@/store/index.js";
 loadScript(
   "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"
 );
 
-// import { GUI } from 'dat.gui'
 var container, controls;
 var camera, scene, raycaster, renderer;
 var INTERSECTED;
 let title;
 var loaded_models = [];
-// let titleCategory
 const pointer = new THREE.Vector2();
 
+
+// Подгружаю модели этажей
 const floors_info = {
   1: {
     src: "models/InUse/first_floor.gltf",
@@ -228,7 +222,6 @@ export default {
     this.init();
     this.animate();
     this.add_events();
-    // this.getapicategory();
     //Шина которая передает данные в дочерний компонент (category1, category2 ...) 
     EventBus.$on("callMethodInChild", () => {
       this.add_row_by_name(store.state.name);
@@ -244,28 +237,24 @@ export default {
       });
     },
 
+
     // _____________________________________ row _____________________________________
     add_row_by_name(name = "0") {
       this.unselect_objects(this.path_lsit[name].objects);
       this.road_floors = [];
-
       this.create_floor_rows(name);
-
       if (this.road_floors.length == 1) {
         this.change_floor(this.road_floors[0]);
       } else {
         this.change_floor(this.selected_floor);
       }
-      // this.create_row(this.path_lsit[name].road);
       this.select_objects(this.path_lsit[name].objects);
     },
 
     create_floor_rows(name = "0") {
       this.remove_row();
-
       const FIRST = 0;
       const SECOND = 1;
-
       const floor_roads = this.path_lsit[name].road;
       console.log(
         ">>> floor_roads",
@@ -292,7 +281,6 @@ export default {
         path_lenght += Math.sqrt(p[0] * p[0] + p[1] * p[1] + p[2] * p[2]);
       });
       path_lenght = Math.fround(path_lenght);
-      // console.log(">>> path_lenght", floor_ind, path_lenght);
       var curve = new THREE.CatmullRomCurve3(
         path_points,
         false /*is it closed*/
@@ -314,7 +302,6 @@ export default {
         tube.visible,
         this.selected_floor == floor_ind
       );
-      // scene.add(tube);
     },
 
     getAnimatedMaterial(count = 15) {
@@ -637,6 +624,8 @@ export default {
       // hemiLight.position.set( 0, 2, 0 );
       // scene.add( hemiLight );
 
+
+      // Освещение
       const dirLight = new THREE.DirectionalLight(0xffffff);
       dirLight.position.set(0.3, 1, 1);
       dirLight.castShadow = true;
@@ -711,6 +700,8 @@ export default {
       }
     },
 
+
+    // Функция чтобы вставить текст название бутиков
     create_text(id, name) {
       id = id.toString();
       const obj = this.text_config[id];
